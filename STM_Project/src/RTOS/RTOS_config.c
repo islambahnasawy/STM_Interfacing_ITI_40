@@ -1,4 +1,4 @@
-#include "STD_TYPES.h"
+#include "../LIB/STD_TYPES.h"
 #include "RTOS_interface.h"
 #include "RTOS_private.h"
 #include "RTOS_config.h"

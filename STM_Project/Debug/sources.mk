@@ -27,6 +27,21 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/Application \
+src/HAL/LCD \
+src/HAL/Switch \
+src/HAL/USART_Handler \
+src/LIB/Delay \
+src/LIB/Queue \
+src/MCAL/DIO \
+src/MCAL/NVIC \
+src/MCAL/RCC \
+src/MCAL/SysTick \
+src/MCAL/USART \
+src/Other_Drivers/7_Segment \
+src/Other_Drivers/Keypad \
+src/Other_Drivers/LED \
+src/RTOS \
 src \
 system/src/cmsis \
 system/src/cortexm \

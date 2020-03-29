@@ -1,14 +1,14 @@
-#include "STD_TYPES.h"
-#include "USART_MYTYPES.h"
+#include "../LIB/STD_TYPES.h"
+#include "../MCAL/USART/USART_MYTYPES.h"
 
-#include "RCC_interface.h"
-#include "DIO_interface.h"
-#include "STK_interface.h"
-#include "C_LCD_interface.h"
-#include "RTOS_interface.h"
-#include "LED_interface.h"
-#include "Switch_interface.h"
-#include "USRTH_interface.h"
+#include "../MCAL/RCC/RCC_interface.h"
+#include "../MCAL/DIO/DIO_interface.h"
+#include "../MCAL/SysTick/STK_interface.h"
+#include "../HAL/LCD/C_LCD_interface.h"
+#include "../RTOS/RTOS_interface.h"
+
+#include "../HAL/Switch/Switch_interface.h"
+#include "../HAL/USART_Handler/USRTH_interface.h"
 #include <stdio.h>
 u8 RxData[4];
 u8 TxData[4];

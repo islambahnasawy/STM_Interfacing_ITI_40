@@ -3,14 +3,14 @@
 /*Date   : 25 March 2020								*/
 /*Version : V01											*/
 /********************************************************/
-#include "STD_TYPES.h"
+#include "../../LIB/STD_TYPES.h"
 #include "USART_MYTYPES.h"
 
 #include "USART_interface.h"
 #include "USART_reg.h"
 #include "USART_config.h"
 #include "USART_private.h"
-#include "C_LCD_interface.h"
+
 
 dataBuffer_t txbuffer ;
 dataBuffer_t rxbuffer;

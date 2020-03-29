@@ -4,15 +4,14 @@
 /*Version : V01											*/
 /********************************************************/
 
-#include "STD_TYPES.h"
-#include "USART_MYTYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../MCAL/USART/USART_MYTYPES.h"
 
 
-#include "USART_interface.h"
-#include "RCC_interface.h"
-#include "DIO_interface.h"
-#include "NVIC_interface.h"
+#include "../../MCAL/USART/USART_interface.h"
+#include "../../MCAL/RCC/RCC_interface.h"
+#include "../../MCAL/DIO/DIO_interface.h"
+#include "../../MCAL/NVIC/NVIC_interface.h"
 
 #include "USRTH_interface.h"
 #include "USRTH_private.h"

@@ -4,13 +4,14 @@
 /*Date : 9 MARCH 2020								    */
 /********************************************************/
 
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/BIT_MATH.h"
+
 #include "C_LCD_interface.h"
 #include "C_LCD_private.h"
 #include "C_LCD_config.h"
-#include "DIO_interface.h"
-#include "queue.h"
+#include "../../MCAL/DIO/DIO_interface.h"
+#include "../../LIB/Queue/queue.h"
 
 queue Queue;
 

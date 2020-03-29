@@ -1,10 +1,10 @@
-#include "STD_TYPES.h"
+#include "../LIB/STD_TYPES.h"
 
 #include "RTOS_interface.h"
 #include "RTOS_config.h"
 #include "RTOS_private.h"
-#include "STK_interface.h"
-#include "RCC_interface.h"
+#include "../MCAL/SysTick/STK_interface.h"
+#include "../MCAL/RCC/RCC_interface.h"
 
 
 u8 OSFlag;

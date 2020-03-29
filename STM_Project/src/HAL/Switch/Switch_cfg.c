@@ -1,6 +1,6 @@
-#include "STD_TYPES.h"
+#include "../../LIB/STD_TYPES.h"
 #include "Switch_interface.h"
-#include "DIO_interface.h"
+#include "../../MCAL/DIO/DIO_interface.h"
 
 
 typedef struct

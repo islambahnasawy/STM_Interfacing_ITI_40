@@ -4,8 +4,7 @@
 /* Version : V01									*/
 /****************************************************/
 
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../LIB/STD_TYPES.h"
 
 #include "STK_interface.h"
 #include "STK_reg.h"
