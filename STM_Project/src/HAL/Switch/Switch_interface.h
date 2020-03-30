@@ -1,9 +1,3 @@
-/******************************************************/
-/*Author   : Islam A. El-Bahnasawy, Mohammed Anwar    */
-/*Date     : 15 Mar 2020                              */
-/*Version  : V.01                                     */
-/******************************************************/
-
 #ifndef _SWITCH_INTERFACE_H_
 #define _SWITCH_INTERFACE_H_
 

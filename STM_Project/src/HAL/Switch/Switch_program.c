@@ -1,9 +1,3 @@
-/******************************************************/
-/*Author   : Islam A. El-Bahnasawy, Mohammed Anwar    */
-/*Date     : 15 Mar 2020                              */
-/*Version  : V.01                                     */
-/******************************************************/
-
 #include "../../LIB/STD_TYPES.h"
 #include "Switch_interface.h"
 #include "../../MCAL/DIO/DIO_interface.h"

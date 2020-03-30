@@ -6,6 +6,8 @@
 #include "../MCAL/SysTick/STK_interface.h"
 #include "../MCAL/RCC/RCC_interface.h"
 
+//can this file be included here ?
+#include "../Application/OS_Tasking_cfg/OS_Tasking_cfg.h"
 
 u8 OSFlag;
 u32 index;
@@ -19,6 +21,9 @@ void RTOS_init(void)
 	sysTick_setTime(TICKTIME_MS*1000,SYSTIC_freqMHZ);
 	sysTick_setcallback(setOSFlag);
 	
+	/*initializing the app tasks*/
+	OS_TaskingInit(); //should this function be used here ?
+
 	for(u32 i=0;i<NUM_OF_TASKS;i++)
 	{
 		sysTask[i].baseTaskInfo = &baseTaskInfo[i];
@@ -29,6 +34,7 @@ void RTOS_init(void)
 
 static void setOSFlag(void)
 {
+	/*Incrementing the OSFlag so that we can know that something went wrong if its value is more than 1*/
 	OSFlag ++;
 }
 
@@ -52,6 +58,11 @@ void RTOS_start(void)
 	{
 		if(OSFlag)
 		{
+			if(OSFlag > 1)
+			{
+				/*Notify user that something went wrong*/
+			}
+			/*Execute only once even if the OSFlag's value is more than one*/
 			OSFlag = 0;
 			schedular();
 		}

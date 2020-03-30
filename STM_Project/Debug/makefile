@@ -27,6 +27,11 @@ RM := rm -rf
 -include src/HAL/USART_Handler/subdir.mk
 -include src/HAL/Switch/subdir.mk
 -include src/HAL/LCD/subdir.mk
+-include src/Application/Switch_IncCounter_APP/subdir.mk
+-include src/Application/SendingUSART_App/subdir.mk
+-include src/Application/ReceivingUSART_App/subdir.mk
+-include src/Application/OS_Tasking_cfg/subdir.mk
+-include src/Application/DisplayLCD_APP/subdir.mk
 -include src/Application/subdir.mk
 -include src/subdir.mk
 -include subdir.mk

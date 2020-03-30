@@ -27,6 +27,11 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/Application/DisplayLCD_APP \
+src/Application/OS_Tasking_cfg \
+src/Application/ReceivingUSART_App \
+src/Application/SendingUSART_App \
+src/Application/Switch_IncCounter_APP \
 src/Application \
 src/HAL/LCD \
 src/HAL/Switch \

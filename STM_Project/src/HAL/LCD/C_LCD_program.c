@@ -25,12 +25,9 @@ handler LCD_handlers[3]=
 {
 		&LCD_apply,&LCD_wipe,&LCD_cursor_moving
 };
+
+taskInfo_t CurrentTask;
 u8 FSM_Complete ;
-u8 LCD_runningTask ;
-u8* buffer ;
-u8 LCD_length;
-u8 LCD_row;
-u8 LCD_col;
 u8 steps = DONE;
 u8 LCD_index;
 void FSM_init(void)
@@ -72,17 +69,17 @@ void LCD_OS_runnable(void)
 			{
 				steps = FIRST_STEP;
 				Dequeue(&Queue,&temptask);
-				LCD_runningTask = temptask.taskID;
-				LCD_length = temptask.task_length;
+				CurrentTask.taskID = temptask.taskID;
+				CurrentTask.task_length = temptask.task_length;
+				CurrentTask.task_string = temptask.task_string;
+				CurrentTask.task_row = temptask.task_row;
+				CurrentTask.task_col = temptask.task_col;
 				LCD_index = temptask.task_length;
-				buffer = temptask.task_string;
-				LCD_row = temptask.task_row;
-				LCD_col = temptask.task_col;
 			}
 
-			if(LCD_length != 0 || LCD_runningTask != LCD_WRITE)
+			if(CurrentTask.task_length != 0 || CurrentTask.taskID != LCD_WRITE)
 			{
-				(LCD_handlers[LCD_runningTask])();
+				(LCD_handlers[CurrentTask.taskID])();
 			}
 		}
 	}
@@ -94,8 +91,11 @@ void LCD_OS_runnable(void)
 void LCD_OS_clear(void)
 {
 
+	/*creating an object of type taskInfo_t*/
 	taskInfo_t temptask;
+	/*Filling that object with the suitable data*/
 	temptask.taskID = LCD_CLEAR;
+	/*Enlisting that object in the queue*/
 	Enqueue(&Queue,temptask);
 }
 
@@ -113,16 +113,16 @@ static void LCD_cursor_moving(void)
 	{
 		DIO_SetPinVal(CLCD_u8_RS_PORT,CLCD_u8_RS_PIN,0);
 		DIO_SetPinVal(CLCD_u8_RW_PORT,CLCD_u8_RW_PIN,0);
-		if(LCD_row==0){
-			if(LCD_col<16)
+		if(CurrentTask.task_row==0){
+			if(CurrentTask.task_col<16)
 			{
-				CLCD_voidSetDataPort(0x80+LCD_col);
+				CLCD_voidSetDataPort(0x80+CurrentTask.task_col);
 			}
 		}
-		else if (LCD_row==1){
-			if(LCD_col<16)
+		else if (CurrentTask.task_row==1){
+			if(CurrentTask.task_col<16)
 			{
-				CLCD_voidSetDataPort(0xC0+LCD_col);
+				CLCD_voidSetDataPort(0xC0+CurrentTask.task_col);
 			}
 		}
 		DIO_SetPinVal(CLCD_u8_E_PORT,CLCD_u8_E_PIN,1);
@@ -157,7 +157,7 @@ static void LCD_apply(void)
 	{
 		DIO_SetPinVal(CLCD_u8_RS_PORT,CLCD_u8_RS_PIN,1);
 		DIO_SetPinVal(CLCD_u8_RW_PORT,CLCD_u8_RW_PIN,0);
-		CLCD_voidSetDataPort(buffer[(LCD_index-LCD_length)]);
+		CLCD_voidSetDataPort(CurrentTask.task_string[(LCD_index-CurrentTask.task_length)]);
 		DIO_SetPinVal(CLCD_u8_E_PORT,CLCD_u8_E_PIN,1);
 		steps = SECOND_STEP;
 	}
@@ -165,8 +165,8 @@ static void LCD_apply(void)
 	{
 		DIO_SetPinVal(CLCD_u8_E_PORT,CLCD_u8_E_PIN,0);
 		steps = FIRST_STEP;
-		LCD_length--;
-		if(LCD_length == 0)
+		CurrentTask.task_length--;
+		if(CurrentTask.task_length == 0)
 		{
 			steps = DONE;
 			//notify that the first word is sent
