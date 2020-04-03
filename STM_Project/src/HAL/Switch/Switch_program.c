@@ -1,15 +1,14 @@
 #include "../../LIB/STD_TYPES.h"
+
+#include "../../RTOS/RTOS_interface.h"
 #include "Switch_interface.h"
 #include "../../MCAL/DIO/DIO_interface.h"
 
-typedef struct
-{
-	u32 GPIO_pinNum;
-	u32 GPIO_pinPort;
-	u32 state;
-}switch_t;
+
+
 u8 switchState[NUM_OF_SWITCH];
-extern switch_t switchMap[NUM_OF_SWITCH];
+
+const task_t UpdatingSwitchesTask = {.handler=Switch_updateValue,.preodicityMS=5};
 
 void switch_init(void)
 {
@@ -31,9 +30,11 @@ u8 getSwitchState(u8 switchNum)
 {
 	return switchState[switchNum];
 }
-
+#define STABLE_STATE_MS 20
+#define TASK_PERIOD_MS		5
 void Switch_updateValue(void)
 {
+	//trace_printf("switch");
 	static u8 counter[NUM_OF_SWITCH] , lastValue[NUM_OF_SWITCH];
 	u8 currentValue;
 	for(u8 i=0;i<NUM_OF_SWITCH;i++)

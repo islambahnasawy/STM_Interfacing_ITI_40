@@ -7,29 +7,31 @@
 #include "../../LIB/STD_TYPES.h"
 #include "../../LIB/BIT_MATH.h"
 
+#include "../../RTOS/RTOS_interface.h"
 #include "C_LCD_interface.h"
 #include "C_LCD_private.h"
 #include "C_LCD_config.h"
 #include "../../MCAL/DIO/DIO_interface.h"
 #include "../../LIB/Queue/queue.h"
 
-queue Queue;
 
-taskInfo_t taskInfo[MAX_QUEUED_TASKS];
+const task_t LCD_Task = {.handler=LCD_OS_runnable,.preodicityMS=5};
 
-handler  handlers[8]=
+static const handler  handlers[8]=
 {
 		FSM_task1,FSM_task2,FSM_task3,FSM_task2,FSM_task4,FSM_task2,FSM_task5,FSM_task2
 };
-handler LCD_handlers[3]=
+static const handler LCD_handlers[3]=
 {
 		&LCD_apply,&LCD_wipe,&LCD_cursor_moving
 };
 
-taskInfo_t CurrentTask;
-u8 FSM_Complete ;
-u8 steps = DONE;
-u8 LCD_index;
+static queue Queue;
+static taskInfo_t taskInfo[MAX_QUEUED_TASKS];
+static taskInfo_t CurrentTask;
+static u8 FSM_Complete ;
+static u8 steps = DONE;
+static u8 LCD_index;
 void FSM_init(void)
 {
 	static u8 index = 0;
@@ -59,7 +61,7 @@ void CLCD_init(void)
 }
 
 void LCD_OS_runnable(void)
-{
+{//trace_printf("LCD");
 	taskInfo_t temptask;
 	if(FSM_Complete)
 	{
@@ -85,6 +87,7 @@ void LCD_OS_runnable(void)
 	}
 	else
 	{
+		trace_printf("LCD init");
 		FSM_init();
 	}
 }

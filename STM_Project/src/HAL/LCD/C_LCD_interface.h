@@ -5,7 +5,6 @@
 /********************************************************/
 
 
-
 #define CLCD_u8_LINE_ONE	0
 #define CLCD_u8_LINE_TWO	1
 
@@ -14,6 +13,8 @@
 #define LCD_CLEAR 			1
 #define LCD_MOVE_CURSOR 	2
 
+/*LCD runnable task*/
+extern const task_t LCD_Task;
 
 /* The max queue size */
 #define MAX_QUEUED_TASKS 10U

@@ -1,15 +1,14 @@
 #ifndef _SWITCH_INTERFACE_H_
 #define _SWITCH_INTERFACE_H_
 
-#define NUM_OF_SWITCH 5
-#define SWITCH1 0
-#define SWITCH2 1
-#define SWITCH3 2
-#define SWITCH4	3
-#define SIWTCH5	4
+#include "Switch_cfg.h"
+
 
 #define SWITCH_PRESSED 	1
 #define SWITCH_RELESED 	0
+
+/*Switch runnable task*/
+extern const task_t UpdatingSwitchesTask;
 
 /******************************************************************************************
 * function name: switch_init

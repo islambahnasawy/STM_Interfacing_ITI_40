@@ -1,18 +1,20 @@
 #include "../LIB/STD_TYPES.h"
 
+
 #include "RTOS_interface.h"
-#include "RTOS_config.h"
+#include "../System_tasks/tasks_cfg.h"
 #include "RTOS_private.h"
 #include "../MCAL/SysTick/STK_interface.h"
 #include "../MCAL/RCC/RCC_interface.h"
 
-//can this file be included here ?
-#include "../Application/OS_Tasking_cfg/OS_Tasking_cfg.h"
 
-u8 OSFlag;
-u32 index;
 
-sysTask_t sysTask[NUM_OF_TASKS];
+
+
+ u8 OSFlag;
+static u32 index;
+
+static sysTask_t sysTask[NUM_OF_TASKS];
 
 void RTOS_init(void)
 {
@@ -22,7 +24,7 @@ void RTOS_init(void)
 	sysTick_setcallback(setOSFlag);
 	
 	/*initializing the app tasks*/
-	OS_TaskingInit(); //should this function be used here ?
+	TaskingInit();
 
 	for(u32 i=0;i<NUM_OF_TASKS;i++)
 	{
@@ -36,6 +38,7 @@ static void setOSFlag(void)
 {
 	/*Incrementing the OSFlag so that we can know that something went wrong if its value is more than 1*/
 	OSFlag ++;
+	trace_printf("hello\n");
 }
 
 static void schedular(void)
