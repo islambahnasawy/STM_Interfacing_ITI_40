@@ -88,7 +88,8 @@ void USART_DMADisable(USART_t* USART)
 u8 USART_u8SendingDataASync(USART_t* USART , u8* Copy_Data , u32 Copy_Length , Handler_t user_handler , M_handler_t manger_handler)
 {
 	u8 Local_Status = OK ;
-	if(txbuffer.state == IDLE)
+	/*Check if there is no transmission in progress by either the Asynchronous USART function or via DMA*/
+	if(txbuffer.state == IDLE && USART_DMAState==IDLE)
 	{
 		txbuffer.state = BUSY;
 		txbuffer.length = Copy_Length;
@@ -111,7 +112,8 @@ u8 USART_u8SendingDataASync(USART_t* USART , u8* Copy_Data , u32 Copy_Length , H
 u8 USART_u8RecDataAsync(USART_t* USART ,u8* Copy_Data,u32 Copy_length,Handler_t handler , M_handler_t manger_handler)
 {
 	u8 Local_Status = OK;
-	if(rxbuffer.state == IDLE)
+	/*Check if there is no reception in progress by either the Asynchronous USART function or via DMA*/
+	if(rxbuffer.state == IDLE && Channel_States[CH5]==IDLE)
 	{
 		rxbuffer.state = BUSY;
 		rxbuffer.data = Copy_Data;
@@ -189,15 +191,7 @@ static void USART_voidTCIntStatus(USART_t* USART ,u32 status)
 void USART1_IRQHandler(void)
 {
 	/*In case of recieve interrupt*/
-	if(IsTransmissionComplete(USART1_ADDRESS)){
-		USART_DMAState = IDLE;
-		USART1_ADDRESS->SR &= (~TC_MASK);
-		if(DMA_CB)
-		{
-			DMA_CB();
-		}
-	}
-	else if(IsDataRecieved(USART1_ADDRESS))
+	if(IsDataRecieved(USART1_ADDRESS))
 	{
 		rxbuffer.data[rxbuffer.position] = USART1_ADDRESS->DR;
 		rxbuffer.position++;
@@ -215,6 +209,17 @@ void USART1_IRQHandler(void)
 			}
 		}
 	}
+
+	else if(IsTransmissionComplete(USART1_ADDRESS)){
+		USART_DMAState = IDLE;
+		/*Clear the Transfer complete flag*/
+		USART1_ADDRESS->SR &= (~TC_MASK);
+		if(DMA_CB)
+		{
+			DMA_CB();
+		}
+	}
+
 
 	/*In case of transmit interrupt*/
 	else if(IsDataTransfered(USART1_ADDRESS))

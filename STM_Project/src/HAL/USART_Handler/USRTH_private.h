@@ -14,7 +14,7 @@ static void Rx_Handler(USART_t* USART);
 /*The max number of requests that can be put in the receive or transmit queue*/
 #define USRTH_QUEUE_LENGTH	10U
 
-#define IDLE									92U
+#define IDLE									0U
 #define BUSY									13U
 
 typedef struct

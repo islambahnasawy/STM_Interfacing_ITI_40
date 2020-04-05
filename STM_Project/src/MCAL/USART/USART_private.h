@@ -48,7 +48,7 @@
 #define TC_INT_ENABLE							0x00000040
 #define TC_INT_DISABLE							0x00000000
 
-#define IDLE									92U
+#define IDLE									0U
 #define BUSY									13U
 
 #define NULL									((void*)0)

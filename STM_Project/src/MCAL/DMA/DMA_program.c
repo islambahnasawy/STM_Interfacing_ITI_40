@@ -13,17 +13,12 @@
 #include "../RCC/RCC_interface.h"
 #include "../NVIC/NVIC_interface.h"
 
-typedef struct
-{
-	CHN_Handler Channel_TCHandler[7];
-	CHN_Handler Channel_HTCHandler[7];
-	CHN_Handler Channel_ERRHandler[7];
-}CB_t;
 
-CB_t CB_Handlers;
+u8 Channel_States[7];
+u8 Channel_AlwaysBusy[7];
 
-static u8 Channel_States[7];
-static u8 Channel_AlwaysBusy[7];
+static CB_t CB_Handlers;
+
 
 void DMA_voidInit(void)
 {

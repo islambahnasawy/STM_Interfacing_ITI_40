@@ -103,6 +103,14 @@
 #define FALSE		0x0
 
 
+typedef struct
+{
+	CHN_Handler Channel_TCHandler[7];
+	CHN_Handler Channel_HTCHandler[7];
+	CHN_Handler Channel_ERRHandler[7];
+}CB_t;
+
+
 static u8 get_TCFlagStatus(u8 Channel);
 static u8 get_HTCFlagStatus(u8 Channel);
 static u8 get_ERRFlagStatus(u8 Channel);

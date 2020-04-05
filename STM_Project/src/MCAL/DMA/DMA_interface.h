@@ -130,6 +130,10 @@ typedef struct
 	u32 Mem_Add;
 }DMA_data;
 
+
+extern u8 Channel_States[];
+extern u8 Channel_AlwaysBusy[];
+
 void DMA_voidInit(void);
 
 u8 DMA_u8ChannelInit(u8 Channel);
