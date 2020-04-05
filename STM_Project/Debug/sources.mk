@@ -35,6 +35,7 @@ src/HAL/USART_Handler \
 src/LIB/Delay \
 src/LIB/Queue \
 src/MCAL/DIO \
+src/MCAL/DMA \
 src/MCAL/NVIC \
 src/MCAL/RCC \
 src/MCAL/SysTick \

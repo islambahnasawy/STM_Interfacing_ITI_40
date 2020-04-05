@@ -7,7 +7,7 @@
 #include "../HAL/Switch/Switch_interface.h"
 #include "../HAL/USART_Handler/USRTH_interface.h"
 #include "../Other_Drivers/LED/LED_interface.h"
-
+#include "../MCAL/DMA/DMA_interface.h"
 
 
 int
@@ -20,6 +20,8 @@ main(int argc, char* argv[])
 	USRTH_voidInit(USART1);
 	switch_init();
 	CLCD_init();
+	DMA_voidInit();
+	USRTH_DMAEnable(USART1);
 	RTOS_init();
 	RTOS_start();
 	while(1);

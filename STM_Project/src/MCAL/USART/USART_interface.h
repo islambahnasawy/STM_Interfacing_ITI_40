@@ -7,6 +7,8 @@
 #ifndef _USART_INTERFACE_H_
 #define _USART_INTERFACE_H_
 
+#include "../DMA/DMA_interface.h"
+
 #define UE_ENABLED			0x00002000
 #define UE_DISABLED			0x00000000
 
@@ -209,4 +211,13 @@ u8 USART_u8SendingDataASync(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Han
 ********************************************************************************************/
 
 u8 USART_u8RecDataAsync(USART_t* USART,u8* Copy_Data,u32 Copy_length,Handler_t handler , M_handler_t manger_handler);
+
+extern u8 USART_DMAState;
+
+void USART_DMAEnable(USART_t* USART);
+
+void USART_DMADisable(USART_t* USART);
+
+u8 set_TransmissionCompleteCB(Handler_t handler);
+
 #endif

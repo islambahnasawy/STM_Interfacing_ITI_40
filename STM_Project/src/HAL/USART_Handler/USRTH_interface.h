@@ -7,6 +7,8 @@
 #ifndef _URTM_INTERFACE_H_
 #define _URTM_INTERFACE_H_
 
+#include "../../MCAL/DMA/DMA_interface.h"
+
 /*Used as input parameters to define which USART is being used*/
 #define USART1 		((USART_t*)(0x40013800))
 #define USART2
@@ -104,5 +106,15 @@ u8 USRTH_u8SendingReq(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t
 * 				put in a queue and will be performed after the current request is performed
 ********************************************************************************************/
 u8 USRTH_u8ReceivingReq(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t handler);
+
+
+void USRTH_DMAEnable(USART_t* USART);
+
+void USRTH_DMADisable(USART_t* USART);
+
+u8 USRTH_DMASend(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t handler);
+
+u8 USRTH_DMARecieve(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t handler);
+
 
 #endif

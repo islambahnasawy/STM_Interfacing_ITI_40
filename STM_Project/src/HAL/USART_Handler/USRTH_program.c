@@ -12,6 +12,7 @@
 #include "../../MCAL/RCC/RCC_interface.h"
 #include "../../MCAL/DIO/DIO_interface.h"
 #include "../../MCAL/NVIC/NVIC_interface.h"
+#include "../../MCAL/DMA/DMA_interface.h"
 
 #include "USRTH_interface.h"
 #include "USRTH_private.h"
@@ -184,5 +185,72 @@ static void Rx_Handler(USART_t* USART)
 		URTM_QueuePop(&RecQueue,&tempdataBuffer);
 		USRTH_u8ReceivingReq(USART,tempdataBuffer.DataBuffer,tempdataBuffer.Length,tempdataBuffer.Callback);
 	}
+}
+
+void USRTH_DMAEnable(USART_t* USART)
+{
+	/*Initializing channel 4 with user's static configuration*/
+	DMA_u8ChannelInit(CH4);
+	/*Initializing channel 5 with user's static configuration*/
+	DMA_u8ChannelInit(CH5);
+
+	USART_DMAEnable(USART);
+}
+
+void USRTH_DMADisable(USART_t* USART)
+{
+	USART_DMADisable(USART);
+}
+
+
+
+u8 USRTH_DMASend(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t handler)
+{
+	u8 local_status = OK;
+	if(USART_DMAState == IDLE)
+	{
+	USART_DMAState = BUSY;
+	DMA_data data ;
+	data.Trans_Dir = MEM_TO_PREI;
+	data.Peri_Size = 0 ;
+	data.Mem_Size = 0;
+	data.Circ_mode = CIRCULAR_MODE_DISABLED;
+	data.Peri_Inc=PERIPHERAL_INC_MODE_DISABLED;
+	data.Mem_Inc=MEMORY_INC_MODE_ENABLED;
+	data.Num_Of_Trans=Copy_Length;
+	data.Peri_Add=DMA_CHN4_PERI_USART1_TX;
+	data.Mem_Add=Copy_Data;
+
+	set_TransmissionCompleteCB(handler);
+	DMA_voidStart(CH4,&data);
+	}
+	else
+	{
+		local_status = NOT_OK;
+	}
+	return local_status;
+}
+
+
+
+u8 USRTH_DMARecieve(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t handler)
+{
+	u8 local_status = OK;
+
+	DMA_data data ;
+	data.Trans_Dir = PERI_TO_MEM;
+	data.Circ_mode = CIRCULAR_MODE_DISABLED;
+	data.Peri_Inc=PERIPHERAL_INC_MODE_DISABLED;
+	data.Mem_Inc=MEMORY_INC_MODE_ENABLED;
+	data.Peri_Size = 0 ;
+	data.Mem_Size = 0;
+	data.Num_Of_Trans=Copy_Length;
+	data.Peri_Add=DMA_CHN5_PERI_USART1_RX;
+	data.Mem_Add=Copy_Data;
+
+	set_ChannelX_TCHandler(CH5,handler);
+	local_status = DMA_voidStart(CH5,&data);
+
+	return local_status;
 }
 

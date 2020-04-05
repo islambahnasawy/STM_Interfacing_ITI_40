@@ -61,7 +61,7 @@ void CLCD_init(void)
 }
 
 void LCD_OS_runnable(void)
-{//trace_printf("LCD");
+{
 	taskInfo_t temptask;
 	if(FSM_Complete)
 	{

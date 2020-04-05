@@ -11,9 +11,12 @@
 #include "USART_config.h"
 #include "USART_private.h"
 
+u8 USART_DMAState=IDLE;
 
-dataBuffer_t txbuffer ;
-dataBuffer_t rxbuffer;
+static dataBuffer_t txbuffer ;
+static dataBuffer_t rxbuffer;
+static Handler_t DMA_CB;
+
 
 void USART_voidInit(USART_t* USART,u32 fclk)
 {
@@ -58,7 +61,28 @@ void USART_voidInit(USART_t* USART,u32 fclk)
 	txbuffer.state = IDLE ;
 	/*Initializing the rxbuffer state as IDLE*/
 	rxbuffer.state = IDLE ;
-	//USART->GTPR = 1;
+}
+
+void USART_DMAEnable(USART_t* USART)
+{
+	/*Enabling Transmission through DMA*/
+	USART->CR3 |= DMAR_MASK;
+	/*Enabling Reception through DMA*/
+	USART->CR3 |= DMAT_MASK;
+	/*Clearing the transmission compelete flag*/
+	USART->SR &= (~TC_MASK);
+	/*Enabling the Transmit complete interrupt*/
+	USART_voidTCIntStatus(USART,TC_INT_ENABLE);
+}
+
+void USART_DMADisable(USART_t* USART)
+{
+	/*Disabling Transmission through DMA*/
+	USART->CR3 &= ~DMAR_MASK;
+	/*Disabling Reception through DMA*/
+	USART->CR3 &= ~DMAT_MASK;
+	/*Disabling the Transmit complete interrupt*/
+	USART_voidTCIntStatus(USART,TC_INT_DISABLE);
 }
 
 u8 USART_u8SendingDataASync(USART_t* USART , u8* Copy_Data , u32 Copy_Length , Handler_t user_handler , M_handler_t manger_handler)
@@ -103,6 +127,12 @@ u8 USART_u8RecDataAsync(USART_t* USART ,u8* Copy_Data,u32 Copy_length,Handler_t 
 	}
 	return Local_Status;
 }
+
+static u8 IsTransmissionComplete(USART_t* USART)
+{
+	return ((USART->SR & TC_MASK) == TC_MASK);
+}
+
 
 static u8 IsDataTransfered(USART_t* USART)
 {
@@ -149,11 +179,25 @@ static void USART_voidRecIntStatus(USART_t* USART ,u32 status)
 	USART->CR1 = temp ;
 }
 
+static void USART_voidTCIntStatus(USART_t* USART ,u32 status)
+{
+	u32 temp = USART->CR1 & ~(TC_MASK) ;
+	temp |= status;
+	USART->CR1 = temp ;
+}
 
 void USART1_IRQHandler(void)
 {
 	/*In case of recieve interrupt*/
-	if(IsDataRecieved(USART1_ADDRESS))
+	if(IsTransmissionComplete(USART1_ADDRESS)){
+		USART_DMAState = IDLE;
+		USART1_ADDRESS->SR &= (~TC_MASK);
+		if(DMA_CB)
+		{
+			DMA_CB();
+		}
+	}
+	else if(IsDataRecieved(USART1_ADDRESS))
 	{
 		rxbuffer.data[rxbuffer.position] = USART1_ADDRESS->DR;
 		rxbuffer.position++;
@@ -171,6 +215,7 @@ void USART1_IRQHandler(void)
 			}
 		}
 	}
+
 	/*In case of transmit interrupt*/
 	else if(IsDataTransfered(USART1_ADDRESS))
 	{
@@ -196,8 +241,27 @@ void USART1_IRQHandler(void)
 		}
 	}
 
+
 	else
 	{
 		/*return error in case any error interrupt is enabled*/
 	}
 }
+
+u8 set_TransmissionCompleteCB(Handler_t handler)
+{
+	u8 local_status=OK;
+	if(handler)
+	{
+		DMA_CB = handler ;
+	}
+	else
+	{
+		local_status=NOT_OK;
+	}
+	return local_status;
+}
+
+
+
+

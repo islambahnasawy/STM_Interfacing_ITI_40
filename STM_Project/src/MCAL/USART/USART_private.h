@@ -12,10 +12,12 @@
 #define UE_CLEAR_MASK 							0xffffDfff
 #define TE_CLEAR_MASK 							0xfffffff7
 #define RE_CLEAR_MASK							0xfffffffB
+#define TC_MASK									0x00000040
 
 #define USART_SR_TXE							0x00000080
 #define USART_SR_RXNE							0x00000020
 #define USART_CR1_PCE_ENABLED					0x00000400
+
 
 #define USART_CR1_M_CLEAR_MASK					0xffffEfff
 #define USART_CR1_PARITY_CLEAR_MASK				0xfffff9ff
@@ -39,6 +41,12 @@
 
 #define RX_INT_ENABLED							0x00000020
 #define RX_INT_DISABLED							0x00000000
+
+#define DMAR_MASK								0x00000040
+#define DMAT_MASK								0x00000080
+
+#define TC_INT_ENABLE							0x00000040
+#define TC_INT_DISABLE							0x00000000
 
 #define IDLE									92U
 #define BUSY									13U
@@ -122,4 +130,13 @@ static void USART_voidTransIntStatus(USART_t* USART,u32 status);
 /*the status options : RX_INT_ENABLED	, RX_INT_DISABLED	*/
 static void USART_voidRecIntStatus(USART_t* USART,u32 status);
 
+/*Enter the USART peripheral Options :
+ * 							 			USART1,
+ * 							 			USART2,
+ * 							 			USART3,
+ * 							 			USART4,
+ * 							 			USART5
+ */
+/*the status options : TC_INT_ENABLE	, TC_INT_DISABLED	*/
+static void USART_voidTCIntStatus(USART_t* USART ,u32 status);
 #endif

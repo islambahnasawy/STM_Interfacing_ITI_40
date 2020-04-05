@@ -27,7 +27,9 @@ void Receiving(void)
 	static u8 local_arr[11];
 	if(!Display_Flag)
 	{
-		USRTH_u8ReceivingReq(USART1,RxData,4,RxCallBack);
+		//USRTH_u8ReceivingReq(USART1,RxData,4,RxCallBack);
+		USRTH_DMARecieve(USART1,RxData,4,RxCallBack);
+
 	}
 	else
 	{
@@ -57,7 +59,8 @@ static void Sending(void)
 	TxData[3] = TransValue>>24 ;
 
 	/*transmitting the frame*/
-	USRTH_u8SendingReq(USART1,TxData,4,0);
+	//USRTH_u8SendingReq(USART1,TxData,4,0);
+	USRTH_DMASend(USART1,TxData,4,0);
 }
 
 /*************************Switch Increment function*********************************/

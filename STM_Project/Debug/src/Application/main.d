@@ -7,7 +7,9 @@ src/Application/main.o: ../src/Application/main.c \
  ../src/Application/../HAL/Switch/Switch_interface.h \
  ../src/Application/../HAL/Switch/Switch_cfg.h \
  ../src/Application/../HAL/USART_Handler/USRTH_interface.h \
- ../src/Application/../Other_Drivers/LED/LED_interface.h
+ d:\arm_training\workspace\stm_project\src\mcal\dma\dma_interface.h \
+ ../src/Application/../Other_Drivers/LED/LED_interface.h \
+ ../src/Application/../MCAL/DMA/DMA_interface.h
 
 ../src/Application/../LIB/STD_TYPES.h:
 
@@ -25,4 +27,8 @@ src/Application/main.o: ../src/Application/main.c \
 
 ../src/Application/../HAL/USART_Handler/USRTH_interface.h:
 
+d:\arm_training\workspace\stm_project\src\mcal\dma\dma_interface.h:
+
 ../src/Application/../Other_Drivers/LED/LED_interface.h:
+
+../src/Application/../MCAL/DMA/DMA_interface.h:
