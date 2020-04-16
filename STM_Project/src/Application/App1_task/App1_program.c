@@ -35,9 +35,11 @@ void Receiving(void)
 	{
 		/*Parsing the received frame */
 		RecValue = RxData[0]+(RxData[1]<<8)+(RxData[2]<<16)+(RxData[3]<<24);
+		//LCD_OS_BlinkCursor();
 		LCD_OS_move_cursor(0,5);
 		sprintf(local_arr,"%lu",RecValue);
 		LCD_OS_write(local_arr);
+
 		Display_Flag = 0;
 	}
 
@@ -70,7 +72,7 @@ static void updatingCounter(void)
 
 	static u8 sw_flag=0;
 
-	if(getSwitchState(SWITCH1)==SWITCH_PRESSED )
+	if(getSwitchState(SWITCH_CFG)==SWITCH_PRESSED )
 	{
 		/*Incerement once for long press*/
 		if(sw_flag == 0)

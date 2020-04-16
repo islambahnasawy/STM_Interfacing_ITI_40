@@ -21,9 +21,9 @@ static const handler  handlers[8]=
 {
 		FSM_task1,FSM_task2,FSM_task3,FSM_task2,FSM_task4,FSM_task2,FSM_task5,FSM_task2
 };
-static const handler LCD_handlers[3]=
+static const handler LCD_handlers[5]=
 {
-		&LCD_apply,&LCD_wipe,&LCD_cursor_moving
+		&LCD_apply,&LCD_wipe,&LCD_cursor_moving,&LCD_cursor_blinkingOn,&LCD_cursor_blinkingOff
 };
 
 static queue Queue;
@@ -102,6 +102,19 @@ void LCD_OS_clear(void)
 	Enqueue(&Queue,temptask);
 }
 
+void LCD_OS_BlinkCursorOn(void)
+{
+	taskInfo_t temptask;
+	temptask.taskID = LCD_CURSOR_BLINK_ON;
+	Enqueue(&Queue,temptask);
+}
+
+void LCD_OS_BlinkCursorOff(void)
+{
+	taskInfo_t temptask;
+	temptask.taskID = LCD_CURSOR_BLINK_OFF;
+	Enqueue(&Queue,temptask);
+}
 void LCD_OS_move_cursor(u8 row , u8 col)
 {
 	taskInfo_t temptask;
@@ -137,6 +150,44 @@ static void LCD_cursor_moving(void)
 		steps=DONE;
 	}
 }
+
+static void LCD_cursor_blinkingOn(void)
+{
+
+	 if (steps==FIRST_STEP)
+	{
+		DIO_SetPinVal(CLCD_u8_RS_PORT,CLCD_u8_RS_PIN,0);
+		DIO_SetPinVal(CLCD_u8_RW_PORT,CLCD_u8_RW_PIN,0);
+		CLCD_voidSetDataPort(0b00001111);
+		DIO_SetPinVal(CLCD_u8_E_PORT,CLCD_u8_E_PIN,1);
+		steps = SECOND_STEP;
+	}
+	else
+	{
+		DIO_SetPinVal(CLCD_u8_E_PORT,CLCD_u8_E_PIN,0);
+		steps=DONE;
+	}
+}
+
+static void LCD_cursor_blinkingOff(void)
+{
+
+	 if (steps==FIRST_STEP)
+	{
+		DIO_SetPinVal(CLCD_u8_RS_PORT,CLCD_u8_RS_PIN,0);
+		DIO_SetPinVal(CLCD_u8_RW_PORT,CLCD_u8_RW_PIN,0);
+		CLCD_voidSetDataPort(0b00001100);
+		DIO_SetPinVal(CLCD_u8_E_PORT,CLCD_u8_E_PIN,1);
+		steps = SECOND_STEP;
+	}
+	else
+	{
+		DIO_SetPinVal(CLCD_u8_E_PORT,CLCD_u8_E_PIN,0);
+		steps=DONE;
+	}
+}
+
+
 static void LCD_wipe(void)
 {
 	if(steps == FIRST_STEP)

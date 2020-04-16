@@ -7,86 +7,28 @@
 
 
 
-void DIO_SetPinMode	(u8 Port , u8 Pin , u8 Mode)
+void DIO_SetPinMode	(GPIO_Prepihral* Port , u8 Pin , u8 Mode)
 {
-	switch(Port)
-	{
-	case 'A' :
 		if(Pin <=7)
 		{	//since all the pins have 4 bits we set pin *4
-			PORTA_CRL &= ~(0b1111 << (Pin *4));//clear the 4 bits
-			PORTA_CRL |= (Mode << (Pin*4));//set them to the new value
+			Port->CRL &= ~(0b1111 << (Pin *4));//clear the 4 bits
+			Port->CRL |= (Mode << (Pin*4));//set them to the new value
 		}
 		else if(Pin <=15)
 		{	//shift it back 8 as it is in CRH which starts from pin 8
 			Pin = Pin - 8;
-			PORTA_CRH &= ~(0b1111 << (Pin *4));//clear the 4 bits
-			PORTA_CRH |= (Mode << (Pin*4));//set them to the new value
+			Port->CRH &= ~(0b1111 << (Pin *4));//clear the 4 bits
+			Port->CRH |= (Mode << (Pin*4));//set them to the new value
 		}
-		break;
-	case 'B' :
-		if(Pin <=7)
-		{	//since all the pins have 4 bits we set pin *4
-			PORTB_CRL &= ~(0b1111 << (Pin *4));//clear the 4 bits
-			PORTB_CRL |= (Mode << (Pin*4));//set them to the new value
-		}
-		else if(Pin <=15)
-		{	//shift it back 8 as it is in CRH which starts from pin 8
-			Pin = Pin - 8;
-			PORTB_CRH &= ~(0b1111 << (Pin *4));//clear the 4 bits
-			PORTB_CRH |= (Mode << (Pin*4));//set them to the new value
-		}
-		break;
-	case 'C' :
-
-		if ((Pin>=13)&&(Pin <=15))
-		{	//shift it back 8 as it is in CRH which starts from pin 8
-			Pin = Pin - 8;
-			PORTC_CRH &= ~(0b1111 << (Pin *4));//clear the 4 bits
-			PORTC_CRH |= (Mode << (Pin*4));//set them to the new value
-		}
-		break ;
-	}
 }
-void DIO_SetPinVal 	(u8 Port , u8 Pin , u8 Val)
+void DIO_SetPinVal 	(GPIO_Prepihral* Port , u8 Pin , u8 Val)
 {
-	switch (Port)
-	{
-	case 'A':
 		if(Val == 1)
-			SET_BIT(PORTA_ODR,Pin);
+			SET_BIT(Port->ODR,Pin);
 		else
-			RESET_BIT(PORTA_ODR,Pin);
-		break;
-	case 'B':
-		if(Val == 1)
-			SET_BIT(PORTB_ODR,Pin);
-		else
-			RESET_BIT(PORTB_ODR,Pin);
-		break;
-	case 'C':
-		if(Val == 1)
-			SET_BIT(PORTC_ODR,Pin);
-		else
-			RESET_BIT(PORTC_ODR,Pin);
-		break;
-	}
-}
-u8 DIO_GetPinVal 	(u8 Port , u8 Pin)
-{	u8 result ;
-switch(Port)
-{
-case 'A' :
-	result = GET_BIT(PORTA_IDR,Pin);break;
-case 'B' :
-	result = GET_BIT(PORTB_IDR,Pin);break;
-case 'C' :
-	result = GET_BIT(PORTC_IDR,Pin);break;
+			RESET_BIT(Port->ODR,Pin);
 
 }
-return result ;
-}
-
 
 
 
@@ -128,7 +70,7 @@ u8 GPIO_SetPinVal(GPIO_v* ledval)
 	return localStatus ;
 }
 
-u8 GPIO_GetPinVal(u8 pin , GPIO_Prepihral*  port , u8*value)
+u8 GPIO_GetPinVal(GPIO_Prepihral*  port ,u8 pin , u8*value)
 {
 	Status localStatus = OK;
 

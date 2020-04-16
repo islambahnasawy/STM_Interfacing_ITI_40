@@ -8,7 +8,7 @@
 #define STABLE_STATE_MS			20
 #define TASK_PERIOD_MS 			5
 
-u8 switchState[NUM_OF_SWITCH];
+static u8 switchState[NUM_OF_SWITCH];
 
 const task_t UpdatingSwitchesTask = {.handler=Switch_updateValue,.preodicityMS=TASK_PERIOD_MS};
 
@@ -18,13 +18,13 @@ void switch_init(void)
 	{
 		if(switchMap[i].state==PIN_MODE_IP_PULLUP)
 		{
-			DIO_SetPinVal(switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum,GPIO_SET);
+			DIO_SetPinVal((GPIO_Prepihral*)switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum,GPIO_SET);
 		}
 		else if(switchMap[i].state==PIN_MODE_IP_PULLDOWN)
 		{
-			DIO_SetPinVal(switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum,GPIO_RESET);
+			DIO_SetPinVal((GPIO_Prepihral*)switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum,GPIO_RESET);
 		}
-		DIO_SetPinMode(switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum,PIN_MODE_IP_PULLDOWN);
+		DIO_SetPinMode((GPIO_Prepihral*)switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum,PIN_MODE_IP_PULLDOWN);
 	}
 }
 
@@ -39,7 +39,7 @@ void Switch_updateValue(void)
 	u8 currentValue;
 	for(u8 i=0;i<NUM_OF_SWITCH;i++)
 	{
-		currentValue = DIO_GetPinVal(switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum);
+		 GPIO_GetPinVal((GPIO_Prepihral*)switchMap[i].GPIO_pinPort,switchMap[i].GPIO_pinNum,&currentValue);
 		if(currentValue == lastValue[i])
 		{
 			counter[i]++;

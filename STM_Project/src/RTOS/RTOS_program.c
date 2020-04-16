@@ -4,8 +4,14 @@
 #include "RTOS_interface.h"
 #include "../System_tasks/tasks_cfg.h"
 #include "RTOS_private.h"
+#if MCU == STM32
 #include "../MCAL/SysTick/STK_interface.h"
 #include "../MCAL/RCC/RCC_interface.h"
+#elif MCU == AVR
+#include "Timer0_interface.h"
+#endif
+
+
 
 
 
@@ -18,7 +24,11 @@ static sysTask_t sysTask[NUM_OF_TASKS];
 
 void RTOS_init(void)
 {
+#if MCU == STM32
 	u32 SYSTIC_freqMHZ = RCC_u32ReadAHBFreq()/1000000;
+#elif MCU == AVR
+	u32 SYSTIC_freqMHZ = 8;
+#endif
 	sysTick_init();
 	sysTick_setTime(TICKTIME_MS*1000,SYSTIC_freqMHZ);
 	sysTick_setcallback(setOSFlag);

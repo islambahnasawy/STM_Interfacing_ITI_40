@@ -212,8 +212,8 @@ u8 USRTH_DMASend(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t hand
 	USART_DMAState = BUSY;
 	DMA_data data ;
 	data.Trans_Dir = MEM_TO_PREI;
-	data.Peri_Size = 0 ;
-	data.Mem_Size = 0;
+	data.Peri_Size = PERIPHERAL_SIZE_8_BITS ;
+	data.Mem_Size = MEMORY_SIZE_8_BITS;
 	data.Circ_mode = CIRCULAR_MODE_DISABLED;
 	data.Peri_Inc=PERIPHERAL_INC_MODE_DISABLED;
 	data.Mem_Inc=MEMORY_INC_MODE_ENABLED;
@@ -242,8 +242,8 @@ u8 USRTH_DMARecieve(USART_t* USART,u8* Copy_Data , u32 Copy_Length , Handler_t h
 	data.Circ_mode = CIRCULAR_MODE_DISABLED;
 	data.Peri_Inc=PERIPHERAL_INC_MODE_DISABLED;
 	data.Mem_Inc=MEMORY_INC_MODE_ENABLED;
-	data.Peri_Size = 0 ;
-	data.Mem_Size = 0;
+	data.Peri_Size = PERIPHERAL_SIZE_8_BITS ;
+	data.Mem_Size = MEMORY_SIZE_8_BITS;
 	data.Num_Of_Trans=Copy_Length;
 	data.Peri_Add=DMA_CHN5_PERI_USART1_RX;
 	data.Mem_Add=Copy_Data;

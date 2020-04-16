@@ -1,12 +1,18 @@
 #ifndef _SWITCH_CFG_H_
 #define _SWITCH_CFG_H_
 
-#define NUM_OF_SWITCH 5
-#define SWITCH1 0
-#define SWITCH2 1
-#define SWITCH3 2
-#define SWITCH4	3
-#define SIWTCH5	4
+
+
+
+typedef enum
+{
+	SWITCH_UP,
+	SWITCH_DOWN,
+	SWITCH_LEFT,
+	SWITCH_RIGHT,
+	SWITCH_CFG,
+	NUM_OF_SWITCH
+}Switches;
 
 typedef struct
 {

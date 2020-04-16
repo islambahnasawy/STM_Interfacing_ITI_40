@@ -5,13 +5,15 @@
 /********************************************************/
 
 
-#define CLCD_u8_LINE_ONE	0
-#define CLCD_u8_LINE_TWO	1
+#define CLCD_u8_LINE_ONE		0
+#define CLCD_u8_LINE_TWO		1
 
 /*The LCD commands*/
-#define LCD_WRITE 			0
-#define LCD_CLEAR 			1
-#define LCD_MOVE_CURSOR 	2
+#define LCD_WRITE 				0
+#define LCD_CLEAR 				1
+#define LCD_MOVE_CURSOR 		2
+#define LCD_CURSOR_BLINK_ON		3
+#define LCD_CURSOR_BLINK_OFF	4
 
 /*LCD runnable task*/
 extern const task_t LCD_Task;
@@ -94,6 +96,10 @@ void LCD_OS_clear(void);
 ********************************************************************************************/
 void LCD_OS_move_cursor(u8 row , u8 col);
 
+
+void LCD_OS_BlinkCursorOn(void);
+
+void LCD_OS_BlinkCursorOff(void);
 
 /*Description : This API shall intialize LCD 			*/
 void CLCD_voidIntialzie(void);

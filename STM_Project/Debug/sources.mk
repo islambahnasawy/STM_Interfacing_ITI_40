@@ -28,7 +28,9 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/Application/App1_task \
+src/Application/Watch_App \
 src/Application \
+src/Com_Protocols \
 src/HAL/LCD \
 src/HAL/Switch \
 src/HAL/USART_Handler \

@@ -6,7 +6,7 @@
 #include "../Application/App1_task/App1_interface.h"
 #include "tasks_cfg.h"
 #include "../Other_Drivers/LED/LED_interface.h"
-
+#include "../Application/Watch_App/Watch_APP_interface.h"
 
 
 
@@ -19,7 +19,7 @@ void TaskingInit(void)
 	baseTaskInfo[0].task=&UpdatingSwitchesTask;
 	baseTaskInfo[0].firstdelay=0;
 
-	baseTaskInfo[1].task=&App1_task;
+	baseTaskInfo[1].task=&Watch_App_task;
 	baseTaskInfo[1].firstdelay=0;
 
 	baseTaskInfo[2].task=&LCD_Task;

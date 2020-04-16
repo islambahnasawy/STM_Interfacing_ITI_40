@@ -5,9 +5,9 @@
 #define GPIO_PORTB_BASE_ADDRESS	0x40010C00
 #define GPIO_PORTC_BASE_ADDRESS	0x40011000
 
-#define GPIO_PORTA ((GPIO_Prepihral* const)GPIO_PORTA_BASE_ADDRESS)
-#define GPIO_PORTB ((GPIO_Prepihral* const)GPIO_PORTB_BASE_ADDRESS)
-#define GPIO_PORTC ((GPIO_Prepihral* const)GPIO_PORTC_BASE_ADDRESS)
+#define GPIO_PORTA ((GPIO_Prepihral* )GPIO_PORTA_BASE_ADDRESS)
+#define GPIO_PORTB ((GPIO_Prepihral* )GPIO_PORTB_BASE_ADDRESS)
+#define GPIO_PORTC ((GPIO_Prepihral* )GPIO_PORTC_BASE_ADDRESS)
 
 
 #define GPIO_PIN_0					0xfffffffffffffff0
@@ -27,9 +27,9 @@
 #define GPIO_PIN_14					0xf0ffffffffffffff
 #define GPIO_PIN_15					0x0fffffffffffffff
 
-#define PORTA					'A'
-#define PORTB					'B'
-#define PORTC					'C'
+#define PORTA					GPIO_PORTA
+#define PORTB					GPIO_PORTB
+#define PORTC					GPIO_PORTC
 
 #define PIN_MODE_OP_PUSHPULL		0x1
 #define PIN_MODE_OP_OPENDRAIN		0x5
@@ -469,11 +469,11 @@ u8 GPIO_SetPinVal(GPIO_v* ledval);
 				2- port : PORTA,PORTB,PORTC
 				3- value : pass the address of a u8 variable that will hold the pin value
 */
-u8 GPIO_GetPinVal(u8 pin , GPIO_Prepihral*  port  , u8*value);
+u8 GPIO_GetPinVal(GPIO_Prepihral*  port ,u8 pin , u8*value);
 
-void DIO_SetPinMode	(u8 Port , u8 Pin , u8 Mode);
-void DIO_SetPinVal 	(u8 Port , u8 Pin , u8 Val);
-u8 DIO_GetPinVal 	(u8 Port , u8 Pin);
+void DIO_SetPinMode	(GPIO_Prepihral* Port , u8 Pin , u8 Mode);
+void DIO_SetPinVal 	(GPIO_Prepihral* Port , u8 Pin , u8 Val);
+
 
 
 #endif
