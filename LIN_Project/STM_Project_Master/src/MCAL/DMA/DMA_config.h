@@ -1,0 +1,95 @@
+/********************************************************/
+/*Author : Mohamed Megahed , Islam El-Bahnasawy 		*/
+/*Date   : 1 APRIL 2020									*/
+/*Version : V01											*/
+/********************************************************/
+
+#ifndef _DMA_CONFIG_H_
+#define _DMA_CONFIG_H_
+
+/************************Channel1 Config********************************/
+
+/*Options : DMA_LOW_PL , DMA_MEDIUM_PL , DMA_HIGH_PL , DMA_VERYHIGH_PL */
+#define DMA_CHANNEL1_PRIOIRITY					DMA_LOW_PL
+
+/*Options :DMA_ERROR_INT_ENABLE , DMA_ERROR_INT_DISABLE*/
+#define DMA_CHANNEL1_ERROR_INT					DMA_ERROR_INT_DISABLE
+
+/*Options : DMA_HALF_TRANS_COMP_INT_ENABLE , DMA_HALF_TRANS_COMP_INT_DISABLE*/
+#define DMA_CHANNEL1_HALF_TRANS_COMP_INT		DMA_HALF_TRANS_COMP_INT_DISABLE
+
+/************************Channel2 Config********************************/
+
+/*Options : DMA_LOW_PL , DMA_MEDIUM_PL , DMA_HIGH_PL , DMA_VERYHIGH_PL */
+#define DMA_CHANNEL2_PRIOIRITY					DMA_LOW_PL
+
+/*Options :DMA_ERROR_INT_ENABLE , DMA_ERROR_INT_DISABLE*/
+#define DMA_CHANNEL2_ERROR_INT					DMA_ERROR_INT_DISABLE
+
+/*Options : DMA_HALF_TRANS_COMP_INT_ENABLE , DMA_HALF_TRANS_COMP_INT_DISABLE*/
+#define DMA_CHANNEL2_HALF_TRANS_COMP_INT		DMA_HALF_TRANS_COMP_INT_DISABLE
+
+/************************Channel3 Config********************************/
+
+/*Options : DMA_LOW_PL , DMA_MEDIUM_PL , DMA_HIGH_PL , DMA_VERYHIGH_PL */
+#define DMA_CHANNEL3_PRIOIRITY					DMA_LOW_PL
+
+/*Options :DMA_ERROR_INT_ENABLE , DMA_ERROR_INT_DISABLE*/
+#define DMA_CHANNEL3_ERROR_INT					DMA_ERROR_INT_DISABLE
+
+/*Options : DMA_HALF_TRANS_COMP_INT_ENABLE , DMA_HALF_TRANS_COMP_INT_DISABLE*/
+#define DMA_CHANNEL3_HALF_TRANS_COMP_INT		DMA_HALF_TRANS_COMP_INT_DISABLE
+
+
+/************************Channel4 Config********************************/
+
+/*Options : DMA_LOW_PL , DMA_MEDIUM_PL , DMA_HIGH_PL , DMA_VERYHIGH_PL */
+#define DMA_CHANNEL4_PRIOIRITY					DMA_LOW_PL
+
+/*Options :DMA_ERROR_INT_ENABLE , DMA_ERROR_INT_DISABLE*/
+#define DMA_CHANNEL4_ERROR_INT					DMA_ERROR_INT_DISABLE
+
+/*Options : DMA_HALF_TRANS_COMP_INT_ENABLE , DMA_HALF_TRANS_COMP_INT_DISABLE*/
+#define DMA_CHANNEL4_HALF_TRANS_COMP_INT		DMA_HALF_TRANS_COMP_INT_DISABLE
+
+
+/************************Channel5 Config********************************/
+
+/*Options : DMA_LOW_PL , DMA_MEDIUM_PL , DMA_HIGH_PL , DMA_VERYHIGH_PL */
+#define DMA_CHANNEL5_PRIOIRITY					DMA_LOW_PL
+
+/*Options :DMA_ERROR_INT_ENABLE , DMA_ERROR_INT_DISABLE*/
+#define DMA_CHANNEL5_ERROR_INT					DMA_ERROR_INT_DISABLE
+
+/*Options : DMA_HALF_TRANS_COMP_INT_ENABLE , DMA_HALF_TRANS_COMP_INT_DISABLE*/
+#define DMA_CHANNEL5_HALF_TRANS_COMP_INT		DMA_HALF_TRANS_COMP_INT_DISABLE
+
+
+/************************Channel6 Config********************************/
+
+/*Options : DMA_LOW_PL , DMA_MEDIUM_PL , DMA_HIGH_PL , DMA_VERYHIGH_PL */
+#define DMA_CHANNEL6_PRIOIRITY					DMA_LOW_PL
+
+/*Options :DMA_ERROR_INT_ENABLE , DMA_ERROR_INT_DISABLE*/
+#define DMA_CHANNEL6_ERROR_INT					DMA_ERROR_INT_DISABLE
+
+/*Options : DMA_HALF_TRANS_COMP_INT_ENABLE , DMA_HALF_TRANS_COMP_INT_DISABLE*/
+#define DMA_CHANNEL6_HALF_TRANS_COMP_INT		DMA_HALF_TRANS_COMP_INT_DISABLE
+
+
+/************************Channel7 Config********************************/
+
+/*Options : DMA_LOW_PL , DMA_MEDIUM_PL , DMA_HIGH_PL , DMA_VERYHIGH_PL */
+#define DMA_CHANNEL7_PRIOIRITY					DMA_LOW_PL
+
+/*Options :DMA_ERROR_INT_ENABLE , DMA_ERROR_INT_DISABLE*/
+#define DMA_CHANNEL7_ERROR_INT					DMA_ERROR_INT_DISABLE
+
+/*Options : DMA_HALF_TRANS_COMP_INT_ENABLE , DMA_HALF_TRANS_COMP_INT_DISABLE*/
+#define DMA_CHANNEL7_HALF_TRANS_COMP_INT		DMA_HALF_TRANS_COMP_INT_DISABLE
+
+
+
+
+
+#endif
