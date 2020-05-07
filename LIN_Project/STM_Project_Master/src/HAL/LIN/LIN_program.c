@@ -1,9 +1,8 @@
-/*
- * LIN_program.c
- *
- *  Created on: May 5, 2020
- *      Author: anwar
- */
+/********************************************************/
+/*Author : Mohamed Megahed ,Islam El-Bahnasawy          */
+/*Date   : 5 May 2020									*/
+/*Version : V01											*/
+/********************************************************/
 #include "../../LIB/STD_TYPES.h"
 #include "../../MCAL/USART/USART_MYTYPES.h"
 

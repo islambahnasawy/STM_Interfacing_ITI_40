@@ -1,10 +1,8 @@
-/*
- * LIN_cfg.h
- *
- *  Created on: May 5, 2020
- *      Author: anwar
- */
-
+/********************************************************/
+/*Author : Mohamed Megahed ,Islam El-Bahnasawy          */
+/*Date   : 5 May 2020									*/
+/*Version : V01											*/
+/********************************************************/
 #ifndef MCAL_LIN_LIN_CFG_H_
 #define MCAL_LIN_LIN_CFG_H_
 
