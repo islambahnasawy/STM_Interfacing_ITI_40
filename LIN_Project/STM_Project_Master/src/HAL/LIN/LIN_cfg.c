@@ -16,7 +16,7 @@ const LIN_cfg_t LIN_cfg_Arr[MESSAGES_NUM] =
 };
 
 /*
- * Put the Index of the  ID in the LIN_cfg_Arr in the suitable slot of the PID_map
+ * Put the Index of the  ID in the LIN_cfg_Arr in the sutiable slot of the PID_map
  * (according to the commented message ID next to it)
  */
 const u8 PID_map[MAX_MESSAGE_NUM]=

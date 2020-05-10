@@ -10,7 +10,9 @@ src/Application/main.o: ../src/Application/main.c \
  ../src/Application/../HAL/USART_Handler/../../MCAL/DMA/DMA_interface.h \
  ../src/Application/../Other_Drivers/LED/LED_interface.h \
  ../src/Application/../MCAL/DMA/DMA_interface.h \
- ../src/Application/../HAL/LIN/LIN_interface.h
+ ../src/Application/../HAL/LIN/LIN_interface.h \
+ ../src/Application/../MCAL/Flash/Flash_interface.h \
+ ../src/Application/../MCAL/Flash/Flash_reg.h
 
 ../src/Application/../LIB/STD_TYPES.h:
 
@@ -35,3 +37,7 @@ src/Application/main.o: ../src/Application/main.c \
 ../src/Application/../MCAL/DMA/DMA_interface.h:
 
 ../src/Application/../HAL/LIN/LIN_interface.h:
+
+../src/Application/../MCAL/Flash/Flash_interface.h:
+
+../src/Application/../MCAL/Flash/Flash_reg.h:

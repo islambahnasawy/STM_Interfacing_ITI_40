@@ -22,6 +22,7 @@ RM := rm -rf
 -include src/MCAL/SysTick/subdir.mk
 -include src/MCAL/RCC/subdir.mk
 -include src/MCAL/NVIC/subdir.mk
+-include src/MCAL/Flash/subdir.mk
 -include src/MCAL/DMA/subdir.mk
 -include src/MCAL/DIO/subdir.mk
 -include src/LIB/Queue/subdir.mk

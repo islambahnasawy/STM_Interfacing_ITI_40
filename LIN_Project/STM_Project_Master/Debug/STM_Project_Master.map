@@ -10,6 +10,8 @@ d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.
                               ./system/src/newlib/_sbrk.o (__errno)
 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
                               d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o) (_impure_ptr)
+d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                              ./src/Application/main.o (memset)
 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
                               ./src/Application/Watch_App/Watch_APP_program.o (sprintf)
 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-strlen.o)
@@ -1315,7 +1317,27 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/System_tasks/tasks_cfg.o
  .data          0x00000000        0x0 ./src/System_tasks/tasks_cfg.o
  .bss           0x00000000        0x0 ./src/System_tasks/tasks_cfg.o
+ .text.TaskingInit
+                0x00000000       0x34 ./src/System_tasks/tasks_cfg.o
+ .debug_info    0x00000000      0x12b ./src/System_tasks/tasks_cfg.o
+ .debug_abbrev  0x00000000       0xbb ./src/System_tasks/tasks_cfg.o
+ .debug_aranges
+                0x00000000       0x20 ./src/System_tasks/tasks_cfg.o
+ .debug_ranges  0x00000000       0x10 ./src/System_tasks/tasks_cfg.o
+ .debug_macro   0x00000000       0x8a ./src/System_tasks/tasks_cfg.o
  .debug_macro   0x00000000      0x88c ./src/System_tasks/tasks_cfg.o
+ .debug_macro   0x00000000       0x34 ./src/System_tasks/tasks_cfg.o
+ .debug_macro   0x00000000       0x34 ./src/System_tasks/tasks_cfg.o
+ .debug_macro   0x00000000       0x10 ./src/System_tasks/tasks_cfg.o
+ .debug_macro   0x00000000       0x1c ./src/System_tasks/tasks_cfg.o
+ .debug_macro   0x00000000       0x2e ./src/System_tasks/tasks_cfg.o
+ .debug_line    0x00000000      0x2a0 ./src/System_tasks/tasks_cfg.o
+ .debug_str     0x00000000     0x285c ./src/System_tasks/tasks_cfg.o
+ .comment       0x00000000       0x6f ./src/System_tasks/tasks_cfg.o
+ .debug_frame   0x00000000       0x20 ./src/System_tasks/tasks_cfg.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/System_tasks/tasks_cfg.o
+ COMMON         0x00000000       0x20 ./src/System_tasks/tasks_cfg.o
  .group         0x00000000        0x8 ./src/RTOS/RTOS_program.o
  .group         0x00000000        0x8 ./src/RTOS/RTOS_program.o
  .group         0x00000000        0x8 ./src/RTOS/RTOS_program.o
@@ -1325,11 +1347,38 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/RTOS/RTOS_program.o
  .data          0x00000000        0x0 ./src/RTOS/RTOS_program.o
  .bss           0x00000000        0x0 ./src/RTOS/RTOS_program.o
+ .text.setOSFlag
+                0x00000000       0x10 ./src/RTOS/RTOS_program.o
+ .text.schedular
+                0x00000000       0x5c ./src/RTOS/RTOS_program.o
+ .text.RTOS_init
+                0x00000000       0x5c ./src/RTOS/RTOS_program.o
+ .text.RTOS_start
+                0x00000000       0x20 ./src/RTOS/RTOS_program.o
  .text.suspend_Task
                 0x00000000       0x18 ./src/RTOS/RTOS_program.o
+ .bss.sysTask   0x00000000       0x40 ./src/RTOS/RTOS_program.o
+ .bss.index     0x00000000        0x4 ./src/RTOS/RTOS_program.o
+ .debug_info    0x00000000      0x2a0 ./src/RTOS/RTOS_program.o
+ .debug_abbrev  0x00000000      0x19a ./src/RTOS/RTOS_program.o
+ .debug_loc     0x00000000       0x32 ./src/RTOS/RTOS_program.o
+ .debug_aranges
+                0x00000000       0x40 ./src/RTOS/RTOS_program.o
+ .debug_ranges  0x00000000       0x30 ./src/RTOS/RTOS_program.o
+ .debug_macro   0x00000000       0x48 ./src/RTOS/RTOS_program.o
  .debug_macro   0x00000000      0x88c ./src/RTOS/RTOS_program.o
- .debug_macro   0x00000000       0x3a ./src/RTOS/RTOS_program.o
+ .debug_macro   0x00000000       0x34 ./src/RTOS/RTOS_program.o
  .debug_macro   0x00000000       0x1c ./src/RTOS/RTOS_program.o
+ .debug_macro   0x00000000       0x16 ./src/RTOS/RTOS_program.o
+ .debug_macro   0x00000000       0x22 ./src/RTOS/RTOS_program.o
+ .debug_macro   0x00000000      0x28c ./src/RTOS/RTOS_program.o
+ .debug_line    0x00000000      0x19e ./src/RTOS/RTOS_program.o
+ .debug_str     0x00000000     0x31fe ./src/RTOS/RTOS_program.o
+ .comment       0x00000000       0x6f ./src/RTOS/RTOS_program.o
+ .debug_frame   0x00000000       0x7c ./src/RTOS/RTOS_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/RTOS/RTOS_program.o
+ COMMON         0x00000000        0x1 ./src/RTOS/RTOS_program.o
  .group         0x00000000        0x8 ./src/Other_Drivers/LED/LED_cfg.o
  .group         0x00000000        0x8 ./src/Other_Drivers/LED/LED_cfg.o
  .group         0x00000000        0x8 ./src/Other_Drivers/LED/LED_cfg.o
@@ -1337,8 +1386,10 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/Other_Drivers/LED/LED_cfg.o
  .data          0x00000000        0x0 ./src/Other_Drivers/LED/LED_cfg.o
  .bss           0x00000000        0x0 ./src/Other_Drivers/LED/LED_cfg.o
+ .rodata.ledstatemap
+                0x00000000        0x6 ./src/Other_Drivers/LED/LED_cfg.o
  .debug_macro   0x00000000      0x88c ./src/Other_Drivers/LED/LED_cfg.o
- .debug_macro   0x00000000       0x3a ./src/Other_Drivers/LED/LED_cfg.o
+ .debug_macro   0x00000000       0x34 ./src/Other_Drivers/LED/LED_cfg.o
  .debug_macro   0x00000000       0x2e ./src/Other_Drivers/LED/LED_cfg.o
  .group         0x00000000        0x8 ./src/Other_Drivers/LED/LED_program.o
  .group         0x00000000        0x8 ./src/Other_Drivers/LED/LED_program.o
@@ -1347,8 +1398,10 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/Other_Drivers/LED/LED_program.o
  .data          0x00000000        0x0 ./src/Other_Drivers/LED/LED_program.o
  .bss           0x00000000        0x0 ./src/Other_Drivers/LED/LED_program.o
+ .text.LED_setLedState
+                0x00000000       0xb4 ./src/Other_Drivers/LED/LED_program.o
  .debug_macro   0x00000000      0x88c ./src/Other_Drivers/LED/LED_program.o
- .debug_macro   0x00000000       0x3a ./src/Other_Drivers/LED/LED_program.o
+ .debug_macro   0x00000000       0x34 ./src/Other_Drivers/LED/LED_program.o
  .debug_macro   0x00000000      0x8e1 ./src/Other_Drivers/LED/LED_program.o
  .debug_macro   0x00000000       0x2e ./src/Other_Drivers/LED/LED_program.o
  .group         0x00000000        0x8 ./src/Other_Drivers/Keypad/keypad_program.o
@@ -1362,7 +1415,7 @@ Discarded input sections
  .text.keypad_value
                 0x00000000       0xac ./src/Other_Drivers/Keypad/keypad_program.o
  .rodata        0x00000000       0x1c ./src/Other_Drivers/Keypad/keypad_program.o
- .debug_info    0x00000000      0x1ac ./src/Other_Drivers/Keypad/keypad_program.o
+ .debug_info    0x00000000      0x1b3 ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_abbrev  0x00000000       0xef ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_loc     0x00000000       0x72 ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_aranges
@@ -1370,12 +1423,12 @@ Discarded input sections
  .debug_ranges  0x00000000       0x10 ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_macro   0x00000000       0x3d ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_macro   0x00000000      0x88c ./src/Other_Drivers/Keypad/keypad_program.o
- .debug_macro   0x00000000       0x3a ./src/Other_Drivers/Keypad/keypad_program.o
+ .debug_macro   0x00000000       0x34 ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_macro   0x00000000       0x1c ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_macro   0x00000000      0x8e1 ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_macro   0x00000000       0x94 ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_line    0x00000000      0x190 ./src/Other_Drivers/Keypad/keypad_program.o
- .debug_str     0x00000000     0x5be4 ./src/Other_Drivers/Keypad/keypad_program.o
+ .debug_str     0x00000000     0x5be7 ./src/Other_Drivers/Keypad/keypad_program.o
  .comment       0x00000000       0x6f ./src/Other_Drivers/Keypad/keypad_program.o
  .debug_frame   0x00000000       0x3c ./src/Other_Drivers/Keypad/keypad_program.o
  .ARM.attributes
@@ -1401,7 +1454,7 @@ Discarded input sections
                 0x00000000        0x1 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .data.SEVENSEG_Enable_pins
                 0x00000000        0x2 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
- .debug_info    0x00000000      0x277 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
+ .debug_info    0x00000000      0x27e ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_abbrev  0x00000000       0xca ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_loc     0x00000000       0x63 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_aranges
@@ -1409,12 +1462,12 @@ Discarded input sections
  .debug_ranges  0x00000000       0x20 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_macro   0x00000000       0x3d ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_macro   0x00000000      0x88c ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
- .debug_macro   0x00000000       0x3a ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
+ .debug_macro   0x00000000       0x34 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_macro   0x00000000       0x1c ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_macro   0x00000000      0x8e1 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_macro   0x00000000       0x8e ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_line    0x00000000      0x1aa ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
- .debug_str     0x00000000     0x5b3c ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
+ .debug_str     0x00000000     0x5b3f ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .comment       0x00000000       0x6f ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .debug_frame   0x00000000       0x60 ./src/Other_Drivers/7_Segment/Seven_Segment_program.o
  .ARM.attributes
@@ -1430,14 +1483,38 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/USART/USART_program.o
  .data          0x00000000        0x0 ./src/MCAL/USART/USART_program.o
  .bss           0x00000000        0x0 ./src/MCAL/USART/USART_program.o
+ .text.USART_voidTCIntStatus
+                0x00000000        0xc ./src/MCAL/USART/USART_program.o
+ .text.USART_LINsendBreak
+                0x00000000        0xc ./src/MCAL/USART/USART_program.o
+ .text.USART_DMAEnable
+                0x00000000       0x1c ./src/MCAL/USART/USART_program.o
  .text.USART_DMADisable
                 0x00000000       0x14 ./src/MCAL/USART/USART_program.o
  .text.USART_u8SendingDataASync
                 0x00000000       0x4c ./src/MCAL/USART/USART_program.o
+ .text.USART_u8RecDataAsync
+                0x00000000       0x3c ./src/MCAL/USART/USART_program.o
+ .text.USART_voidChangeStatus
+                0x00000000        0xc ./src/MCAL/USART/USART_program.o
+ .text.USART_voidChangeTransStatus
+                0x00000000        0xc ./src/MCAL/USART/USART_program.o
+ .text.USART_voidChangeRecStatus
+                0x00000000        0xc ./src/MCAL/USART/USART_program.o
  .text.USART_voidInit
                 0x00000000       0x50 ./src/MCAL/USART/USART_program.o
+ .text.USART_LINInit
+                0x00000000       0x60 ./src/MCAL/USART/USART_program.o
+ .text.set_TransmissionCompleteCB
+                0x00000000        0xc ./src/MCAL/USART/USART_program.o
+ .text.set_LIN_BreakCB
+                0x00000000       0x14 ./src/MCAL/USART/USART_program.o
+ .text.USART_DMASend
+                0x00000000       0x58 ./src/MCAL/USART/USART_program.o
+ .text.USART_DMARecieve
+                0x00000000       0x34 ./src/MCAL/USART/USART_program.o
  .debug_macro   0x00000000      0x88c ./src/MCAL/USART/USART_program.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/USART/USART_program.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/USART/USART_program.o
  .debug_macro   0x00000000       0x34 ./src/MCAL/USART/USART_program.o
  .group         0x00000000        0x8 ./src/MCAL/SysTick/STK_program.o
  .group         0x00000000        0x8 ./src/MCAL/SysTick/STK_program.o
@@ -1448,10 +1525,18 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/SysTick/STK_program.o
  .data          0x00000000        0x0 ./src/MCAL/SysTick/STK_program.o
  .bss           0x00000000        0x0 ./src/MCAL/SysTick/STK_program.o
+ .text.sysTick_init
+                0x00000000       0x1c ./src/MCAL/SysTick/STK_program.o
+ .text.sysTick_start
+                0x00000000       0x1c ./src/MCAL/SysTick/STK_program.o
  .text.sysTick_stop
                 0x00000000       0x18 ./src/MCAL/SysTick/STK_program.o
+ .text.sysTick_setTime
+                0x00000000       0x10 ./src/MCAL/SysTick/STK_program.o
+ .text.sysTick_setcallback
+                0x00000000       0x14 ./src/MCAL/SysTick/STK_program.o
  .debug_macro   0x00000000      0x88c ./src/MCAL/SysTick/STK_program.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/SysTick/STK_program.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/SysTick/STK_program.o
  .debug_macro   0x00000000       0x22 ./src/MCAL/SysTick/STK_program.o
  .group         0x00000000        0x8 ./src/MCAL/RCC/RCC_program.o
  .group         0x00000000        0x8 ./src/MCAL/RCC/RCC_program.o
@@ -1459,14 +1544,16 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/RCC/RCC_program.o
  .data          0x00000000        0x0 ./src/MCAL/RCC/RCC_program.o
  .bss           0x00000000        0x0 ./src/MCAL/RCC/RCC_program.o
+ .text.RCC_u8ReadSystemClock
+                0x00000000       0x14 ./src/MCAL/RCC/RCC_program.o
  .text.RCC_u8CheckHSI_ON
                 0x00000000       0x14 ./src/MCAL/RCC/RCC_program.o
  .text.RCC_u8CheckHSE_ON
                 0x00000000       0x14 ./src/MCAL/RCC/RCC_program.o
  .text.RCC_u8CheckPLL_ON
                 0x00000000       0x14 ./src/MCAL/RCC/RCC_program.o
- .text.RCC_u8ChangeClockStatus
-                0x00000000       0x38 ./src/MCAL/RCC/RCC_program.o
+ .text.RCC_u8SwitchSystemClock
+                0x00000000       0x14 ./src/MCAL/RCC/RCC_program.o
  .text.RCC_HSE_HSEBYP
                 0x00000000       0x34 ./src/MCAL/RCC/RCC_program.o
  .text.RCC_PLL_Config
@@ -1479,8 +1566,16 @@ Discarded input sections
                 0x00000000       0x28 ./src/MCAL/RCC/RCC_program.o
  .text.RCC_AHBClock_Config
                 0x00000000       0x24 ./src/MCAL/RCC/RCC_program.o
+ .text.RCC_Peripheral_Config
+                0x00000000       0xa4 ./src/MCAL/RCC/RCC_program.o
+ .text.RCC_u32ReadSystemFreq
+                0x00000000       0x84 ./src/MCAL/RCC/RCC_program.o
+ .text.RCC_u32ReadAHBFreq
+                0x00000000       0x8c ./src/MCAL/RCC/RCC_program.o
+ .text.RCC_u32ReadAPB2Freq
+                0x00000000       0x2c ./src/MCAL/RCC/RCC_program.o
  .debug_macro   0x00000000      0x88c ./src/MCAL/RCC/RCC_program.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/RCC/RCC_program.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/RCC/RCC_program.o
  .debug_macro   0x00000000      0x28c ./src/MCAL/RCC/RCC_program.o
  .group         0x00000000        0x8 ./src/MCAL/NVIC/NVIC_program.o
  .group         0x00000000        0x8 ./src/MCAL/NVIC/NVIC_program.o
@@ -1490,6 +1585,8 @@ Discarded input sections
  .bss           0x00000000        0x0 ./src/MCAL/NVIC/NVIC_program.o
  .text.NVIC_SetPriorityGrouping
                 0x00000000       0x18 ./src/MCAL/NVIC/NVIC_program.o
+ .text.NVIC_EnableIRQ
+                0x00000000       0x2c ./src/MCAL/NVIC/NVIC_program.o
  .text.NVIC_DisableIRQ
                 0x00000000       0x30 ./src/MCAL/NVIC/NVIC_program.o
  .text.NVIC_GetPendingIRQ
@@ -1514,8 +1611,35 @@ Discarded input sections
                 0x00000000        0x4 ./src/MCAL/NVIC/NVIC_program.o
  .text.NVIC_Disable_LowerPriority
                 0x00000000        0x8 ./src/MCAL/NVIC/NVIC_program.o
+ .debug_info    0x00000000      0x41e ./src/MCAL/NVIC/NVIC_program.o
+ .debug_abbrev  0x00000000      0x14e ./src/MCAL/NVIC/NVIC_program.o
+ .debug_loc     0x00000000      0x333 ./src/MCAL/NVIC/NVIC_program.o
+ .debug_aranges
+                0x00000000       0x88 ./src/MCAL/NVIC/NVIC_program.o
+ .debug_ranges  0x00000000       0x78 ./src/MCAL/NVIC/NVIC_program.o
+ .debug_macro   0x00000000       0x47 ./src/MCAL/NVIC/NVIC_program.o
  .debug_macro   0x00000000      0x88c ./src/MCAL/NVIC/NVIC_program.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/NVIC/NVIC_program.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/NVIC/NVIC_program.o
+ .debug_macro   0x00000000      0x1a8 ./src/MCAL/NVIC/NVIC_program.o
+ .debug_line    0x00000000      0x18d ./src/MCAL/NVIC/NVIC_program.o
+ .debug_str     0x00000000     0x2d1a ./src/MCAL/NVIC/NVIC_program.o
+ .comment       0x00000000       0x6f ./src/MCAL/NVIC/NVIC_program.o
+ .debug_frame   0x00000000      0x140 ./src/MCAL/NVIC/NVIC_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/MCAL/NVIC/NVIC_program.o
+ .group         0x00000000        0x8 ./src/MCAL/Flash/Flash_program.o
+ .group         0x00000000        0x8 ./src/MCAL/Flash/Flash_program.o
+ .group         0x00000000        0x8 ./src/MCAL/Flash/Flash_program.o
+ .group         0x00000000        0x8 ./src/MCAL/Flash/Flash_program.o
+ .group         0x00000000        0x8 ./src/MCAL/Flash/Flash_program.o
+ .text          0x00000000        0x0 ./src/MCAL/Flash/Flash_program.o
+ .data          0x00000000        0x0 ./src/MCAL/Flash/Flash_program.o
+ .bss           0x00000000        0x0 ./src/MCAL/Flash/Flash_program.o
+ .text.Flash_program
+                0x00000000       0xd4 ./src/MCAL/Flash/Flash_program.o
+ .debug_macro   0x00000000      0x88c ./src/MCAL/Flash/Flash_program.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/Flash/Flash_program.o
+ .debug_macro   0x00000000       0x1c ./src/MCAL/Flash/Flash_program.o
  .group         0x00000000        0x8 ./src/MCAL/DMA/DMA_program.o
  .group         0x00000000        0x8 ./src/MCAL/DMA/DMA_program.o
  .group         0x00000000        0x8 ./src/MCAL/DMA/DMA_program.o
@@ -1528,10 +1652,18 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/DMA/DMA_program.o
  .data          0x00000000        0x0 ./src/MCAL/DMA/DMA_program.o
  .bss           0x00000000        0x0 ./src/MCAL/DMA/DMA_program.o
+ .text.DMA_voidInit
+                0x00000000       0x3c ./src/MCAL/DMA/DMA_program.o
+ .text.DMA_u8ChannelInit
+                0x00000000       0x40 ./src/MCAL/DMA/DMA_program.o
  .text.DMA_voidSetPriority
                 0x00000000       0x20 ./src/MCAL/DMA/DMA_program.o
  .text.DMA_voidSetInterruptsStatus
                 0x00000000       0x28 ./src/MCAL/DMA/DMA_program.o
+ .text.DMA_voidStart
+                0x00000000       0xb0 ./src/MCAL/DMA/DMA_program.o
+ .text.set_ChannelX_TCHandler
+                0x00000000       0x14 ./src/MCAL/DMA/DMA_program.o
  .text.set_ChannelX_HTCHandler
                 0x00000000       0x18 ./src/MCAL/DMA/DMA_program.o
  .text.set_ChannelX_ERRHandler
@@ -1539,7 +1671,7 @@ Discarded input sections
  .text.DMA_voidStop
                 0x00000000       0x34 ./src/MCAL/DMA/DMA_program.o
  .debug_macro   0x00000000      0x88c ./src/MCAL/DMA/DMA_program.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/DMA/DMA_program.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/DMA/DMA_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/DMA/DMA_program.o
  .debug_macro   0x00000000      0x1a2 ./src/MCAL/DMA/DMA_program.o
  .debug_macro   0x00000000      0x28c ./src/MCAL/DMA/DMA_program.o
@@ -1552,12 +1684,16 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/DIO/DIO_program.o
  .data          0x00000000        0x0 ./src/MCAL/DIO/DIO_program.o
  .bss           0x00000000        0x0 ./src/MCAL/DIO/DIO_program.o
+ .text.DIO_SetPinVal
+                0x00000000       0x24 ./src/MCAL/DIO/DIO_program.o
+ .text.GPIO_Config
+                0x00000000       0xe0 ./src/MCAL/DIO/DIO_program.o
  .text.GPIO_SetPinVal
                 0x00000000        0xc ./src/MCAL/DIO/DIO_program.o
  .text.GPIO_GetPinVal
                 0x00000000       0x10 ./src/MCAL/DIO/DIO_program.o
  .debug_macro   0x00000000      0x88c ./src/MCAL/DIO/DIO_program.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/DIO/DIO_program.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/DIO/DIO_program.o
  .debug_macro   0x00000000       0x1c ./src/MCAL/DIO/DIO_program.o
  .debug_macro   0x00000000      0x8e1 ./src/MCAL/DIO/DIO_program.o
  .group         0x00000000        0x8 ./src/LIB/Queue/queue.o
@@ -1565,8 +1701,13 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/LIB/Queue/queue.o
  .data          0x00000000        0x0 ./src/LIB/Queue/queue.o
  .bss           0x00000000        0x0 ./src/LIB/Queue/queue.o
+ .text.QueueInit
+                0x00000000       0x14 ./src/LIB/Queue/queue.o
+ .text.QueueIsEmpty
+                0x00000000        0xc ./src/LIB/Queue/queue.o
+ .text.Dequeue  0x00000000       0x58 ./src/LIB/Queue/queue.o
  .debug_macro   0x00000000      0x88c ./src/LIB/Queue/queue.o
- .debug_macro   0x00000000       0x3a ./src/LIB/Queue/queue.o
+ .debug_macro   0x00000000       0x34 ./src/LIB/Queue/queue.o
  .group         0x00000000        0x8 ./src/LIB/Delay/DELAY_program.o
  .group         0x00000000        0x8 ./src/LIB/Delay/DELAY_program.o
  .text          0x00000000        0x0 ./src/LIB/Delay/DELAY_program.o
@@ -1574,7 +1715,7 @@ Discarded input sections
  .bss           0x00000000        0x0 ./src/LIB/Delay/DELAY_program.o
  .text.delay_mSec
                 0x00000000       0x34 ./src/LIB/Delay/DELAY_program.o
- .debug_info    0x00000000       0x85 ./src/LIB/Delay/DELAY_program.o
+ .debug_info    0x00000000       0x8c ./src/LIB/Delay/DELAY_program.o
  .debug_abbrev  0x00000000       0x74 ./src/LIB/Delay/DELAY_program.o
  .debug_loc     0x00000000       0x40 ./src/LIB/Delay/DELAY_program.o
  .debug_aranges
@@ -1582,9 +1723,9 @@ Discarded input sections
  .debug_ranges  0x00000000       0x10 ./src/LIB/Delay/DELAY_program.o
  .debug_macro   0x00000000       0x2a ./src/LIB/Delay/DELAY_program.o
  .debug_macro   0x00000000      0x88c ./src/LIB/Delay/DELAY_program.o
- .debug_macro   0x00000000       0x3a ./src/LIB/Delay/DELAY_program.o
+ .debug_macro   0x00000000       0x34 ./src/LIB/Delay/DELAY_program.o
  .debug_line    0x00000000       0x9c ./src/LIB/Delay/DELAY_program.o
- .debug_str     0x00000000     0x261b ./src/LIB/Delay/DELAY_program.o
+ .debug_str     0x00000000     0x261e ./src/LIB/Delay/DELAY_program.o
  .comment       0x00000000       0x6f ./src/LIB/Delay/DELAY_program.o
  .debug_frame   0x00000000       0x28 ./src/LIB/Delay/DELAY_program.o
  .ARM.attributes
@@ -1621,6 +1762,8 @@ Discarded input sections
                 0x00000000       0x40 ./src/HAL/USART_Handler/USRTH_program.o
  .text.Rx_Handler
                 0x00000000       0x2c ./src/HAL/USART_Handler/USRTH_program.o
+ .text.USRTH_DMAEnable
+                0x00000000       0x18 ./src/HAL/USART_Handler/USRTH_program.o
  .text.USRTH_DMADisable
                 0x00000000        0x8 ./src/HAL/USART_Handler/USRTH_program.o
  .text.USRTH_DMASend
@@ -1628,13 +1771,28 @@ Discarded input sections
  .text.USRTH_DMARecieve
                 0x00000000        0x8 ./src/HAL/USART_Handler/USRTH_program.o
  .rodata        0x00000000       0x18 ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_info    0x00000000      0x93e ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_abbrev  0x00000000      0x1ef ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_loc     0x00000000      0x4bd ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_aranges
+                0x00000000       0x88 ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_ranges  0x00000000       0x78 ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_macro   0x00000000       0x73 ./src/HAL/USART_Handler/USRTH_program.o
  .debug_macro   0x00000000      0x88c ./src/HAL/USART_Handler/USRTH_program.o
- .debug_macro   0x00000000       0x3a ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_macro   0x00000000       0x34 ./src/HAL/USART_Handler/USRTH_program.o
  .debug_macro   0x00000000      0x1a2 ./src/HAL/USART_Handler/USRTH_program.o
  .debug_macro   0x00000000       0x5e ./src/HAL/USART_Handler/USRTH_program.o
  .debug_macro   0x00000000      0x28c ./src/HAL/USART_Handler/USRTH_program.o
  .debug_macro   0x00000000      0x8e1 ./src/HAL/USART_Handler/USRTH_program.o
  .debug_macro   0x00000000      0x1a8 ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_macro   0x00000000       0x22 ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_macro   0x00000000       0x1c ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_line    0x00000000      0x356 ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_str     0x00000000     0x726f ./src/HAL/USART_Handler/USRTH_program.o
+ .comment       0x00000000       0x6f ./src/HAL/USART_Handler/USRTH_program.o
+ .debug_frame   0x00000000      0x184 ./src/HAL/USART_Handler/USRTH_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/HAL/USART_Handler/USRTH_program.o
  COMMON         0x00000000      0x110 ./src/HAL/USART_Handler/USRTH_program.o
  .group         0x00000000        0x8 ./src/HAL/Switch/Switch_cfg.o
  .group         0x00000000        0x8 ./src/HAL/Switch/Switch_cfg.o
@@ -1642,9 +1800,21 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/HAL/Switch/Switch_cfg.o
  .data          0x00000000        0x0 ./src/HAL/Switch/Switch_cfg.o
  .bss           0x00000000        0x0 ./src/HAL/Switch/Switch_cfg.o
+ .rodata.switchMap
+                0x00000000       0x3c ./src/HAL/Switch/Switch_cfg.o
+ .debug_info    0x00000000      0x155 ./src/HAL/Switch/Switch_cfg.o
+ .debug_abbrev  0x00000000       0xce ./src/HAL/Switch/Switch_cfg.o
+ .debug_aranges
+                0x00000000       0x18 ./src/HAL/Switch/Switch_cfg.o
+ .debug_macro   0x00000000       0x2d ./src/HAL/Switch/Switch_cfg.o
  .debug_macro   0x00000000      0x88c ./src/HAL/Switch/Switch_cfg.o
- .debug_macro   0x00000000       0x3a ./src/HAL/Switch/Switch_cfg.o
+ .debug_macro   0x00000000       0x34 ./src/HAL/Switch/Switch_cfg.o
  .debug_macro   0x00000000      0x8e1 ./src/HAL/Switch/Switch_cfg.o
+ .debug_line    0x00000000       0xae ./src/HAL/Switch/Switch_cfg.o
+ .debug_str     0x00000000     0x5891 ./src/HAL/Switch/Switch_cfg.o
+ .comment       0x00000000       0x6f ./src/HAL/Switch/Switch_cfg.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/HAL/Switch/Switch_cfg.o
  .group         0x00000000        0x8 ./src/HAL/Switch/Switch_program.o
  .group         0x00000000        0x8 ./src/HAL/Switch/Switch_program.o
  .group         0x00000000        0x8 ./src/HAL/Switch/Switch_program.o
@@ -1654,28 +1824,58 @@ Discarded input sections
  .bss           0x00000000        0x0 ./src/HAL/Switch/Switch_program.o
  .text.Switch_updateValue
                 0x00000000       0x88 ./src/HAL/Switch/Switch_program.o
+ .text.switch_init
+                0x00000000       0x6c ./src/HAL/Switch/Switch_program.o
  .text.getSwitchState
                 0x00000000        0xc ./src/HAL/Switch/Switch_program.o
- .bss.counter.3772
+ .bss.counter.3773
+                0x00000000        0x5 ./src/HAL/Switch/Switch_program.o
+ .bss.switchState
                 0x00000000        0x5 ./src/HAL/Switch/Switch_program.o
  .rodata.UpdatingSwitchesTask
                 0x00000000        0x8 ./src/HAL/Switch/Switch_program.o
- .bss.switchState
+ .bss.lastValue.3774
                 0x00000000        0x5 ./src/HAL/Switch/Switch_program.o
- .bss.lastValue.3773
-                0x00000000        0x5 ./src/HAL/Switch/Switch_program.o
+ .debug_info    0x00000000      0x2ed ./src/HAL/Switch/Switch_program.o
+ .debug_abbrev  0x00000000      0x199 ./src/HAL/Switch/Switch_program.o
+ .debug_loc     0x00000000       0x75 ./src/HAL/Switch/Switch_program.o
+ .debug_aranges
+                0x00000000       0x30 ./src/HAL/Switch/Switch_program.o
+ .debug_ranges  0x00000000       0x20 ./src/HAL/Switch/Switch_program.o
+ .debug_macro   0x00000000       0x52 ./src/HAL/Switch/Switch_program.o
  .debug_macro   0x00000000      0x88c ./src/HAL/Switch/Switch_program.o
- .debug_macro   0x00000000       0x3a ./src/HAL/Switch/Switch_program.o
+ .debug_macro   0x00000000       0x34 ./src/HAL/Switch/Switch_program.o
  .debug_macro   0x00000000       0x10 ./src/HAL/Switch/Switch_program.o
  .debug_macro   0x00000000      0x8e1 ./src/HAL/Switch/Switch_program.o
+ .debug_line    0x00000000      0x162 ./src/HAL/Switch/Switch_program.o
+ .debug_str     0x00000000     0x59cd ./src/HAL/Switch/Switch_program.o
+ .comment       0x00000000       0x6f ./src/HAL/Switch/Switch_program.o
+ .debug_frame   0x00000000       0x5c ./src/HAL/Switch/Switch_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/HAL/Switch/Switch_program.o
  .group         0x00000000        0x8 ./src/HAL/LIN/LIN_cfg.o
  .group         0x00000000        0x8 ./src/HAL/LIN/LIN_cfg.o
  .group         0x00000000        0x8 ./src/HAL/LIN/LIN_cfg.o
  .text          0x00000000        0x0 ./src/HAL/LIN/LIN_cfg.o
  .data          0x00000000        0x0 ./src/HAL/LIN/LIN_cfg.o
  .bss           0x00000000        0x0 ./src/HAL/LIN/LIN_cfg.o
+ .rodata.PID_map
+                0x00000000       0x3c ./src/HAL/LIN/LIN_cfg.o
+ .rodata.LIN_cfg_Arr
+                0x00000000        0xc ./src/HAL/LIN/LIN_cfg.o
+ .debug_info    0x00000000       0xe8 ./src/HAL/LIN/LIN_cfg.o
+ .debug_abbrev  0x00000000       0x8d ./src/HAL/LIN/LIN_cfg.o
+ .debug_aranges
+                0x00000000       0x18 ./src/HAL/LIN/LIN_cfg.o
+ .debug_macro   0x00000000       0x23 ./src/HAL/LIN/LIN_cfg.o
  .debug_macro   0x00000000      0x88c ./src/HAL/LIN/LIN_cfg.o
- .debug_macro   0x00000000       0x3a ./src/HAL/LIN/LIN_cfg.o
+ .debug_macro   0x00000000       0x34 ./src/HAL/LIN/LIN_cfg.o
+ .debug_macro   0x00000000       0x2e ./src/HAL/LIN/LIN_cfg.o
+ .debug_line    0x00000000       0x6e ./src/HAL/LIN/LIN_cfg.o
+ .debug_str     0x00000000     0x2688 ./src/HAL/LIN/LIN_cfg.o
+ .comment       0x00000000       0x6f ./src/HAL/LIN/LIN_cfg.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/HAL/LIN/LIN_cfg.o
  .group         0x00000000        0x8 ./src/HAL/LIN/LIN_program.o
  .group         0x00000000        0x8 ./src/HAL/LIN/LIN_program.o
  .group         0x00000000        0x8 ./src/HAL/LIN/LIN_program.o
@@ -1688,14 +1888,72 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/HAL/LIN/LIN_program.o
  .data          0x00000000        0x0 ./src/HAL/LIN/LIN_program.o
  .bss           0x00000000        0x0 ./src/HAL/LIN/LIN_program.o
+ .text.Header_received
+                0x00000000        0xc ./src/HAL/LIN/LIN_program.o
+ .text.Response_received
+                0x00000000        0xc ./src/HAL/LIN/LIN_program.o
+ .text.LIN_MasterTask
+                0x00000000       0xd8 ./src/HAL/LIN/LIN_program.o
+ .text.Send_Checksum
+                0x00000000       0x1c ./src/HAL/LIN/LIN_program.o
+ .text.LIN_SlaveTask
+                0x00000000      0x1dc ./src/HAL/LIN/LIN_program.o
+ .text.LIN_Break_detected
+                0x00000000       0x2c ./src/HAL/LIN/LIN_program.o
+ .text.LIN_REC_HEADER
+                0x00000000       0x28 ./src/HAL/LIN/LIN_program.o
+ .text.LIN_init
+                0x00000000       0x60 ./src/HAL/LIN/LIN_program.o
+ .text.LIN_masterInit
+                0x00000000       0x64 ./src/HAL/LIN/LIN_program.o
+ .text.getSDU   0x00000000       0x48 ./src/HAL/LIN/LIN_program.o
+ .text.setSDU   0x00000000       0x48 ./src/HAL/LIN/LIN_program.o
+ .rodata        0x00000000       0x18 ./src/HAL/LIN/LIN_program.o
+ .bss.LIN_databuffer
+                0x00000000       0x18 ./src/HAL/LIN/LIN_program.o
+ .bss.checksum  0x00000000        0x1 ./src/HAL/LIN/LIN_program.o
+ .bss.LIN_slaveStatus
+                0x00000000        0x1 ./src/HAL/LIN/LIN_program.o
+ .bss.dataLength.3987
+                0x00000000        0x1 ./src/HAL/LIN/LIN_program.o
+ .bss.LIN_masterStatus
+                0x00000000        0x1 ./src/HAL/LIN/LIN_program.o
+ .bss.LIN_Msg   0x00000000        0x9 ./src/HAL/LIN/LIN_program.o
+ .bss.Local_buffer.3986
+                0x00000000        0x9 ./src/HAL/LIN/LIN_program.o
+ .bss.Master_Header
+                0x00000000        0x2 ./src/HAL/LIN/LIN_program.o
+ .bss.idx.3961  0x00000000        0x1 ./src/HAL/LIN/LIN_program.o
+ .rodata.Slave_task
+                0x00000000        0x8 ./src/HAL/LIN/LIN_program.o
+ .bss.Slave_Header
+                0x00000000        0x2 ./src/HAL/LIN/LIN_program.o
+ .rodata.Master_task
+                0x00000000        0x8 ./src/HAL/LIN/LIN_program.o
+ .data.LIN_USART
+                0x00000000        0x4 ./src/HAL/LIN/LIN_program.o
+ .debug_info    0x00000000      0x7f8 ./src/HAL/LIN/LIN_program.o
+ .debug_abbrev  0x00000000      0x26c ./src/HAL/LIN/LIN_program.o
+ .debug_loc     0x00000000      0x4bc ./src/HAL/LIN/LIN_program.o
+ .debug_aranges
+                0x00000000       0x70 ./src/HAL/LIN/LIN_program.o
+ .debug_ranges  0x00000000       0xe8 ./src/HAL/LIN/LIN_program.o
+ .debug_macro   0x00000000       0x7d ./src/HAL/LIN/LIN_program.o
  .debug_macro   0x00000000      0x88c ./src/HAL/LIN/LIN_program.o
- .debug_macro   0x00000000       0x3a ./src/HAL/LIN/LIN_program.o
+ .debug_macro   0x00000000       0x34 ./src/HAL/LIN/LIN_program.o
  .debug_macro   0x00000000      0x28c ./src/HAL/LIN/LIN_program.o
  .debug_macro   0x00000000      0x8e1 ./src/HAL/LIN/LIN_program.o
  .debug_macro   0x00000000      0x1a8 ./src/HAL/LIN/LIN_program.o
  .debug_macro   0x00000000      0x1a2 ./src/HAL/LIN/LIN_program.o
  .debug_macro   0x00000000       0x5e ./src/HAL/LIN/LIN_program.o
+ .debug_macro   0x00000000       0xa6 ./src/HAL/LIN/LIN_program.o
  .debug_macro   0x00000000       0x2e ./src/HAL/LIN/LIN_program.o
+ .debug_line    0x00000000      0x398 ./src/HAL/LIN/LIN_program.o
+ .debug_str     0x00000000     0x7439 ./src/HAL/LIN/LIN_program.o
+ .comment       0x00000000       0x6f ./src/HAL/LIN/LIN_program.o
+ .debug_frame   0x00000000      0x154 ./src/HAL/LIN/LIN_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/HAL/LIN/LIN_program.o
  .group         0x00000000        0x8 ./src/HAL/LCD/C_LCD_program.o
  .group         0x00000000        0x8 ./src/HAL/LCD/C_LCD_program.o
  .group         0x00000000        0x8 ./src/HAL/LCD/C_LCD_program.o
@@ -1706,10 +1964,38 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/HAL/LCD/C_LCD_program.o
  .data          0x00000000        0x0 ./src/HAL/LCD/C_LCD_program.o
  .bss           0x00000000        0x0 ./src/HAL/LCD/C_LCD_program.o
+ .text.CLCD_voidSetDataPort
+                0x00000000       0x6c ./src/HAL/LCD/C_LCD_program.o
+ .text.FSM_task5
+                0x00000000       0x30 ./src/HAL/LCD/C_LCD_program.o
+ .text.FSM_task4
+                0x00000000       0x30 ./src/HAL/LCD/C_LCD_program.o
+ .text.FSM_task3
+                0x00000000       0x30 ./src/HAL/LCD/C_LCD_program.o
+ .text.FSM_task2
+                0x00000000       0x14 ./src/HAL/LCD/C_LCD_program.o
+ .text.FSM_task1
+                0x00000000       0x30 ./src/HAL/LCD/C_LCD_program.o
+ .text.LCD_cursor_blinkingOff
+                0x00000000       0x50 ./src/HAL/LCD/C_LCD_program.o
+ .text.LCD_cursor_blinkingOn
+                0x00000000       0x50 ./src/HAL/LCD/C_LCD_program.o
+ .text.LCD_cursor_moving
+                0x00000000       0x7c ./src/HAL/LCD/C_LCD_program.o
+ .text.LCD_wipe
+                0x00000000       0x50 ./src/HAL/LCD/C_LCD_program.o
+ .text.LCD_apply
+                0x00000000       0x78 ./src/HAL/LCD/C_LCD_program.o
  .text.CLCD_voidsethalfDataPort
                 0x00000000       0x3c ./src/HAL/LCD/C_LCD_program.o
  .text.CLCD_Kick
                 0x00000000       0x2c ./src/HAL/LCD/C_LCD_program.o
+ .text.FSM_init
+                0x00000000       0x30 ./src/HAL/LCD/C_LCD_program.o
+ .text.LCD_OS_runnable
+                0x00000000       0x90 ./src/HAL/LCD/C_LCD_program.o
+ .text.CLCD_init
+                0x00000000       0x90 ./src/HAL/LCD/C_LCD_program.o
  .text.LCD_OS_clear
                 0x00000000       0x20 ./src/HAL/LCD/C_LCD_program.o
  .text.LCD_OS_BlinkCursorOn
@@ -1736,8 +2022,24 @@ Discarded input sections
                 0x00000000        0xc ./src/HAL/LCD/C_LCD_program.o
  .text.CLCD_voidDDRAM
                 0x00000000        0xc ./src/HAL/LCD/C_LCD_program.o
+ .rodata.handlers
+                0x00000000       0x20 ./src/HAL/LCD/C_LCD_program.o
+ .data.steps    0x00000000        0x1 ./src/HAL/LCD/C_LCD_program.o
+ .bss.index.3840
+                0x00000000        0x1 ./src/HAL/LCD/C_LCD_program.o
+ .rodata.LCD_Task
+                0x00000000        0x8 ./src/HAL/LCD/C_LCD_program.o
+ .rodata.LCD_handlers
+                0x00000000       0x14 ./src/HAL/LCD/C_LCD_program.o
+ .bss.FSM_Complete
+                0x00000000        0x1 ./src/HAL/LCD/C_LCD_program.o
+ .bss.taskInfo  0x00000000       0x78 ./src/HAL/LCD/C_LCD_program.o
+ .bss.CurrentTask
+                0x00000000        0xc ./src/HAL/LCD/C_LCD_program.o
+ .bss.LCD_index
+                0x00000000        0x1 ./src/HAL/LCD/C_LCD_program.o
  .debug_macro   0x00000000      0x88c ./src/HAL/LCD/C_LCD_program.o
- .debug_macro   0x00000000       0x3a ./src/HAL/LCD/C_LCD_program.o
+ .debug_macro   0x00000000       0x34 ./src/HAL/LCD/C_LCD_program.o
  .debug_macro   0x00000000       0x1c ./src/HAL/LCD/C_LCD_program.o
  .debug_macro   0x00000000       0x34 ./src/HAL/LCD/C_LCD_program.o
  .debug_macro   0x00000000      0x8e1 ./src/HAL/LCD/C_LCD_program.o
@@ -1753,7 +2055,7 @@ Discarded input sections
                 0x00000000       0x10 ./src/Com_Protocols/A_Protocol.o
  .text.AProtocol_extractData
                 0x00000000       0x14 ./src/Com_Protocols/A_Protocol.o
- .debug_info    0x00000000      0x1e9 ./src/Com_Protocols/A_Protocol.o
+ .debug_info    0x00000000      0x1f0 ./src/Com_Protocols/A_Protocol.o
  .debug_abbrev  0x00000000      0x102 ./src/Com_Protocols/A_Protocol.o
  .debug_loc     0x00000000      0x11e ./src/Com_Protocols/A_Protocol.o
  .debug_aranges
@@ -1761,10 +2063,10 @@ Discarded input sections
  .debug_ranges  0x00000000       0x20 ./src/Com_Protocols/A_Protocol.o
  .debug_macro   0x00000000       0x45 ./src/Com_Protocols/A_Protocol.o
  .debug_macro   0x00000000      0x88c ./src/Com_Protocols/A_Protocol.o
- .debug_macro   0x00000000       0x3a ./src/Com_Protocols/A_Protocol.o
+ .debug_macro   0x00000000       0x34 ./src/Com_Protocols/A_Protocol.o
  .debug_macro   0x00000000       0x16 ./src/Com_Protocols/A_Protocol.o
  .debug_line    0x00000000       0xd1 ./src/Com_Protocols/A_Protocol.o
- .debug_str     0x00000000     0x2745 ./src/Com_Protocols/A_Protocol.o
+ .debug_str     0x00000000     0x2748 ./src/Com_Protocols/A_Protocol.o
  .comment       0x00000000       0x6f ./src/Com_Protocols/A_Protocol.o
  .debug_frame   0x00000000       0x4c ./src/Com_Protocols/A_Protocol.o
  .ARM.attributes
@@ -1777,16 +2079,16 @@ Discarded input sections
  .bss           0x00000000        0x0 ./src/Com_Protocols/A_Protocol_cfg.o
  .data.data_size
                 0x00000000        0x1 ./src/Com_Protocols/A_Protocol_cfg.o
- .debug_info    0x00000000       0x69 ./src/Com_Protocols/A_Protocol_cfg.o
+ .debug_info    0x00000000       0x70 ./src/Com_Protocols/A_Protocol_cfg.o
  .debug_abbrev  0x00000000       0x4e ./src/Com_Protocols/A_Protocol_cfg.o
  .debug_aranges
                 0x00000000       0x18 ./src/Com_Protocols/A_Protocol_cfg.o
  .debug_macro   0x00000000       0x23 ./src/Com_Protocols/A_Protocol_cfg.o
  .debug_macro   0x00000000      0x88c ./src/Com_Protocols/A_Protocol_cfg.o
- .debug_macro   0x00000000       0x3a ./src/Com_Protocols/A_Protocol_cfg.o
+ .debug_macro   0x00000000       0x34 ./src/Com_Protocols/A_Protocol_cfg.o
  .debug_macro   0x00000000       0x16 ./src/Com_Protocols/A_Protocol_cfg.o
  .debug_line    0x00000000       0x85 ./src/Com_Protocols/A_Protocol_cfg.o
- .debug_str     0x00000000     0x263a ./src/Com_Protocols/A_Protocol_cfg.o
+ .debug_str     0x00000000     0x263d ./src/Com_Protocols/A_Protocol_cfg.o
  .comment       0x00000000       0x6f ./src/Com_Protocols/A_Protocol_cfg.o
  .ARM.attributes
                 0x00000000       0x33 ./src/Com_Protocols/A_Protocol_cfg.o
@@ -1838,43 +2140,43 @@ Discarded input sections
                 0x00000000       0x58 ./src/Application/Watch_App/Watch_APP_program.o
  .text.watch_App_Task
                 0x00000000       0x48 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.cfg_Mode  0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
- .data.cursorIdx.4905
+ .bss.updateWatch_counter.4880
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
+ .bss.cfg_Mode  0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
+ .bss.TxDataBuffer
+                0x00000000       0x14 ./src/Application/Watch_App/Watch_APP_program.o
  .bss.RxSwitches
                 0x00000000        0x5 ./src/Application/Watch_App/Watch_APP_program.o
  .bss.minutes_flag
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.cfg_sw_flag.4906
+ .bss.cfg_sw_flag.4907
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.send_counter.4878
+ .bss.send_counter.4879
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
  .bss.seconds_flag
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.right_sw_flag.4908
+ .data.cursorIdx.4906
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.down_sw_flag.4910
+ .bss.right_sw_flag.4909
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.left_sw_flag.4907
+ .bss.down_sw_flag.4911
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
  .rodata.str1.4
                 0x00000000        0xf ./src/Application/Watch_App/Watch_APP_program.o
+ .bss.up_sw_flag.4910
+                0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
  .bss.time      0x00000000       0x14 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.local_watch.4904
+ .bss.local_watch.4905
                 0x00000000        0x3 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.up_sw_flag.4909
+ .bss.left_sw_flag.4908
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
  .bss.RxDataBuffer
                 0x00000000       0x14 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.updateWatch_counter.4879
-                0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
  .bss.hours_flag
                 0x00000000        0x1 ./src/Application/Watch_App/Watch_APP_program.o
  .rodata.Watch_App_task
                 0x00000000        0x8 ./src/Application/Watch_App/Watch_APP_program.o
  .data.watch    0x00000000        0x3 ./src/Application/Watch_App/Watch_APP_program.o
- .bss.TxDataBuffer
-                0x00000000       0x14 ./src/Application/Watch_App/Watch_APP_program.o
  .debug_info    0x00000000      0x73f ./src/Application/Watch_App/Watch_APP_program.o
  .debug_abbrev  0x00000000      0x14e ./src/Application/Watch_App/Watch_APP_program.o
  .debug_loc     0x00000000       0xbb ./src/Application/Watch_App/Watch_APP_program.o
@@ -1883,7 +2185,7 @@ Discarded input sections
  .debug_ranges  0x00000000       0x38 ./src/Application/Watch_App/Watch_APP_program.o
  .debug_macro   0x00000000      0x246 ./src/Application/Watch_App/Watch_APP_program.o
  .debug_macro   0x00000000      0x88c ./src/Application/Watch_App/Watch_APP_program.o
- .debug_macro   0x00000000       0x3a ./src/Application/Watch_App/Watch_APP_program.o
+ .debug_macro   0x00000000       0x34 ./src/Application/Watch_App/Watch_APP_program.o
  .debug_macro   0x00000000      0x1a2 ./src/Application/Watch_App/Watch_APP_program.o
  .debug_macro   0x00000000       0x22 ./src/Application/Watch_App/Watch_APP_program.o
  .debug_macro   0x00000000       0x34 ./src/Application/Watch_App/Watch_APP_program.o
@@ -1916,7 +2218,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x18b ./src/Application/Watch_App/Watch_APP_program.o
  .debug_macro   0x00000000       0x16 ./src/Application/Watch_App/Watch_APP_program.o
  .debug_line    0x00000000      0x6af ./src/Application/Watch_App/Watch_APP_program.o
- .debug_str     0x00000000     0x7339 ./src/Application/Watch_App/Watch_APP_program.o
+ .debug_str     0x00000000     0x7322 ./src/Application/Watch_App/Watch_APP_program.o
  .comment       0x00000000       0x6f ./src/Application/Watch_App/Watch_APP_program.o
  .debug_frame   0x00000000       0xc8 ./src/Application/Watch_App/Watch_APP_program.o
  .ARM.attributes
@@ -1955,8 +2257,19 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/Application/LIN_APP/LIN_APP.o
  .data          0x00000000        0x0 ./src/Application/LIN_APP/LIN_APP.o
  .bss           0x00000000        0x0 ./src/Application/LIN_APP/LIN_APP.o
+ .text.LIN_APP_task
+                0x00000000       0x5c ./src/Application/LIN_APP/LIN_APP.o
+ .rodata        0x00000000        0x6 ./src/Application/LIN_APP/LIN_APP.o
+ .rodata.LIN_demo
+                0x00000000        0x8 ./src/Application/LIN_APP/LIN_APP.o
+ .debug_info    0x00000000      0x1e5 ./src/Application/LIN_APP/LIN_APP.o
+ .debug_abbrev  0x00000000      0x10a ./src/Application/LIN_APP/LIN_APP.o
+ .debug_aranges
+                0x00000000       0x20 ./src/Application/LIN_APP/LIN_APP.o
+ .debug_ranges  0x00000000       0x10 ./src/Application/LIN_APP/LIN_APP.o
+ .debug_macro   0x00000000      0x1da ./src/Application/LIN_APP/LIN_APP.o
  .debug_macro   0x00000000      0x88c ./src/Application/LIN_APP/LIN_APP.o
- .debug_macro   0x00000000       0x3a ./src/Application/LIN_APP/LIN_APP.o
+ .debug_macro   0x00000000       0x34 ./src/Application/LIN_APP/LIN_APP.o
  .debug_macro   0x00000000       0x34 ./src/Application/LIN_APP/LIN_APP.o
  .debug_macro   0x00000000       0x2e ./src/Application/LIN_APP/LIN_APP.o
  .debug_macro   0x00000000       0x10 ./src/Application/LIN_APP/LIN_APP.o
@@ -1986,6 +2299,12 @@ Discarded input sections
  .debug_macro   0x00000000       0xd7 ./src/Application/LIN_APP/LIN_APP.o
  .debug_macro   0x00000000       0x16 ./src/Application/LIN_APP/LIN_APP.o
  .debug_macro   0x00000000      0x18b ./src/Application/LIN_APP/LIN_APP.o
+ .debug_line    0x00000000      0x4ac ./src/Application/LIN_APP/LIN_APP.o
+ .debug_str     0x00000000     0x6791 ./src/Application/LIN_APP/LIN_APP.o
+ .comment       0x00000000       0x6f ./src/Application/LIN_APP/LIN_APP.o
+ .debug_frame   0x00000000       0x2c ./src/Application/LIN_APP/LIN_APP.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/Application/LIN_APP/LIN_APP.o
  .group         0x00000000        0x8 ./src/Application/App1_task/App1_program.o
  .group         0x00000000        0x8 ./src/Application/App1_task/App1_program.o
  .group         0x00000000        0x8 ./src/Application/App1_task/App1_program.o
@@ -2030,19 +2349,19 @@ Discarded input sections
                 0x00000000       0x68 ./src/Application/App1_task/App1_program.o
  .text.APP1_runnable
                 0x00000000       0x2c ./src/Application/App1_task/App1_program.o
- .bss.sw_flag.4854
+ .bss.sw_flag.4855
                 0x00000000        0x1 ./src/Application/App1_task/App1_program.o
- .bss.local_arr.4843
+ .bss.local_arr.4844
                 0x00000000        0xb ./src/Application/App1_task/App1_program.o
- .bss.RxData.4842
+ .bss.RxData.4843
                 0x00000000        0x4 ./src/Application/App1_task/App1_program.o
- .bss.TxData.4850
-                0x00000000        0x4 ./src/Application/App1_task/App1_program.o
- .rodata.str1.4
+ .bss.TxData.4851
                 0x00000000        0x4 ./src/Application/App1_task/App1_program.o
  .rodata.App1_task
                 0x00000000        0x8 ./src/Application/App1_task/App1_program.o
- .bss.counter.4858
+ .rodata.str1.4
+                0x00000000        0x4 ./src/Application/App1_task/App1_program.o
+ .bss.counter.4859
                 0x00000000        0x1 ./src/Application/App1_task/App1_program.o
  .debug_info    0x00000000      0x39f ./src/Application/App1_task/App1_program.o
  .debug_abbrev  0x00000000      0x16a ./src/Application/App1_task/App1_program.o
@@ -2052,7 +2371,7 @@ Discarded input sections
  .debug_ranges  0x00000000       0x30 ./src/Application/App1_task/App1_program.o
  .debug_macro   0x00000000      0x1df ./src/Application/App1_task/App1_program.o
  .debug_macro   0x00000000      0x88c ./src/Application/App1_task/App1_program.o
- .debug_macro   0x00000000       0x3a ./src/Application/App1_task/App1_program.o
+ .debug_macro   0x00000000       0x34 ./src/Application/App1_task/App1_program.o
  .debug_macro   0x00000000      0x1a2 ./src/Application/App1_task/App1_program.o
  .debug_macro   0x00000000       0x22 ./src/Application/App1_task/App1_program.o
  .debug_macro   0x00000000       0x34 ./src/Application/App1_task/App1_program.o
@@ -2084,7 +2403,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./src/Application/App1_task/App1_program.o
  .debug_macro   0x00000000      0x18b ./src/Application/App1_task/App1_program.o
  .debug_line    0x00000000      0x524 ./src/Application/App1_task/App1_program.o
- .debug_str     0x00000000     0x6f68 ./src/Application/App1_task/App1_program.o
+ .debug_str     0x00000000     0x6f51 ./src/Application/App1_task/App1_program.o
  .comment       0x00000000       0x6f ./src/Application/App1_task/App1_program.o
  .debug_frame   0x00000000       0x84 ./src/Application/App1_task/App1_program.o
  .ARM.attributes
@@ -2098,17 +2417,19 @@ Discarded input sections
  .group         0x00000000        0x8 ./src/Application/main.o
  .group         0x00000000        0x8 ./src/Application/main.o
  .group         0x00000000        0x8 ./src/Application/main.o
+ .group         0x00000000        0x8 ./src/Application/main.o
  .text          0x00000000        0x0 ./src/Application/main.o
  .data          0x00000000        0x0 ./src/Application/main.o
  .bss           0x00000000        0x0 ./src/Application/main.o
  .debug_macro   0x00000000      0x88c ./src/Application/main.o
- .debug_macro   0x00000000       0x3a ./src/Application/main.o
+ .debug_macro   0x00000000       0x34 ./src/Application/main.o
  .debug_macro   0x00000000      0x28c ./src/Application/main.o
  .debug_macro   0x00000000       0x34 ./src/Application/main.o
  .debug_macro   0x00000000       0x10 ./src/Application/main.o
  .debug_macro   0x00000000      0x1a2 ./src/Application/main.o
  .debug_macro   0x00000000       0x22 ./src/Application/main.o
  .debug_macro   0x00000000       0x2e ./src/Application/main.o
+ .debug_macro   0x00000000       0x16 ./src/Application/main.o
  .group         0x00000000        0x8 ./src/_write.o
  .text          0x00000000        0x0 ./src/_write.o
  .data          0x00000000        0x0 ./src/_write.o
@@ -2147,6 +2468,9 @@ Discarded input sections
  .bss           0x00000000        0x0 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .rodata._global_impure_ptr
                 0x00000000        0x4 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
  .text          0x00000000        0x0 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
  .data          0x00000000        0x0 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
  .bss           0x00000000        0x0 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
@@ -2242,6 +2566,7 @@ LOAD ./src/MCAL/USART/USART_program.o
 LOAD ./src/MCAL/SysTick/STK_program.o
 LOAD ./src/MCAL/RCC/RCC_program.o
 LOAD ./src/MCAL/NVIC/NVIC_program.o
+LOAD ./src/MCAL/Flash/Flash_program.o
 LOAD ./src/MCAL/DMA/DMA_program.o
 LOAD ./src/MCAL/DIO/DIO_program.o
 LOAD ./src/LIB/Queue/queue.o
@@ -2277,7 +2602,7 @@ END GROUP
                 0x20004c00                __Main_Stack_Limit = (__stack - __Main_Stack_Size)
                 [!provide]                PROVIDE (_Main_Stack_Limit, __Main_Stack_Limit)
                 0x00000100                _Minimum_Stack_Size = 0x100
-                0x20000314                PROVIDE (_Heap_Begin, _end_noinit)
+                0x200001dc                PROVIDE (_Heap_Begin, _end_noinit)
                 0x20004c00                PROVIDE (_Heap_Limit, (__stack - __Main_Stack_Size))
 
 .isr_vector     0x08000000      0x354
@@ -2390,16 +2715,16 @@ END GROUP
 
 .inits          0x08000354       0x28
                 0x08000354                __data_regions_array_start = .
-                0x08000354        0x4 LONG 0x8002c50 LOADADDR (.data)
+                0x08000354        0x4 LONG 0x8001db0 LOADADDR (.data)
                 0x08000358        0x4 LONG 0x20000000 ADDR (.data)
-                0x0800035c        0x4 LONG 0x20000090 (ADDR (.data) + SIZEOF (.data))
-                0x08000360        0x4 LONG 0x8002c50 LOADADDR (.data_CCMRAM)
+                0x0800035c        0x4 LONG 0x20000088 (ADDR (.data) + SIZEOF (.data))
+                0x08000360        0x4 LONG 0x8001db0 LOADADDR (.data_CCMRAM)
                 0x08000364        0x4 LONG 0x0 ADDR (.data_CCMRAM)
                 0x08000368        0x4 LONG 0x0 (ADDR (.data_CCMRAM) + SIZEOF (.data_CCMRAM))
                 0x0800036c                __data_regions_array_end = .
                 0x0800036c                __bss_regions_array_start = .
-                0x0800036c        0x4 LONG 0x20000090 ADDR (.bss)
-                0x08000370        0x4 LONG 0x20000314 (ADDR (.bss) + SIZEOF (.bss))
+                0x0800036c        0x4 LONG 0x20000088 ADDR (.bss)
+                0x08000370        0x4 LONG 0x200001dc (ADDR (.bss) + SIZEOF (.bss))
                 0x08000374        0x4 LONG 0x0 ADDR (.bss_CCMRAM)
                 0x08000378        0x4 LONG 0x0 (ADDR (.bss_CCMRAM) + SIZEOF (.bss_CCMRAM))
                 0x0800037c                __bss_regions_array_end = .
@@ -2425,422 +2750,237 @@ END GROUP
 .flashtext
  *(.flashtext .flashtext.*)
 
-.text           0x08000380     0x28cf
+.text           0x0800037c     0x1a33
  *(.text .text.*)
- .text._exit    0x08000380        0x4 ./system/src/newlib/_exit.o
-                0x08000380                _exit
- .text._sbrk    0x08000384       0x44 ./system/src/newlib/_sbrk.o
-                0x08000384                _sbrk
+ .text._exit    0x0800037c        0x4 ./system/src/newlib/_exit.o
+                0x0800037c                _exit
+ .text._sbrk    0x08000380       0x44 ./system/src/newlib/_sbrk.o
+                0x08000380                _sbrk
  .text.__initialize_args
-                0x080003c8       0x10 ./system/src/newlib/_syscalls.o
-                0x080003c8                __initialize_args
+                0x080003c4       0x10 ./system/src/newlib/_syscalls.o
+                0x080003c4                __initialize_args
  .text.trace_printf
-                0x080003d8       0x30 ./system/src/diag/Trace.o
-                0x080003d8                trace_printf
+                0x080003d4       0x30 ./system/src/diag/Trace.o
+                0x080003d4                trace_printf
  .text._trace_write_semihosting_debug
-                0x08000408       0x64 ./system/src/diag/trace_impl.o
+                0x08000404       0x64 ./system/src/diag/trace_impl.o
  .text.trace_write
-                0x0800046c        0x8 ./system/src/diag/trace_impl.o
-                0x0800046c                trace_write
+                0x08000468        0x8 ./system/src/diag/trace_impl.o
+                0x08000468                trace_write
  .text.__initialize_hardware_early
-                0x08000474       0x18 ./system/src/cortexm/_initialize_hardware.o
-                0x08000474                __initialize_hardware_early
+                0x08000470       0x18 ./system/src/cortexm/_initialize_hardware.o
+                0x08000470                __initialize_hardware_early
  .text.__initialize_hardware
-                0x0800048c        0x8 ./system/src/cortexm/_initialize_hardware.o
-                0x0800048c                __initialize_hardware
+                0x08000488        0x8 ./system/src/cortexm/_initialize_hardware.o
+                0x08000488                __initialize_hardware
  .text.dumpExceptionStack
-                0x08000494       0xf0 ./system/src/cortexm/exception_handlers.o
-                0x08000494                dumpExceptionStack
+                0x08000490       0xf0 ./system/src/cortexm/exception_handlers.o
+                0x08000490                dumpExceptionStack
  .text.isSemihosting
-                0x08000584       0x20 ./system/src/cortexm/exception_handlers.o
-                0x08000584                isSemihosting
+                0x08000580       0x20 ./system/src/cortexm/exception_handlers.o
+                0x08000580                isSemihosting
  .text.SetSysClockTo72
-                0x080005a4       0xc4 ./system/src/cmsis/system_stm32f10x.o
+                0x080005a0       0xc4 ./system/src/cmsis/system_stm32f10x.o
  .text.SetSysClock
-                0x08000668        0x8 ./system/src/cmsis/system_stm32f10x.o
+                0x08000664        0x8 ./system/src/cmsis/system_stm32f10x.o
  .text.SystemInit
-                0x08000670       0x50 ./system/src/cmsis/system_stm32f10x.o
-                0x08000670                SystemInit
+                0x0800066c       0x50 ./system/src/cmsis/system_stm32f10x.o
+                0x0800066c                SystemInit
  .text.SystemCoreClockUpdate
-                0x080006c0       0x94 ./system/src/cmsis/system_stm32f10x.o
-                0x080006c0                SystemCoreClockUpdate
- .text.TaskingInit
-                0x08000754       0x34 ./src/System_tasks/tasks_cfg.o
-                0x08000754                TaskingInit
- .text.setOSFlag
-                0x08000788       0x10 ./src/RTOS/RTOS_program.o
- .text.schedular
-                0x08000798       0x5c ./src/RTOS/RTOS_program.o
- .text.RTOS_init
-                0x080007f4       0x5c ./src/RTOS/RTOS_program.o
-                0x080007f4                RTOS_init
- .text.RTOS_start
-                0x08000850       0x20 ./src/RTOS/RTOS_program.o
-                0x08000850                RTOS_start
+                0x080006bc       0x94 ./system/src/cmsis/system_stm32f10x.o
+                0x080006bc                SystemCoreClockUpdate
  .text.LED_Init
-                0x08000870       0x24 ./src/Other_Drivers/LED/LED_program.o
-                0x08000870                LED_Init
- .text.LED_setLedState
-                0x08000894       0xb4 ./src/Other_Drivers/LED/LED_program.o
-                0x08000894                LED_setLedState
+                0x08000750       0x24 ./src/Other_Drivers/LED/LED_program.o
+                0x08000750                LED_Init
  .text.IsTransmissionComplete
-                0x08000948        0x8 ./src/MCAL/USART/USART_program.o
+                0x08000774        0x8 ./src/MCAL/USART/USART_program.o
  .text.IsDataRecieved
-                0x08000950        0x8 ./src/MCAL/USART/USART_program.o
+                0x0800077c        0x8 ./src/MCAL/USART/USART_program.o
  .text.IsBreakRecieved
-                0x08000958        0x8 ./src/MCAL/USART/USART_program.o
+                0x08000784        0x8 ./src/MCAL/USART/USART_program.o
  .text.USART_voidTransIntStatus
-                0x08000960        0xc ./src/MCAL/USART/USART_program.o
+                0x0800078c        0xc ./src/MCAL/USART/USART_program.o
  .text.USART_voidRecIntStatus
-                0x0800096c        0xc ./src/MCAL/USART/USART_program.o
- .text.USART_voidTCIntStatus
-                0x08000978        0xc ./src/MCAL/USART/USART_program.o
- .text.USART_LINsendBreak
-                0x08000984        0xc ./src/MCAL/USART/USART_program.o
-                0x08000984                USART_LINsendBreak
- .text.USART_DMAEnable
-                0x08000990       0x1c ./src/MCAL/USART/USART_program.o
-                0x08000990                USART_DMAEnable
- .text.USART_u8RecDataAsync
-                0x080009ac       0x3c ./src/MCAL/USART/USART_program.o
-                0x080009ac                USART_u8RecDataAsync
- .text.USART_voidChangeStatus
-                0x080009e8        0xc ./src/MCAL/USART/USART_program.o
-                0x080009e8                USART_voidChangeStatus
- .text.USART_voidChangeTransStatus
-                0x080009f4        0xc ./src/MCAL/USART/USART_program.o
-                0x080009f4                USART_voidChangeTransStatus
- .text.USART_voidChangeRecStatus
-                0x08000a00        0xc ./src/MCAL/USART/USART_program.o
-                0x08000a00                USART_voidChangeRecStatus
- .text.USART_LINInit
-                0x08000a0c       0x60 ./src/MCAL/USART/USART_program.o
-                0x08000a0c                USART_LINInit
+                0x08000798        0xc ./src/MCAL/USART/USART_program.o
  .text.USART1_IRQHandler
-                0x08000a6c      0x130 ./src/MCAL/USART/USART_program.o
-                0x08000a6c                USART1_IRQHandler
- .text.set_TransmissionCompleteCB
-                0x08000b9c        0xc ./src/MCAL/USART/USART_program.o
-                0x08000b9c                set_TransmissionCompleteCB
- .text.set_LIN_BreakCB
-                0x08000ba8       0x14 ./src/MCAL/USART/USART_program.o
-                0x08000ba8                set_LIN_BreakCB
- .text.USART_DMASend
-                0x08000bbc       0x58 ./src/MCAL/USART/USART_program.o
-                0x08000bbc                USART_DMASend
- .text.USART_DMARecieve
-                0x08000c14       0x34 ./src/MCAL/USART/USART_program.o
-                0x08000c14                USART_DMARecieve
- .text.sysTick_init
-                0x08000c48       0x1c ./src/MCAL/SysTick/STK_program.o
-                0x08000c48                sysTick_init
- .text.sysTick_start
-                0x08000c64       0x1c ./src/MCAL/SysTick/STK_program.o
-                0x08000c64                sysTick_start
- .text.sysTick_setTime
-                0x08000c80       0x10 ./src/MCAL/SysTick/STK_program.o
-                0x08000c80                sysTick_setTime
- .text.sysTick_setcallback
-                0x08000c90       0x14 ./src/MCAL/SysTick/STK_program.o
-                0x08000c90                sysTick_setcallback
+                0x080007a4      0x130 ./src/MCAL/USART/USART_program.o
+                0x080007a4                USART1_IRQHandler
  .text.SysTick_Handler
-                0x08000ca4       0x10 ./src/MCAL/SysTick/STK_program.o
-                0x08000ca4                SysTick_Handler
- .text.RCC_u8ReadSystemClock
-                0x08000cb4       0x14 ./src/MCAL/RCC/RCC_program.o
-                0x08000cb4                RCC_u8ReadSystemClock
- .text.RCC_u8SwitchSystemClock
-                0x08000cc8       0x14 ./src/MCAL/RCC/RCC_program.o
-                0x08000cc8                RCC_u8SwitchSystemClock
- .text.RCC_Peripheral_Config
-                0x08000cdc       0xa4 ./src/MCAL/RCC/RCC_program.o
-                0x08000cdc                RCC_Peripheral_Config
- .text.RCC_u32ReadSystemFreq
-                0x08000d80       0x84 ./src/MCAL/RCC/RCC_program.o
-                0x08000d80                RCC_u32ReadSystemFreq
- .text.RCC_u32ReadAHBFreq
-                0x08000e04       0x8c ./src/MCAL/RCC/RCC_program.o
-                0x08000e04                RCC_u32ReadAHBFreq
- .text.RCC_u32ReadAPB2Freq
-                0x08000e90       0x2c ./src/MCAL/RCC/RCC_program.o
-                0x08000e90                RCC_u32ReadAPB2Freq
- .text.NVIC_EnableIRQ
-                0x08000ebc       0x2c ./src/MCAL/NVIC/NVIC_program.o
-                0x08000ebc                NVIC_EnableIRQ
+                0x080008d4       0x10 ./src/MCAL/SysTick/STK_program.o
+                0x080008d4                SysTick_Handler
+ .text.RCC_u8ChangeClockStatus
+                0x080008e4       0x38 ./src/MCAL/RCC/RCC_program.o
+                0x080008e4                RCC_u8ChangeClockStatus
+ .text.flash_write
+                0x0800091c       0x34 ./src/MCAL/Flash/Flash_program.o
+ .text.Flash_unlock
+                0x08000950       0x18 ./src/MCAL/Flash/Flash_program.o
+                0x08000950                Flash_unlock
+ .text.Flash_lock
+                0x08000968       0x1c ./src/MCAL/Flash/Flash_program.o
+                0x08000968                Flash_lock
+ .text.Flash_massErase
+                0x08000984       0x64 ./src/MCAL/Flash/Flash_program.o
+                0x08000984                Flash_massErase
+ .text.Flash_pageErase
+                0x080009e8       0x6c ./src/MCAL/Flash/Flash_program.o
+                0x080009e8                Flash_pageErase
+ .text.Flash_programWrite
+                0x08000a54      0x2d4 ./src/MCAL/Flash/Flash_program.o
+                0x08000a54                Flash_programWrite
  .text.get_TCFlagStatus
-                0x08000ee8       0x18 ./src/MCAL/DMA/DMA_program.o
+                0x08000d28       0x18 ./src/MCAL/DMA/DMA_program.o
  .text.get_HTCFlagStatus
-                0x08000f00       0x18 ./src/MCAL/DMA/DMA_program.o
+                0x08000d40       0x18 ./src/MCAL/DMA/DMA_program.o
  .text.get_ERRFlagStatus
-                0x08000f18       0x18 ./src/MCAL/DMA/DMA_program.o
+                0x08000d58       0x18 ./src/MCAL/DMA/DMA_program.o
  .text.clear_TCFlag
-                0x08000f30       0x18 ./src/MCAL/DMA/DMA_program.o
+                0x08000d70       0x18 ./src/MCAL/DMA/DMA_program.o
  .text.clear_HTCFlag
-                0x08000f48       0x18 ./src/MCAL/DMA/DMA_program.o
+                0x08000d88       0x18 ./src/MCAL/DMA/DMA_program.o
  .text.clear_ERRFlag
-                0x08000f60       0x18 ./src/MCAL/DMA/DMA_program.o
- .text.DMA_voidInit
-                0x08000f78       0x3c ./src/MCAL/DMA/DMA_program.o
-                0x08000f78                DMA_voidInit
- .text.DMA_u8ChannelInit
-                0x08000fb4       0x40 ./src/MCAL/DMA/DMA_program.o
-                0x08000fb4                DMA_u8ChannelInit
- .text.DMA_voidStart
-                0x08000ff4       0xb0 ./src/MCAL/DMA/DMA_program.o
-                0x08000ff4                DMA_voidStart
- .text.set_ChannelX_TCHandler
-                0x080010a4       0x14 ./src/MCAL/DMA/DMA_program.o
-                0x080010a4                set_ChannelX_TCHandler
+                0x08000da0       0x18 ./src/MCAL/DMA/DMA_program.o
  .text.DMA1_Channel1_IRQHandler
-                0x080010b8       0x58 ./src/MCAL/DMA/DMA_program.o
-                0x080010b8                DMA1_Channel1_IRQHandler
+                0x08000db8       0x58 ./src/MCAL/DMA/DMA_program.o
+                0x08000db8                DMA1_Channel1_IRQHandler
  .text.DMA1_Channel2_IRQHandler
-                0x08001110       0x58 ./src/MCAL/DMA/DMA_program.o
-                0x08001110                DMA1_Channel2_IRQHandler
+                0x08000e10       0x58 ./src/MCAL/DMA/DMA_program.o
+                0x08000e10                DMA1_Channel2_IRQHandler
  .text.DMA1_Channel3_IRQHandler
-                0x08001168       0x58 ./src/MCAL/DMA/DMA_program.o
-                0x08001168                DMA1_Channel3_IRQHandler
+                0x08000e68       0x58 ./src/MCAL/DMA/DMA_program.o
+                0x08000e68                DMA1_Channel3_IRQHandler
  .text.DMA1_Channel4_IRQHandler
-                0x080011c0       0xa0 ./src/MCAL/DMA/DMA_program.o
-                0x080011c0                DMA1_Channel4_IRQHandler
+                0x08000ec0       0xa0 ./src/MCAL/DMA/DMA_program.o
+                0x08000ec0                DMA1_Channel4_IRQHandler
  .text.DMA1_Channel5_IRQHandler
-                0x08001260       0xa0 ./src/MCAL/DMA/DMA_program.o
-                0x08001260                DMA1_Channel5_IRQHandler
+                0x08000f60       0xa0 ./src/MCAL/DMA/DMA_program.o
+                0x08000f60                DMA1_Channel5_IRQHandler
  .text.DMA1_Channel6_IRQHandler
-                0x08001300       0x58 ./src/MCAL/DMA/DMA_program.o
-                0x08001300                DMA1_Channel6_IRQHandler
+                0x08001000       0x58 ./src/MCAL/DMA/DMA_program.o
+                0x08001000                DMA1_Channel6_IRQHandler
  .text.DMA1_Channel7_IRQHandler
-                0x08001358       0x58 ./src/MCAL/DMA/DMA_program.o
-                0x08001358                DMA1_Channel7_IRQHandler
+                0x08001058       0x58 ./src/MCAL/DMA/DMA_program.o
+                0x08001058                DMA1_Channel7_IRQHandler
  .text.DIO_SetPinMode
-                0x080013b0       0x40 ./src/MCAL/DIO/DIO_program.o
-                0x080013b0                DIO_SetPinMode
- .text.DIO_SetPinVal
-                0x080013f0       0x24 ./src/MCAL/DIO/DIO_program.o
-                0x080013f0                DIO_SetPinVal
- .text.GPIO_Config
-                0x08001414       0xe0 ./src/MCAL/DIO/DIO_program.o
-                0x08001414                GPIO_Config
- .text.QueueInit
-                0x080014f4       0x14 ./src/LIB/Queue/queue.o
-                0x080014f4                QueueInit
- .text.QueueIsEmpty
-                0x08001508        0xc ./src/LIB/Queue/queue.o
-                0x08001508                QueueIsEmpty
+                0x080010b0       0x40 ./src/MCAL/DIO/DIO_program.o
+                0x080010b0                DIO_SetPinMode
  .text.QueueIsFull
-                0x08001514       0x10 ./src/LIB/Queue/queue.o
-                0x08001514                QueueIsFull
- .text.Enqueue  0x08001524       0x40 ./src/LIB/Queue/queue.o
-                0x08001524                Enqueue
- .text.Dequeue  0x08001564       0x58 ./src/LIB/Queue/queue.o
-                0x08001564                Dequeue
- .text.USRTH_DMAEnable
-                0x080015bc       0x18 ./src/HAL/USART_Handler/USRTH_program.o
-                0x080015bc                USRTH_DMAEnable
- .text.switch_init
-                0x080015d4       0x6c ./src/HAL/Switch/Switch_program.o
-                0x080015d4                switch_init
- .text.Header_received
-                0x08001640        0xc ./src/HAL/LIN/LIN_program.o
- .text.Response_received
-                0x0800164c        0xc ./src/HAL/LIN/LIN_program.o
- .text.LIN_MasterTask
-                0x08001658       0xd8 ./src/HAL/LIN/LIN_program.o
- .text.Send_Checksum
-                0x08001730       0x1c ./src/HAL/LIN/LIN_program.o
- .text.LIN_SlaveTask
-                0x0800174c      0x1dc ./src/HAL/LIN/LIN_program.o
- .text.LIN_Break_detected
-                0x08001928       0x2c ./src/HAL/LIN/LIN_program.o
- .text.LIN_REC_HEADER
-                0x08001954       0x28 ./src/HAL/LIN/LIN_program.o
- .text.LIN_init
-                0x0800197c       0x60 ./src/HAL/LIN/LIN_program.o
-                0x0800197c                LIN_init
- .text.LIN_masterInit
-                0x080019dc       0x64 ./src/HAL/LIN/LIN_program.o
-                0x080019dc                LIN_masterInit
- .text.getSDU   0x08001a40       0x48 ./src/HAL/LIN/LIN_program.o
-                0x08001a40                getSDU
- .text.setSDU   0x08001a88       0x48 ./src/HAL/LIN/LIN_program.o
-                0x08001a88                setSDU
- .text.CLCD_voidSetDataPort
-                0x08001ad0       0x6c ./src/HAL/LCD/C_LCD_program.o
- .text.FSM_task5
-                0x08001b3c       0x30 ./src/HAL/LCD/C_LCD_program.o
- .text.FSM_task4
-                0x08001b6c       0x30 ./src/HAL/LCD/C_LCD_program.o
- .text.FSM_task3
-                0x08001b9c       0x30 ./src/HAL/LCD/C_LCD_program.o
- .text.FSM_task2
-                0x08001bcc       0x14 ./src/HAL/LCD/C_LCD_program.o
- .text.FSM_task1
-                0x08001be0       0x30 ./src/HAL/LCD/C_LCD_program.o
- .text.LCD_cursor_blinkingOff
-                0x08001c10       0x50 ./src/HAL/LCD/C_LCD_program.o
- .text.LCD_cursor_blinkingOn
-                0x08001c60       0x50 ./src/HAL/LCD/C_LCD_program.o
- .text.LCD_cursor_moving
-                0x08001cb0       0x7c ./src/HAL/LCD/C_LCD_program.o
- .text.LCD_wipe
-                0x08001d2c       0x50 ./src/HAL/LCD/C_LCD_program.o
- .text.LCD_apply
-                0x08001d7c       0x78 ./src/HAL/LCD/C_LCD_program.o
- .text.FSM_init
-                0x08001df4       0x30 ./src/HAL/LCD/C_LCD_program.o
-                0x08001df4                FSM_init
- .text.LCD_OS_runnable
-                0x08001e24       0x90 ./src/HAL/LCD/C_LCD_program.o
-                0x08001e24                LCD_OS_runnable
- .text.CLCD_init
-                0x08001eb4       0x90 ./src/HAL/LCD/C_LCD_program.o
-                0x08001eb4                CLCD_init
+                0x080010f0       0x10 ./src/LIB/Queue/queue.o
+                0x080010f0                QueueIsFull
+ .text.Enqueue  0x08001100       0x40 ./src/LIB/Queue/queue.o
+                0x08001100                Enqueue
  .text.LCD_OS_write
-                0x08001f44       0x3c ./src/HAL/LCD/C_LCD_program.o
-                0x08001f44                LCD_OS_write
- .text.LIN_APP_task
-                0x08001f80       0x5c ./src/Application/LIN_APP/LIN_APP.o
-                0x08001f80                LIN_APP_task
- .text.main     0x08001fdc       0x6c ./src/Application/main.o
-                0x08001fdc                main
- .text.__errno  0x08002048        0xc d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x08002048                __errno
+                0x08001140       0x3c ./src/HAL/LCD/C_LCD_program.o
+                0x08001140                LCD_OS_write
+ .text.main     0x0800117c      0x120 ./src/Application/main.o
+                0x0800117c                main
+ .text.__errno  0x0800129c        0xc d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x0800129c                __errno
+ .text.memset   0x080012a8       0x10 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x080012a8                memset
  .text._vsnprintf_r
-                0x08002054       0x56 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08002054                _vsniprintf_r
-                0x08002054                _vsnprintf_r
- *fill*         0x080020aa        0x2 
+                0x080012b8       0x56 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x080012b8                _vsniprintf_r
+                0x080012b8                _vsnprintf_r
+ *fill*         0x0800130e        0x2 
  .text.vsnprintf
-                0x080020ac       0x1c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x080020ac                vsniprintf
-                0x080020ac                vsnprintf
+                0x08001310       0x1c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08001310                vsniprintf
+                0x08001310                vsnprintf
  .text.__ssputs_r
-                0x080020c8       0xb2 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x080020c8                __ssputs_r
- *fill*         0x0800217a        0x2 
+                0x0800132c       0xb2 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x0800132c                __ssputs_r
+ *fill*         0x080013de        0x2 
  .text._svfprintf_r
-                0x0800217c      0x1e8 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x0800217c                _svfiprintf_r
-                0x0800217c                _svfprintf_r
+                0x080013e0      0x1e8 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x080013e0                _svfiprintf_r
+                0x080013e0                _svfprintf_r
  .text._printf_common
-                0x08002364       0xec d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08002364                _printf_common
+                0x080015c8       0xec d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x080015c8                _printf_common
  .text._printf_i
-                0x08002450      0x24c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08002450                _printf_i
- .text.memchr   0x0800269c       0x1c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
-                0x0800269c                memchr
- .text.memcpy   0x080026b8       0x16 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x080026b8                memcpy
- .text.memmove  0x080026ce       0x36 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
-                0x080026ce                memmove
- .text._free_r  0x08002704       0x98 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
-                0x08002704                _free_r
+                0x080016b4      0x24c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x080016b4                _printf_i
+ .text.memchr   0x08001900       0x1c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+                0x08001900                memchr
+ .text.memcpy   0x0800191c       0x16 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x0800191c                memcpy
+ .text.memmove  0x08001932       0x36 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
+                0x08001932                memmove
+ .text._free_r  0x08001968       0x98 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+                0x08001968                _free_r
  .text._malloc_r
-                0x0800279c       0xbc d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x0800279c                _malloc_r
+                0x08001a00       0xbc d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x08001a00                _malloc_r
  .text._realloc_r
-                0x08002858       0x4c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
-                0x08002858                _realloc_r
- .text._sbrk_r  0x080028a4       0x20 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
-                0x080028a4                _sbrk_r
+                0x08001abc       0x4c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
+                0x08001abc                _realloc_r
+ .text._sbrk_r  0x08001b08       0x20 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+                0x08001b08                _sbrk_r
  .text.__malloc_lock
-                0x080028c4        0x2 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
-                0x080028c4                __malloc_lock
+                0x08001b28        0x2 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                0x08001b28                __malloc_lock
  .text.__malloc_unlock
-                0x080028c6        0x2 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
-                0x080028c6                __malloc_unlock
+                0x08001b2a        0x2 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                0x08001b2a                __malloc_unlock
  .text._malloc_usable_size_r
-                0x080028c8       0x14 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
-                0x080028c8                _malloc_usable_size_r
+                0x08001b2c       0x14 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x08001b2c                _malloc_usable_size_r
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.str1.4
-                0x080028dc      0x146 ./system/src/cortexm/exception_handlers.o
- *fill*         0x08002a22        0x2 
- .rodata.ledstatemap
-                0x08002a24        0x6 ./src/Other_Drivers/LED/LED_cfg.o
-                0x08002a24                ledstatemap
- *fill*         0x08002a2a        0x2 
+                0x08001b40      0x146 ./system/src/cortexm/exception_handlers.o
+ *fill*         0x08001c86        0x2 
  .rodata.ledmap
-                0x08002a2c       0x18 ./src/Other_Drivers/LED/LED_cfg.o
-                0x08002a2c                ledmap
+                0x08001c88       0x18 ./src/Other_Drivers/LED/LED_cfg.o
+                0x08001c88                ledmap
  .rodata.str1.4
-                0x08002a44       0x3f ./src/MCAL/USART/USART_program.o
- *fill*         0x08002a83        0x1 
+                0x08001ca0       0x3f ./src/MCAL/USART/USART_program.o
+ *fill*         0x08001cdf        0x1 
  .rodata.str1.4
-                0x08002a84       0x9c ./src/MCAL/DMA/DMA_program.o
+                0x08001ce0       0x9c ./src/MCAL/DMA/DMA_program.o
                                  0x99 (size before relaxing)
- .rodata.switchMap
-                0x08002b20       0x3c ./src/HAL/Switch/Switch_cfg.o
-                0x08002b20                switchMap
- .rodata.PID_map
-                0x08002b5c       0x3c ./src/HAL/LIN/LIN_cfg.o
-                0x08002b5c                PID_map
- .rodata.LIN_cfg_Arr
-                0x08002b98        0xc ./src/HAL/LIN/LIN_cfg.o
-                0x08002b98                LIN_cfg_Arr
- *fill*         0x08002ba4        0x4 
- .rodata        0x08002ba8       0x18 ./src/HAL/LIN/LIN_program.o
- .rodata.Master_task
-                0x08002bc0        0x8 ./src/HAL/LIN/LIN_program.o
-                0x08002bc0                Master_task
- .rodata.Slave_task
-                0x08002bc8        0x8 ./src/HAL/LIN/LIN_program.o
-                0x08002bc8                Slave_task
- .rodata.handlers
-                0x08002bd0       0x20 ./src/HAL/LCD/C_LCD_program.o
- .rodata.LCD_Task
-                0x08002bf0        0x8 ./src/HAL/LCD/C_LCD_program.o
-                0x08002bf0                LCD_Task
- .rodata.LCD_handlers
-                0x08002bf8       0x14 ./src/HAL/LCD/C_LCD_program.o
- .rodata        0x08002c0c        0x6 ./src/Application/LIN_APP/LIN_APP.o
- *fill*         0x08002c12        0x2 
- .rodata.LIN_demo
-                0x08002c14        0x8 ./src/Application/LIN_APP/LIN_APP.o
-                0x08002c14                LIN_demo
  .rodata.str1.1
-                0x08002c1c       0x11 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08001d7c       0x11 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .rodata.str1.1
-                0x08002c2d       0x22 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08001d8d       0x22 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
- .glue_7        0x08002c4f        0x0 linker stubs
+ .glue_7        0x08001daf        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08002c4f        0x0 linker stubs
+ .glue_7t       0x08001daf        0x0 linker stubs
 
-.vfp11_veneer   0x08002c50        0x0
- .vfp11_veneer  0x08002c50        0x0 linker stubs
+.vfp11_veneer   0x08001db0        0x0
+ .vfp11_veneer  0x08001db0        0x0 linker stubs
 
-.v4_bx          0x08002c50        0x0
- .v4_bx         0x08002c50        0x0 linker stubs
+.v4_bx          0x08001db0        0x0
+ .v4_bx         0x08001db0        0x0 linker stubs
 
-.iplt           0x08002c50        0x0
- .iplt          0x08002c50        0x0 ./system/src/stm32f1-stdperiph/misc.o
+.iplt           0x08001db0        0x0
+ .iplt          0x08001db0        0x0 ./system/src/stm32f1-stdperiph/misc.o
 
-.rel.dyn        0x08002c50        0x0
- .rel.iplt      0x08002c50        0x0 ./system/src/stm32f1-stdperiph/misc.o
+.rel.dyn        0x08001db0        0x0
+ .rel.iplt      0x08001db0        0x0 ./system/src/stm32f1-stdperiph/misc.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08002c50                . = ALIGN (0x4)
-                0x08002c50                __exidx_start = .
+                0x08001db0                . = ALIGN (0x4)
+                0x08001db0                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08002c50                __exidx_end = .
-                0x08002c50                . = ALIGN (0x4)
-                0x08002c50                _etext = .
-                0x08002c50                __etext = .
+                0x08001db0                __exidx_end = .
+                0x08001db0                . = ALIGN (0x4)
+                0x08001db0                _etext = .
+                0x08001db0                __etext = .
 
-.data_CCMRAM    0x00000000        0x0 load address 0x08002c50
+.data_CCMRAM    0x00000000        0x0 load address 0x08001db0
  FILL mask 0xff
  *(.data.CCMRAM .data.CCMRAM.*)
                 0x00000000                . = ALIGN (0x4)
-                0x08002c50                _sidata = LOADADDR (.data)
+                0x08001db0                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x90 load address 0x08002c50
+.data           0x20000000       0x88 load address 0x08001db0
  FILL mask 0xff
                 0x20000000                _sdata = .
                 0x20000000                __data_start__ = .
@@ -2855,130 +2995,87 @@ END GROUP
  .data.SystemCoreClock
                 0x2000001c        0x4 ./system/src/cmsis/system_stm32f10x.o
                 0x2000001c                SystemCoreClock
- .data.LIN_USART
-                0x20000020        0x4 ./src/HAL/LIN/LIN_program.o
- .data.steps    0x20000024        0x1 ./src/HAL/LCD/C_LCD_program.o
- *fill*         0x20000025        0x3 ff
  .data.impure_data
-                0x20000028       0x60 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x20000020       0x60 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .data._impure_ptr
-                0x20000088        0x4 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x20000088                _impure_ptr
+                0x20000080        0x4 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x20000080                _impure_ptr
  *(.data_end .data_end.*)
- .data_end      0x2000008c        0x4 ./system/src/newlib/_startup.o
-                0x20000090                . = ALIGN (0x4)
-                0x20000090                _edata = .
-                0x20000090                __data_end__ = .
+ .data_end      0x20000084        0x4 ./system/src/newlib/_startup.o
+                0x20000088                . = ALIGN (0x4)
+                0x20000088                _edata = .
+                0x20000088                __data_end__ = .
 
-.igot.plt       0x20000090        0x0 load address 0x08002ce0
- .igot.plt      0x20000090        0x0 ./system/src/stm32f1-stdperiph/misc.o
+.igot.plt       0x20000088        0x0 load address 0x08001e38
+ .igot.plt      0x20000088        0x0 ./system/src/stm32f1-stdperiph/misc.o
 
 .bss_CCMRAM     0x00000000        0x0
  *(.bss.CCMRAM .bss.CCMRAM.*)
 
-.bss            0x20000090      0x284
-                0x20000090                __bss_start__ = .
-                0x20000090                _sbss = .
+.bss            0x20000088      0x154
+                0x20000088                __bss_start__ = .
+                0x20000088                _sbss = .
  *(.bss_begin .bss_begin.*)
- .bss_begin     0x20000090        0x4 ./system/src/newlib/_startup.o
+ .bss_begin     0x20000088        0x4 ./system/src/newlib/_startup.o
  *(.bss .bss.*)
  .bss.current_heap_end.3974
-                0x20000094        0x4 ./system/src/newlib/_sbrk.o
+                0x2000008c        0x4 ./system/src/newlib/_sbrk.o
  .bss.name.4289
-                0x20000098        0x1 ./system/src/newlib/_syscalls.o
- *fill*         0x20000099        0x3 
- .bss.buf.5179  0x2000009c       0x80 ./system/src/diag/Trace.o
- .bss.sysTask   0x2000011c       0x40 ./src/RTOS/RTOS_program.o
- .bss.index     0x2000015c        0x4 ./src/RTOS/RTOS_program.o
- .bss.txbuffer  0x20000160       0x18 ./src/MCAL/USART/USART_program.o
- .bss.DMA_CB    0x20000178        0x4 ./src/MCAL/USART/USART_program.o
+                0x20000090        0x1 ./system/src/newlib/_syscalls.o
+ *fill*         0x20000091        0x3 
+ .bss.buf.5179  0x20000094       0x80 ./system/src/diag/Trace.o
+ .bss.txbuffer  0x20000114       0x18 ./src/MCAL/USART/USART_program.o
+ .bss.DMA_CB    0x2000012c        0x4 ./src/MCAL/USART/USART_program.o
  .bss.Sending_Mode
-                0x2000017c        0x4 ./src/MCAL/USART/USART_program.o
+                0x20000130        0x4 ./src/MCAL/USART/USART_program.o
  .bss.USART_DMAState
-                0x20000180        0x1 ./src/MCAL/USART/USART_program.o
-                0x20000180                USART_DMAState
- *fill*         0x20000181        0x3 
+                0x20000134        0x1 ./src/MCAL/USART/USART_program.o
+                0x20000134                USART_DMAState
+ *fill*         0x20000135        0x3 
  .bss.LIN_break_CB
-                0x20000184        0x4 ./src/MCAL/USART/USART_program.o
- .bss.rxbuffer  0x20000188       0x18 ./src/MCAL/USART/USART_program.o
- .bss.callBack  0x200001a0        0x4 ./src/MCAL/SysTick/STK_program.o
- .bss.x.3904    0x200001a4        0x4 ./src/MCAL/DMA/DMA_program.o
+                0x20000138        0x4 ./src/MCAL/USART/USART_program.o
+ .bss.rxbuffer  0x2000013c       0x18 ./src/MCAL/USART/USART_program.o
+ .bss.callBack  0x20000154        0x4 ./src/MCAL/SysTick/STK_program.o
+ .bss.x.3905    0x20000158        0x4 ./src/MCAL/DMA/DMA_program.o
  .bss.CB_Handlers
-                0x200001a8       0x54 ./src/MCAL/DMA/DMA_program.o
- .bss.x.3912    0x200001fc        0x4 ./src/MCAL/DMA/DMA_program.o
- .bss.LIN_databuffer
-                0x20000200       0x18 ./src/HAL/LIN/LIN_program.o
- .bss.checksum  0x20000218        0x1 ./src/HAL/LIN/LIN_program.o
- .bss.LIN_slaveStatus
-                0x20000219        0x1 ./src/HAL/LIN/LIN_program.o
- .bss.LIN_masterStatus
-                0x2000021a        0x1 ./src/HAL/LIN/LIN_program.o
- *fill*         0x2000021b        0x1 
- .bss.LIN_Msg   0x2000021c        0x9 ./src/HAL/LIN/LIN_program.o
- *fill*         0x20000225        0x3 
- .bss.Local_buffer.3985
-                0x20000228        0x9 ./src/HAL/LIN/LIN_program.o
- *fill*         0x20000231        0x3 
- .bss.Master_Header
-                0x20000234        0x2 ./src/HAL/LIN/LIN_program.o
- .bss.idx.3960  0x20000236        0x1 ./src/HAL/LIN/LIN_program.o
- .bss.dataLength.3986
-                0x20000237        0x1 ./src/HAL/LIN/LIN_program.o
- .bss.Slave_Header
-                0x20000238        0x2 ./src/HAL/LIN/LIN_program.o
- *fill*         0x2000023a        0x2 
- .bss.Queue     0x2000023c        0x8 ./src/HAL/LCD/C_LCD_program.o
- .bss.index.3839
-                0x20000244        0x1 ./src/HAL/LCD/C_LCD_program.o
- .bss.FSM_Complete
-                0x20000245        0x1 ./src/HAL/LCD/C_LCD_program.o
- *fill*         0x20000246        0x2 
- .bss.taskInfo  0x20000248       0x78 ./src/HAL/LCD/C_LCD_program.o
- .bss.CurrentTask
-                0x200002c0        0xc ./src/HAL/LCD/C_LCD_program.o
- .bss.LCD_index
-                0x200002cc        0x1 ./src/HAL/LCD/C_LCD_program.o
- *fill*         0x200002cd        0x3 
+                0x2000015c       0x54 ./src/MCAL/DMA/DMA_program.o
+ .bss.x.3913    0x200001b0        0x4 ./src/MCAL/DMA/DMA_program.o
+ .bss.Queue     0x200001b4        0x8 ./src/HAL/LCD/C_LCD_program.o
  .bss.__malloc_sbrk_start
-                0x200002d0        0x4 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x200002d0                __malloc_sbrk_start
+                0x200001bc        0x4 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x200001bc                __malloc_sbrk_start
  .bss.__malloc_free_list
-                0x200002d4        0x4 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x200002d4                __malloc_free_list
+                0x200001c0        0x4 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x200001c0                __malloc_free_list
  *(COMMON)
- COMMON         0x200002d8        0x4 ./system/src/newlib/_syscalls.o
-                0x200002d8                errno
- COMMON         0x200002dc       0x20 ./src/System_tasks/tasks_cfg.o
-                0x200002dc                baseTaskInfo
- COMMON         0x200002fc        0x1 ./src/RTOS/RTOS_program.o
-                0x200002fc                OSFlag
- *fill*         0x200002fd        0x3 
- COMMON         0x20000300        0xf ./src/MCAL/DMA/DMA_program.o
-                0x20000300                Channel_AlwaysBusy
-                0x20000308                Channel_States
+ COMMON         0x200001c4        0x4 ./system/src/newlib/_syscalls.o
+                0x200001c4                errno
+ COMMON         0x200001c8        0xf ./src/MCAL/DMA/DMA_program.o
+                0x200001c8                Channel_AlwaysBusy
+                0x200001d0                Channel_States
  *(.bss_end .bss_end.*)
- *fill*         0x2000030f        0x1 
- .bss_end       0x20000310        0x4 ./system/src/newlib/_startup.o
-                0x20000314                . = ALIGN (0x4)
-                0x20000314                __bss_end__ = .
-                0x20000314                _ebss = .
+ *fill*         0x200001d7        0x1 
+ .bss_end       0x200001d8        0x4 ./system/src/newlib/_startup.o
+                0x200001dc                . = ALIGN (0x4)
+                0x200001dc                __bss_end__ = .
+                0x200001dc                _ebss = .
 
 .noinit_CCMRAM
  *(.noinit.CCMRAM .noinit.CCMRAM.*)
 
-.noinit         0x20000314        0x0
-                0x20000314                _noinit = .
+.noinit         0x200001dc        0x0
+                0x200001dc                _noinit = .
  *(.noinit .noinit.*)
-                0x20000314                . = ALIGN (0x4)
-                0x20000314                _end_noinit = .
+                0x200001dc                . = ALIGN (0x4)
+                0x200001dc                _end_noinit = .
                 [!provide]                PROVIDE (end, _end_noinit)
                 [!provide]                PROVIDE (_end, _end_noinit)
                 [!provide]                PROVIDE (__end, _end_noinit)
                 [!provide]                PROVIDE (__end__, _end_noinit)
 
-._check_stack   0x20000314      0x100
-                0x20000414                . = (. + _Minimum_Stack_Size)
- *fill*         0x20000314      0x100 
+._check_stack   0x200001dc      0x100
+                0x200002dc                . = (. + _Minimum_Stack_Size)
+ *fill*         0x200001dc      0x100 
 
 .b1text
  *(.b1text)
@@ -3036,24 +3133,16 @@ END GROUP
  .comment       0x0000006e       0x6f ./system/src/cortexm/exception_handlers.o
  .comment       0x0000006e       0x6f ./system/src/cmsis/system_stm32f10x.o
  .comment       0x0000006e       0x6f ./system/src/cmsis/vectors_stm32f10x.o
- .comment       0x0000006e       0x6f ./src/System_tasks/tasks_cfg.o
- .comment       0x0000006e       0x6f ./src/RTOS/RTOS_program.o
  .comment       0x0000006e       0x6f ./src/Other_Drivers/LED/LED_cfg.o
  .comment       0x0000006e       0x6f ./src/Other_Drivers/LED/LED_program.o
  .comment       0x0000006e       0x6f ./src/MCAL/USART/USART_program.o
  .comment       0x0000006e       0x6f ./src/MCAL/SysTick/STK_program.o
  .comment       0x0000006e       0x6f ./src/MCAL/RCC/RCC_program.o
- .comment       0x0000006e       0x6f ./src/MCAL/NVIC/NVIC_program.o
+ .comment       0x0000006e       0x6f ./src/MCAL/Flash/Flash_program.o
  .comment       0x0000006e       0x6f ./src/MCAL/DMA/DMA_program.o
  .comment       0x0000006e       0x6f ./src/MCAL/DIO/DIO_program.o
  .comment       0x0000006e       0x6f ./src/LIB/Queue/queue.o
- .comment       0x0000006e       0x6f ./src/HAL/USART_Handler/USRTH_program.o
- .comment       0x0000006e       0x6f ./src/HAL/Switch/Switch_cfg.o
- .comment       0x0000006e       0x6f ./src/HAL/Switch/Switch_program.o
- .comment       0x0000006e       0x6f ./src/HAL/LIN/LIN_cfg.o
- .comment       0x0000006e       0x6f ./src/HAL/LIN/LIN_program.o
  .comment       0x0000006e       0x6f ./src/HAL/LCD/C_LCD_program.o
- .comment       0x0000006e       0x6f ./src/Application/LIN_APP/LIN_APP.o
  .comment       0x0000006e       0x6f ./src/Application/main.o
 
 .ARM.attributes
@@ -3079,71 +3168,57 @@ END GROUP
  .ARM.attributes
                 0x000001cb       0x33 ./system/src/cmsis/vectors_stm32f10x.o
  .ARM.attributes
-                0x000001fe       0x33 ./src/System_tasks/tasks_cfg.o
+                0x000001fe       0x33 ./src/Other_Drivers/LED/LED_cfg.o
  .ARM.attributes
-                0x00000231       0x33 ./src/RTOS/RTOS_program.o
+                0x00000231       0x33 ./src/Other_Drivers/LED/LED_program.o
  .ARM.attributes
-                0x00000264       0x33 ./src/Other_Drivers/LED/LED_cfg.o
+                0x00000264       0x33 ./src/MCAL/USART/USART_program.o
  .ARM.attributes
-                0x00000297       0x33 ./src/Other_Drivers/LED/LED_program.o
+                0x00000297       0x33 ./src/MCAL/SysTick/STK_program.o
  .ARM.attributes
-                0x000002ca       0x33 ./src/MCAL/USART/USART_program.o
+                0x000002ca       0x33 ./src/MCAL/RCC/RCC_program.o
  .ARM.attributes
-                0x000002fd       0x33 ./src/MCAL/SysTick/STK_program.o
+                0x000002fd       0x33 ./src/MCAL/Flash/Flash_program.o
  .ARM.attributes
-                0x00000330       0x33 ./src/MCAL/RCC/RCC_program.o
+                0x00000330       0x33 ./src/MCAL/DMA/DMA_program.o
  .ARM.attributes
-                0x00000363       0x33 ./src/MCAL/NVIC/NVIC_program.o
+                0x00000363       0x33 ./src/MCAL/DIO/DIO_program.o
  .ARM.attributes
-                0x00000396       0x33 ./src/MCAL/DMA/DMA_program.o
+                0x00000396       0x33 ./src/LIB/Queue/queue.o
  .ARM.attributes
-                0x000003c9       0x33 ./src/MCAL/DIO/DIO_program.o
+                0x000003c9       0x33 ./src/HAL/LCD/C_LCD_program.o
  .ARM.attributes
-                0x000003fc       0x33 ./src/LIB/Queue/queue.o
+                0x000003fc       0x33 ./src/Application/main.o
  .ARM.attributes
-                0x0000042f       0x33 ./src/HAL/USART_Handler/USRTH_program.o
+                0x0000042f       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
  .ARM.attributes
-                0x00000462       0x33 ./src/HAL/Switch/Switch_cfg.o
+                0x0000045c       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000495       0x33 ./src/HAL/Switch/Switch_program.o
+                0x00000489       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x000004c8       0x33 ./src/HAL/LIN/LIN_cfg.o
+                0x000004b6       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
  .ARM.attributes
-                0x000004fb       0x33 ./src/HAL/LIN/LIN_program.o
+                0x000004e3       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .ARM.attributes
-                0x0000052e       0x33 ./src/HAL/LCD/C_LCD_program.o
+                0x00000510       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
  .ARM.attributes
-                0x00000561       0x33 ./src/Application/LIN_APP/LIN_APP.o
+                0x0000053d       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
  .ARM.attributes
-                0x00000594       0x33 ./src/Application/main.o
+                0x0000056a       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x000005c7       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00000597       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
  .ARM.attributes
-                0x000005f4       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x000005c4       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
  .ARM.attributes
-                0x00000621       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x000005f1       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
  .ARM.attributes
-                0x0000064e       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x0000061e       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
  .ARM.attributes
-                0x0000067b       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000064b       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x000006a8       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+                0x00000678       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
  .ARM.attributes
-                0x000006d5       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
- .ARM.attributes
-                0x00000702       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
- .ARM.attributes
-                0x0000072f       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
- .ARM.attributes
-                0x0000075c       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
- .ARM.attributes
-                0x00000789       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
- .ARM.attributes
-                0x000007b6       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
- .ARM.attributes
-                0x000007e3       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
- .ARM.attributes
-                0x00000810       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x000006a5       0x2d d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
 
 .debug
  *(.debug)
@@ -3157,7 +3232,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x8e0
+.debug_aranges  0x00000000      0x6d0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 ./system/src/newlib/_exit.o
@@ -3180,48 +3255,32 @@ END GROUP
  .debug_aranges
                 0x00000210       0x20 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_aranges
-                0x00000230       0x20 ./src/System_tasks/tasks_cfg.o
+                0x00000230       0x18 ./src/Other_Drivers/LED/LED_cfg.o
  .debug_aranges
-                0x00000250       0x40 ./src/RTOS/RTOS_program.o
+                0x00000248       0x28 ./src/Other_Drivers/LED/LED_program.o
  .debug_aranges
-                0x00000290       0x18 ./src/Other_Drivers/LED/LED_cfg.o
+                0x00000270       0xc0 ./src/MCAL/USART/USART_program.o
  .debug_aranges
-                0x000002a8       0x28 ./src/Other_Drivers/LED/LED_program.o
+                0x00000330       0x48 ./src/MCAL/SysTick/STK_program.o
  .debug_aranges
-                0x000002d0       0xc0 ./src/MCAL/USART/USART_program.o
+                0x00000378       0x98 ./src/MCAL/RCC/RCC_program.o
  .debug_aranges
-                0x00000390       0x48 ./src/MCAL/SysTick/STK_program.o
+                0x00000410       0x50 ./src/MCAL/Flash/Flash_program.o
  .debug_aranges
-                0x000003d8       0x98 ./src/MCAL/RCC/RCC_program.o
+                0x00000460       0xc8 ./src/MCAL/DMA/DMA_program.o
  .debug_aranges
-                0x00000470       0x88 ./src/MCAL/NVIC/NVIC_program.o
+                0x00000528       0x40 ./src/MCAL/DIO/DIO_program.o
  .debug_aranges
-                0x000004f8       0xc8 ./src/MCAL/DMA/DMA_program.o
+                0x00000568       0x40 ./src/LIB/Queue/queue.o
  .debug_aranges
-                0x000005c0       0x40 ./src/MCAL/DIO/DIO_program.o
+                0x000005a8      0x108 ./src/HAL/LCD/C_LCD_program.o
  .debug_aranges
-                0x00000600       0x40 ./src/LIB/Queue/queue.o
- .debug_aranges
-                0x00000640       0x88 ./src/HAL/USART_Handler/USRTH_program.o
- .debug_aranges
-                0x000006c8       0x18 ./src/HAL/Switch/Switch_cfg.o
- .debug_aranges
-                0x000006e0       0x30 ./src/HAL/Switch/Switch_program.o
- .debug_aranges
-                0x00000710       0x18 ./src/HAL/LIN/LIN_cfg.o
- .debug_aranges
-                0x00000728       0x70 ./src/HAL/LIN/LIN_program.o
- .debug_aranges
-                0x00000798      0x108 ./src/HAL/LCD/C_LCD_program.o
- .debug_aranges
-                0x000008a0       0x20 ./src/Application/LIN_APP/LIN_APP.o
- .debug_aranges
-                0x000008c0       0x20 ./src/Application/main.o
+                0x000006b0       0x20 ./src/Application/main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x7819
+.debug_info     0x00000000     0x5d7b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xef ./system/src/newlib/_exit.o
  .debug_info    0x000000ef      0x11f ./system/src/newlib/_sbrk.o
@@ -3233,27 +3292,19 @@ END GROUP
  .debug_info    0x000010cd      0x8da ./system/src/cortexm/exception_handlers.o
  .debug_info    0x000019a7      0x497 ./system/src/cmsis/system_stm32f10x.o
  .debug_info    0x00001e3e       0xd1 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_info    0x00001f0f      0x124 ./src/System_tasks/tasks_cfg.o
- .debug_info    0x00002033      0x299 ./src/RTOS/RTOS_program.o
- .debug_info    0x000022cc      0x178 ./src/Other_Drivers/LED/LED_cfg.o
- .debug_info    0x00002444      0x1c8 ./src/Other_Drivers/LED/LED_program.o
- .debug_info    0x0000260c      0xabe ./src/MCAL/USART/USART_program.o
- .debug_info    0x000030ca      0x1aa ./src/MCAL/SysTick/STK_program.o
- .debug_info    0x00003274      0x51d ./src/MCAL/RCC/RCC_program.o
- .debug_info    0x00003791      0x417 ./src/MCAL/NVIC/NVIC_program.o
- .debug_info    0x00003ba8      0xb0d ./src/MCAL/DMA/DMA_program.o
- .debug_info    0x000046b5      0x2c8 ./src/MCAL/DIO/DIO_program.o
- .debug_info    0x0000497d      0x255 ./src/LIB/Queue/queue.o
- .debug_info    0x00004bd2      0x937 ./src/HAL/USART_Handler/USRTH_program.o
- .debug_info    0x00005509      0x14e ./src/HAL/Switch/Switch_cfg.o
- .debug_info    0x00005657      0x2e6 ./src/HAL/Switch/Switch_program.o
- .debug_info    0x0000593d       0xe1 ./src/HAL/LIN/LIN_cfg.o
- .debug_info    0x00005a1e      0x7ed ./src/HAL/LIN/LIN_program.o
- .debug_info    0x0000620b     0x119c ./src/HAL/LCD/C_LCD_program.o
- .debug_info    0x000073a7      0x1e5 ./src/Application/LIN_APP/LIN_APP.o
- .debug_info    0x0000758c      0x28d ./src/Application/main.o
+ .debug_info    0x00001f0f      0x17f ./src/Other_Drivers/LED/LED_cfg.o
+ .debug_info    0x0000208e      0x1cf ./src/Other_Drivers/LED/LED_program.o
+ .debug_info    0x0000225d      0xac5 ./src/MCAL/USART/USART_program.o
+ .debug_info    0x00002d22      0x1b1 ./src/MCAL/SysTick/STK_program.o
+ .debug_info    0x00002ed3      0x524 ./src/MCAL/RCC/RCC_program.o
+ .debug_info    0x000033f7      0x53f ./src/MCAL/Flash/Flash_program.o
+ .debug_info    0x00003936      0xb14 ./src/MCAL/DMA/DMA_program.o
+ .debug_info    0x0000444a      0x2cf ./src/MCAL/DIO/DIO_program.o
+ .debug_info    0x00004719      0x25c ./src/LIB/Queue/queue.o
+ .debug_info    0x00004975     0x11a3 ./src/HAL/LCD/C_LCD_program.o
+ .debug_info    0x00005b18      0x263 ./src/Application/main.o
 
-.debug_abbrev   0x00000000     0x267d
+.debug_abbrev   0x00000000     0x1c8b
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x8e ./system/src/newlib/_exit.o
  .debug_abbrev  0x0000008e       0xb9 ./system/src/newlib/_sbrk.o
@@ -3265,27 +3316,19 @@ END GROUP
  .debug_abbrev  0x000007e7      0x247 ./system/src/cortexm/exception_handlers.o
  .debug_abbrev  0x00000a2e      0x159 ./system/src/cmsis/system_stm32f10x.o
  .debug_abbrev  0x00000b87       0x9d ./system/src/cmsis/vectors_stm32f10x.o
- .debug_abbrev  0x00000c24       0xbb ./src/System_tasks/tasks_cfg.o
- .debug_abbrev  0x00000cdf      0x19a ./src/RTOS/RTOS_program.o
- .debug_abbrev  0x00000e79       0xbf ./src/Other_Drivers/LED/LED_cfg.o
- .debug_abbrev  0x00000f38      0x118 ./src/Other_Drivers/LED/LED_program.o
- .debug_abbrev  0x00001050      0x274 ./src/MCAL/USART/USART_program.o
- .debug_abbrev  0x000012c4      0x10d ./src/MCAL/SysTick/STK_program.o
- .debug_abbrev  0x000013d1      0x173 ./src/MCAL/RCC/RCC_program.o
- .debug_abbrev  0x00001544      0x14e ./src/MCAL/NVIC/NVIC_program.o
- .debug_abbrev  0x00001692      0x21d ./src/MCAL/DMA/DMA_program.o
- .debug_abbrev  0x000018af      0x137 ./src/MCAL/DIO/DIO_program.o
- .debug_abbrev  0x000019e6      0x123 ./src/LIB/Queue/queue.o
- .debug_abbrev  0x00001b09      0x1ef ./src/HAL/USART_Handler/USRTH_program.o
- .debug_abbrev  0x00001cf8       0xce ./src/HAL/Switch/Switch_cfg.o
- .debug_abbrev  0x00001dc6      0x199 ./src/HAL/Switch/Switch_program.o
- .debug_abbrev  0x00001f5f       0x8d ./src/HAL/LIN/LIN_cfg.o
- .debug_abbrev  0x00001fec      0x26c ./src/HAL/LIN/LIN_program.o
- .debug_abbrev  0x00002258      0x22c ./src/HAL/LCD/C_LCD_program.o
- .debug_abbrev  0x00002484      0x10a ./src/Application/LIN_APP/LIN_APP.o
- .debug_abbrev  0x0000258e       0xef ./src/Application/main.o
+ .debug_abbrev  0x00000c24       0xbf ./src/Other_Drivers/LED/LED_cfg.o
+ .debug_abbrev  0x00000ce3      0x118 ./src/Other_Drivers/LED/LED_program.o
+ .debug_abbrev  0x00000dfb      0x274 ./src/MCAL/USART/USART_program.o
+ .debug_abbrev  0x0000106f      0x10d ./src/MCAL/SysTick/STK_program.o
+ .debug_abbrev  0x0000117c      0x173 ./src/MCAL/RCC/RCC_program.o
+ .debug_abbrev  0x000012ef      0x1d0 ./src/MCAL/Flash/Flash_program.o
+ .debug_abbrev  0x000014bf      0x21d ./src/MCAL/DMA/DMA_program.o
+ .debug_abbrev  0x000016dc      0x137 ./src/MCAL/DIO/DIO_program.o
+ .debug_abbrev  0x00001813      0x123 ./src/LIB/Queue/queue.o
+ .debug_abbrev  0x00001936      0x22c ./src/HAL/LCD/C_LCD_program.o
+ .debug_abbrev  0x00001b62      0x129 ./src/Application/main.o
 
-.debug_line     0x00000000     0x4e92
+.debug_line     0x00000000     0x3dd3
  *(.debug_line)
  .debug_line    0x00000000      0x31d ./system/src/newlib/_exit.o
  .debug_line    0x0000031d      0x2ce ./system/src/newlib/_sbrk.o
@@ -3297,27 +3340,19 @@ END GROUP
  .debug_line    0x00001a49      0x6ac ./system/src/cortexm/exception_handlers.o
  .debug_line    0x000020f5      0x3cb ./system/src/cmsis/system_stm32f10x.o
  .debug_line    0x000024c0       0xfb ./system/src/cmsis/vectors_stm32f10x.o
- .debug_line    0x000025bb      0x2a0 ./src/System_tasks/tasks_cfg.o
- .debug_line    0x0000285b      0x19e ./src/RTOS/RTOS_program.o
- .debug_line    0x000029f9       0xf4 ./src/Other_Drivers/LED/LED_cfg.o
- .debug_line    0x00002aed      0x161 ./src/Other_Drivers/LED/LED_program.o
- .debug_line    0x00002c4e      0x363 ./src/MCAL/USART/USART_program.o
- .debug_line    0x00002fb1      0x11d ./src/MCAL/SysTick/STK_program.o
- .debug_line    0x000030ce      0x247 ./src/MCAL/RCC/RCC_program.o
- .debug_line    0x00003315      0x18d ./src/MCAL/NVIC/NVIC_program.o
- .debug_line    0x000034a2      0x339 ./src/MCAL/DMA/DMA_program.o
- .debug_line    0x000037db      0x112 ./src/MCAL/DIO/DIO_program.o
- .debug_line    0x000038ed       0xf6 ./src/LIB/Queue/queue.o
- .debug_line    0x000039e3      0x356 ./src/HAL/USART_Handler/USRTH_program.o
- .debug_line    0x00003d39       0xae ./src/HAL/Switch/Switch_cfg.o
- .debug_line    0x00003de7      0x162 ./src/HAL/Switch/Switch_program.o
- .debug_line    0x00003f49       0x6e ./src/HAL/LIN/LIN_cfg.o
- .debug_line    0x00003fb7      0x398 ./src/HAL/LIN/LIN_program.o
- .debug_line    0x0000434f      0x3e2 ./src/HAL/LCD/C_LCD_program.o
- .debug_line    0x00004731      0x4ac ./src/Application/LIN_APP/LIN_APP.o
- .debug_line    0x00004bdd      0x2b5 ./src/Application/main.o
+ .debug_line    0x000025bb       0xf4 ./src/Other_Drivers/LED/LED_cfg.o
+ .debug_line    0x000026af      0x161 ./src/Other_Drivers/LED/LED_program.o
+ .debug_line    0x00002810      0x363 ./src/MCAL/USART/USART_program.o
+ .debug_line    0x00002b73      0x11d ./src/MCAL/SysTick/STK_program.o
+ .debug_line    0x00002c90      0x247 ./src/MCAL/RCC/RCC_program.o
+ .debug_line    0x00002ed7      0x2b8 ./src/MCAL/Flash/Flash_program.o
+ .debug_line    0x0000318f      0x339 ./src/MCAL/DMA/DMA_program.o
+ .debug_line    0x000034c8      0x112 ./src/MCAL/DIO/DIO_program.o
+ .debug_line    0x000035da       0xf6 ./src/LIB/Queue/queue.o
+ .debug_line    0x000036d0      0x3e2 ./src/HAL/LCD/C_LCD_program.o
+ .debug_line    0x00003ab2      0x321 ./src/Application/main.o
 
-.debug_frame    0x00000000     0x1678
+.debug_frame    0x00000000     0x1234
  *(.debug_frame)
  .debug_frame   0x00000000       0x38 ./system/src/newlib/_exit.o
  .debug_frame   0x00000038       0x28 ./system/src/newlib/_sbrk.o
@@ -3329,37 +3364,32 @@ END GROUP
  .debug_frame   0x00000260      0x158 ./system/src/cortexm/exception_handlers.o
  .debug_frame   0x000003b8       0x68 ./system/src/cmsis/system_stm32f10x.o
  .debug_frame   0x00000420       0x20 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_frame   0x00000440       0x20 ./src/System_tasks/tasks_cfg.o
- .debug_frame   0x00000460       0x7c ./src/RTOS/RTOS_program.o
- .debug_frame   0x000004dc       0x44 ./src/Other_Drivers/LED/LED_program.o
- .debug_frame   0x00000520      0x1d4 ./src/MCAL/USART/USART_program.o
- .debug_frame   0x000006f4       0x78 ./src/MCAL/SysTick/STK_program.o
- .debug_frame   0x0000076c      0x12c ./src/MCAL/RCC/RCC_program.o
- .debug_frame   0x00000898      0x140 ./src/MCAL/NVIC/NVIC_program.o
- .debug_frame   0x000009d8      0x20c ./src/MCAL/DMA/DMA_program.o
- .debug_frame   0x00000be4       0x88 ./src/MCAL/DIO/DIO_program.o
- .debug_frame   0x00000c6c       0x90 ./src/LIB/Queue/queue.o
- .debug_frame   0x00000cfc      0x184 ./src/HAL/USART_Handler/USRTH_program.o
- .debug_frame   0x00000e80       0x5c ./src/HAL/Switch/Switch_program.o
- .debug_frame   0x00000edc      0x154 ./src/HAL/LIN/LIN_program.o
- .debug_frame   0x00001030      0x308 ./src/HAL/LCD/C_LCD_program.o
- .debug_frame   0x00001338       0x2c ./src/Application/LIN_APP/LIN_APP.o
- .debug_frame   0x00001364       0x28 ./src/Application/main.o
- .debug_frame   0x0000138c       0x20 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x000013ac       0x48 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
- .debug_frame   0x000013f4       0x90 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
- .debug_frame   0x00001484       0x60 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x000014e4       0x28 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
- .debug_frame   0x0000150c       0x28 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00001534       0x28 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
- .debug_frame   0x0000155c       0x38 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x00001594       0x2c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x000015c0       0x3c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x000015fc       0x2c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x00001628       0x30 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
- .debug_frame   0x00001658       0x20 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+ .debug_frame   0x00000440       0x44 ./src/Other_Drivers/LED/LED_program.o
+ .debug_frame   0x00000484      0x1d4 ./src/MCAL/USART/USART_program.o
+ .debug_frame   0x00000658       0x78 ./src/MCAL/SysTick/STK_program.o
+ .debug_frame   0x000006d0      0x12c ./src/MCAL/RCC/RCC_program.o
+ .debug_frame   0x000007fc       0xd4 ./src/MCAL/Flash/Flash_program.o
+ .debug_frame   0x000008d0      0x20c ./src/MCAL/DMA/DMA_program.o
+ .debug_frame   0x00000adc       0x88 ./src/MCAL/DIO/DIO_program.o
+ .debug_frame   0x00000b64       0x90 ./src/LIB/Queue/queue.o
+ .debug_frame   0x00000bf4      0x308 ./src/HAL/LCD/C_LCD_program.o
+ .debug_frame   0x00000efc       0x2c ./src/Application/main.o
+ .debug_frame   0x00000f28       0x20 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00000f48       0x20 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000f68       0x48 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-vsnprintf.o)
+ .debug_frame   0x00000fb0       0x90 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+ .debug_frame   0x00001040       0x60 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x000010a0       0x28 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+ .debug_frame   0x000010c8       0x28 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000010f0       0x28 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
+ .debug_frame   0x00001118       0x38 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x00001150       0x2c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000117c       0x3c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x000011b8       0x2c d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x000011e4       0x30 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .debug_frame   0x00001214       0x20 d:/iti/tourkey/arm_tourkey/arm tools iti/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
 
-.debug_str      0x00000000    0x5c613
+.debug_str      0x00000000    0x5bf3c
  *(.debug_str)
  .debug_str     0x00000000     0x6d29 ./system/src/newlib/_exit.o
                                0x6e9b (size before relaxing)
@@ -3377,50 +3407,34 @@ END GROUP
                               0x4e007 (size before relaxing)
  .debug_str     0x000547df      0x1a6 ./system/src/cortexm/exception_handlers.o
                               0x52c0f (size before relaxing)
- .debug_str     0x00054985      0x124 ./system/src/cmsis/system_stm32f10x.o
+ .debug_str     0x00054985      0x117 ./system/src/cmsis/system_stm32f10x.o
                               0x4e0b1 (size before relaxing)
- .debug_str     0x00054aa9       0x57 ./system/src/cmsis/vectors_stm32f10x.o
+ .debug_str     0x00054a9c       0x57 ./system/src/cmsis/vectors_stm32f10x.o
                                0x3056 (size before relaxing)
- .debug_str     0x00054b00      0x30b ./src/System_tasks/tasks_cfg.o
-                               0x2859 (size before relaxing)
- .debug_str     0x00054e0b      0xb6b ./src/RTOS/RTOS_program.o
-                               0x31fb (size before relaxing)
- .debug_str     0x00055976     0x3293 ./src/Other_Drivers/LED/LED_cfg.o
-                               0x58b0 (size before relaxing)
- .debug_str     0x00058c09       0x77 ./src/Other_Drivers/LED/LED_program.o
-                               0x58f1 (size before relaxing)
- .debug_str     0x00058c80     0x111e ./src/MCAL/USART/USART_program.o
-                               0x37d5 (size before relaxing)
- .debug_str     0x00059d9e      0x17a ./src/MCAL/SysTick/STK_program.o
-                               0x281b (size before relaxing)
- .debug_str     0x00059f18      0x5c4 ./src/MCAL/RCC/RCC_program.o
-                               0x35cd (size before relaxing)
- .debug_str     0x0005a4dc      0x72c ./src/MCAL/NVIC/NVIC_program.o
-                               0x2d17 (size before relaxing)
- .debug_str     0x0005ac08      0x82f ./src/MCAL/DMA/DMA_program.o
-                               0x445f (size before relaxing)
- .debug_str     0x0005b437      0x46b ./src/MCAL/DIO/DIO_program.o
-                               0x5d77 (size before relaxing)
- .debug_str     0x0005b8a2       0xbf ./src/LIB/Queue/queue.o
-                               0x26a6 (size before relaxing)
- .debug_str     0x0005b961      0x1fb ./src/HAL/USART_Handler/USRTH_program.o
-                               0x726c (size before relaxing)
- .debug_str     0x0005bb5c       0x7a ./src/HAL/Switch/Switch_cfg.o
-                               0x588e (size before relaxing)
- .debug_str     0x0005bbd6       0xbf ./src/HAL/Switch/Switch_program.o
-                               0x59ca (size before relaxing)
- .debug_str     0x0005bc95       0xb9 ./src/HAL/LIN/LIN_cfg.o
-                               0x2685 (size before relaxing)
- .debug_str     0x0005bd4e      0x32b ./src/HAL/LIN/LIN_program.o
-                               0x7449 (size before relaxing)
- .debug_str     0x0005c079      0x51b ./src/HAL/LCD/C_LCD_program.o
-                               0x5f38 (size before relaxing)
- .debug_str     0x0005c594       0x32 ./src/Application/LIN_APP/LIN_APP.o
-                               0x67a1 (size before relaxing)
- .debug_str     0x0005c5c6       0x4d ./src/Application/main.o
-                               0x3924 (size before relaxing)
+ .debug_str     0x00054af3     0x3393 ./src/Other_Drivers/LED/LED_cfg.o
+                               0x58b3 (size before relaxing)
+ .debug_str     0x00057e86       0x77 ./src/Other_Drivers/LED/LED_program.o
+                               0x58f4 (size before relaxing)
+ .debug_str     0x00057efd     0x11dd ./src/MCAL/USART/USART_program.o
+                               0x37d8 (size before relaxing)
+ .debug_str     0x000590da      0x236 ./src/MCAL/SysTick/STK_program.o
+                               0x281e (size before relaxing)
+ .debug_str     0x00059310      0xfb1 ./src/MCAL/RCC/RCC_program.o
+                               0x35d0 (size before relaxing)
+ .debug_str     0x0005a2c1      0x4d1 ./src/MCAL/Flash/Flash_program.o
+                               0x2ac8 (size before relaxing)
+ .debug_str     0x0005a792      0xc65 ./src/MCAL/DMA/DMA_program.o
+                               0x4462 (size before relaxing)
+ .debug_str     0x0005b3f7      0x46b ./src/MCAL/DIO/DIO_program.o
+                               0x5d7a (size before relaxing)
+ .debug_str     0x0005b862       0xbf ./src/LIB/Queue/queue.o
+                               0x26a9 (size before relaxing)
+ .debug_str     0x0005b921      0x53e ./src/HAL/LCD/C_LCD_program.o
+                               0x5f3b (size before relaxing)
+ .debug_str     0x0005be5f       0xdd ./src/Application/main.o
+                               0x3968 (size before relaxing)
 
-.debug_loc      0x00000000     0x31c1
+.debug_loc      0x00000000     0x2d5d
  *(.debug_loc)
  .debug_loc     0x00000000       0x82 ./system/src/newlib/_sbrk.o
  .debug_loc     0x00000082      0x265 ./system/src/newlib/_startup.o
@@ -3429,20 +3443,16 @@ END GROUP
  .debug_loc     0x0000044c      0x17c ./system/src/diag/trace_impl.o
  .debug_loc     0x000005c8      0x2a8 ./system/src/cortexm/exception_handlers.o
  .debug_loc     0x00000870       0xdf ./system/src/cmsis/system_stm32f10x.o
- .debug_loc     0x0000094f       0x32 ./src/RTOS/RTOS_program.o
- .debug_loc     0x00000981      0x187 ./src/Other_Drivers/LED/LED_program.o
- .debug_loc     0x00000b08      0x82b ./src/MCAL/USART/USART_program.o
- .debug_loc     0x00001333       0x9c ./src/MCAL/SysTick/STK_program.o
- .debug_loc     0x000013cf      0x67d ./src/MCAL/RCC/RCC_program.o
- .debug_loc     0x00001a4c      0x333 ./src/MCAL/NVIC/NVIC_program.o
- .debug_loc     0x00001d7f      0x3f0 ./src/MCAL/DMA/DMA_program.o
- .debug_loc     0x0000216f      0x12c ./src/MCAL/DIO/DIO_program.o
- .debug_loc     0x0000229b      0x1f3 ./src/LIB/Queue/queue.o
- .debug_loc     0x0000248e      0x4bd ./src/HAL/USART_Handler/USRTH_program.o
- .debug_loc     0x0000294b       0x75 ./src/HAL/Switch/Switch_program.o
- .debug_loc     0x000029c0      0x4bc ./src/HAL/LIN/LIN_program.o
- .debug_loc     0x00002e7c      0x303 ./src/HAL/LCD/C_LCD_program.o
- .debug_loc     0x0000317f       0x42 ./src/Application/main.o
+ .debug_loc     0x0000094f      0x187 ./src/Other_Drivers/LED/LED_program.o
+ .debug_loc     0x00000ad6      0x82b ./src/MCAL/USART/USART_program.o
+ .debug_loc     0x00001301       0x9c ./src/MCAL/SysTick/STK_program.o
+ .debug_loc     0x0000139d      0x67d ./src/MCAL/RCC/RCC_program.o
+ .debug_loc     0x00001a1a      0x893 ./src/MCAL/Flash/Flash_program.o
+ .debug_loc     0x000022ad      0x3f0 ./src/MCAL/DMA/DMA_program.o
+ .debug_loc     0x0000269d      0x12c ./src/MCAL/DIO/DIO_program.o
+ .debug_loc     0x000027c9      0x1f3 ./src/LIB/Queue/queue.o
+ .debug_loc     0x000029bc      0x303 ./src/HAL/LCD/C_LCD_program.o
+ .debug_loc     0x00002cbf       0x9e ./src/Application/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -3460,7 +3470,7 @@ END GROUP
  *(.debug_varnames)
 OUTPUT(STM_Project_Master.elf elf32-littlearm)
 
-.debug_ranges   0x00000000      0x800
+.debug_ranges   0x00000000      0x690
  .debug_ranges  0x00000000       0x18 ./system/src/newlib/_exit.o
  .debug_ranges  0x00000018       0x10 ./system/src/newlib/_sbrk.o
  .debug_ranges  0x00000028       0x48 ./system/src/newlib/_startup.o
@@ -3471,24 +3481,18 @@ OUTPUT(STM_Project_Master.elf elf32-littlearm)
  .debug_ranges  0x00000108       0x98 ./system/src/cortexm/exception_handlers.o
  .debug_ranges  0x000001a0       0x28 ./system/src/cmsis/system_stm32f10x.o
  .debug_ranges  0x000001c8       0x10 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_ranges  0x000001d8       0x10 ./src/System_tasks/tasks_cfg.o
- .debug_ranges  0x000001e8       0x30 ./src/RTOS/RTOS_program.o
- .debug_ranges  0x00000218       0x18 ./src/Other_Drivers/LED/LED_program.o
- .debug_ranges  0x00000230       0xb0 ./src/MCAL/USART/USART_program.o
- .debug_ranges  0x000002e0       0x38 ./src/MCAL/SysTick/STK_program.o
- .debug_ranges  0x00000318       0x88 ./src/MCAL/RCC/RCC_program.o
- .debug_ranges  0x000003a0       0x78 ./src/MCAL/NVIC/NVIC_program.o
- .debug_ranges  0x00000418       0xd8 ./src/MCAL/DMA/DMA_program.o
- .debug_ranges  0x000004f0       0x30 ./src/MCAL/DIO/DIO_program.o
- .debug_ranges  0x00000520       0x48 ./src/LIB/Queue/queue.o
- .debug_ranges  0x00000568       0x78 ./src/HAL/USART_Handler/USRTH_program.o
- .debug_ranges  0x000005e0       0x20 ./src/HAL/Switch/Switch_program.o
- .debug_ranges  0x00000600       0xe8 ./src/HAL/LIN/LIN_program.o
- .debug_ranges  0x000006e8       0xf8 ./src/HAL/LCD/C_LCD_program.o
- .debug_ranges  0x000007e0       0x10 ./src/Application/LIN_APP/LIN_APP.o
- .debug_ranges  0x000007f0       0x10 ./src/Application/main.o
+ .debug_ranges  0x000001d8       0x18 ./src/Other_Drivers/LED/LED_program.o
+ .debug_ranges  0x000001f0       0xb0 ./src/MCAL/USART/USART_program.o
+ .debug_ranges  0x000002a0       0x38 ./src/MCAL/SysTick/STK_program.o
+ .debug_ranges  0x000002d8       0x88 ./src/MCAL/RCC/RCC_program.o
+ .debug_ranges  0x00000360       0xd8 ./src/MCAL/Flash/Flash_program.o
+ .debug_ranges  0x00000438       0xd8 ./src/MCAL/DMA/DMA_program.o
+ .debug_ranges  0x00000510       0x30 ./src/MCAL/DIO/DIO_program.o
+ .debug_ranges  0x00000540       0x48 ./src/LIB/Queue/queue.o
+ .debug_ranges  0x00000588       0xf8 ./src/HAL/LCD/C_LCD_program.o
+ .debug_ranges  0x00000680       0x10 ./src/Application/main.o
 
-.debug_macro    0x00000000     0x4251
+.debug_macro    0x00000000     0x385e
  .debug_macro   0x00000000      0x19c ./system/src/newlib/_exit.o
  .debug_macro   0x0000019c       0x9c ./system/src/newlib/_exit.o
  .debug_macro   0x00000238      0x10e ./system/src/newlib/_exit.o
@@ -3533,49 +3537,30 @@ OUTPUT(STM_Project_Master.elf elf32-littlearm)
  .debug_macro   0x0000235e       0x10 ./system/src/cortexm/exception_handlers.o
  .debug_macro   0x0000236e      0x16e ./system/src/cmsis/system_stm32f10x.o
  .debug_macro   0x000024dc       0x34 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_macro   0x00002510       0x8a ./src/System_tasks/tasks_cfg.o
- .debug_macro   0x0000259a       0x3a ./src/System_tasks/tasks_cfg.o
- .debug_macro   0x000025d4       0x34 ./src/System_tasks/tasks_cfg.o
- .debug_macro   0x00002608       0x10 ./src/System_tasks/tasks_cfg.o
- .debug_macro   0x00002618       0x1c ./src/System_tasks/tasks_cfg.o
- .debug_macro   0x00002634       0x2e ./src/System_tasks/tasks_cfg.o
- .debug_macro   0x00002662       0x48 ./src/RTOS/RTOS_program.o
- .debug_macro   0x000026aa       0x16 ./src/RTOS/RTOS_program.o
- .debug_macro   0x000026c0       0x22 ./src/RTOS/RTOS_program.o
- .debug_macro   0x000026e2      0x28c ./src/RTOS/RTOS_program.o
- .debug_macro   0x0000296e       0x2c ./src/Other_Drivers/LED/LED_cfg.o
- .debug_macro   0x0000299a      0x8e1 ./src/Other_Drivers/LED/LED_cfg.o
- .debug_macro   0x0000327b       0x2c ./src/Other_Drivers/LED/LED_program.o
- .debug_macro   0x000032a7       0x77 ./src/MCAL/USART/USART_program.o
- .debug_macro   0x0000331e      0x1a2 ./src/MCAL/USART/USART_program.o
- .debug_macro   0x000034c0       0x5e ./src/MCAL/USART/USART_program.o
- .debug_macro   0x0000351e       0x46 ./src/MCAL/USART/USART_program.o
- .debug_macro   0x00003564       0xee ./src/MCAL/USART/USART_program.o
- .debug_macro   0x00003652       0x3e ./src/MCAL/SysTick/STK_program.o
- .debug_macro   0x00003690       0x1c ./src/MCAL/SysTick/STK_program.o
- .debug_macro   0x000036ac       0x16 ./src/MCAL/SysTick/STK_program.o
- .debug_macro   0x000036c2       0x1c ./src/MCAL/SysTick/STK_program.o
- .debug_macro   0x000036de      0x12b ./src/MCAL/RCC/RCC_program.o
- .debug_macro   0x00003809       0x47 ./src/MCAL/NVIC/NVIC_program.o
- .debug_macro   0x00003850      0x1a8 ./src/MCAL/NVIC/NVIC_program.o
- .debug_macro   0x000039f8       0x59 ./src/MCAL/DMA/DMA_program.o
- .debug_macro   0x00003a51       0x88 ./src/MCAL/DMA/DMA_program.o
- .debug_macro   0x00003ad9       0x1c ./src/MCAL/DMA/DMA_program.o
- .debug_macro   0x00003af5       0x3a ./src/MCAL/DMA/DMA_program.o
- .debug_macro   0x00003b2f       0x41 ./src/MCAL/DIO/DIO_program.o
- .debug_macro   0x00003b70       0x94 ./src/MCAL/DIO/DIO_program.o
- .debug_macro   0x00003c04       0x24 ./src/LIB/Queue/queue.o
- .debug_macro   0x00003c28       0x73 ./src/HAL/USART_Handler/USRTH_program.o
- .debug_macro   0x00003c9b       0x22 ./src/HAL/USART_Handler/USRTH_program.o
- .debug_macro   0x00003cbd       0x1c ./src/HAL/USART_Handler/USRTH_program.o
- .debug_macro   0x00003cd9       0x2d ./src/HAL/Switch/Switch_cfg.o
- .debug_macro   0x00003d06       0x52 ./src/HAL/Switch/Switch_program.o
- .debug_macro   0x00003d58       0x23 ./src/HAL/LIN/LIN_cfg.o
- .debug_macro   0x00003d7b       0x2e ./src/HAL/LIN/LIN_cfg.o
- .debug_macro   0x00003da9       0x7d ./src/HAL/LIN/LIN_program.o
- .debug_macro   0x00003e26       0xa6 ./src/HAL/LIN/LIN_program.o
- .debug_macro   0x00003ecc       0x5b ./src/HAL/LCD/C_LCD_program.o
- .debug_macro   0x00003f27       0x3a ./src/HAL/LCD/C_LCD_program.o
- .debug_macro   0x00003f61       0x8e ./src/HAL/LCD/C_LCD_program.o
- .debug_macro   0x00003fef      0x1da ./src/Application/LIN_APP/LIN_APP.o
- .debug_macro   0x000041c9       0x88 ./src/Application/main.o
+ .debug_macro   0x00002510       0x2c ./src/Other_Drivers/LED/LED_cfg.o
+ .debug_macro   0x0000253c      0x8e1 ./src/Other_Drivers/LED/LED_cfg.o
+ .debug_macro   0x00002e1d       0x2c ./src/Other_Drivers/LED/LED_program.o
+ .debug_macro   0x00002e49       0x77 ./src/MCAL/USART/USART_program.o
+ .debug_macro   0x00002ec0      0x1a2 ./src/MCAL/USART/USART_program.o
+ .debug_macro   0x00003062       0x5e ./src/MCAL/USART/USART_program.o
+ .debug_macro   0x000030c0       0x46 ./src/MCAL/USART/USART_program.o
+ .debug_macro   0x00003106       0xee ./src/MCAL/USART/USART_program.o
+ .debug_macro   0x000031f4       0x3e ./src/MCAL/SysTick/STK_program.o
+ .debug_macro   0x00003232       0x1c ./src/MCAL/SysTick/STK_program.o
+ .debug_macro   0x0000324e       0x16 ./src/MCAL/SysTick/STK_program.o
+ .debug_macro   0x00003264       0x1c ./src/MCAL/SysTick/STK_program.o
+ .debug_macro   0x00003280      0x12b ./src/MCAL/RCC/RCC_program.o
+ .debug_macro   0x000033ab       0x3f ./src/MCAL/Flash/Flash_program.o
+ .debug_macro   0x000033ea       0x16 ./src/MCAL/Flash/Flash_program.o
+ .debug_macro   0x00003400       0x70 ./src/MCAL/Flash/Flash_program.o
+ .debug_macro   0x00003470       0x59 ./src/MCAL/DMA/DMA_program.o
+ .debug_macro   0x000034c9       0x88 ./src/MCAL/DMA/DMA_program.o
+ .debug_macro   0x00003551       0x1c ./src/MCAL/DMA/DMA_program.o
+ .debug_macro   0x0000356d       0x3a ./src/MCAL/DMA/DMA_program.o
+ .debug_macro   0x000035a7       0x41 ./src/MCAL/DIO/DIO_program.o
+ .debug_macro   0x000035e8       0x94 ./src/MCAL/DIO/DIO_program.o
+ .debug_macro   0x0000367c       0x24 ./src/LIB/Queue/queue.o
+ .debug_macro   0x000036a0       0x5b ./src/HAL/LCD/C_LCD_program.o
+ .debug_macro   0x000036fb       0x3a ./src/HAL/LCD/C_LCD_program.o
+ .debug_macro   0x00003735       0x8e ./src/HAL/LCD/C_LCD_program.o
+ .debug_macro   0x000037c3       0x9b ./src/Application/main.o

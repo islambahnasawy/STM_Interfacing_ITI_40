@@ -2,7 +2,7 @@
 #define _STD_TYPES_H_
 
 typedef unsigned char u8;
-#define u16 unsigned short int
+typedef unsigned short int u16;
 typedef unsigned long u32;
 typedef unsigned long long u64;
 #define s8 signed char
