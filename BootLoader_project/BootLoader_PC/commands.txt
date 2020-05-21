@@ -1,0 +1,3 @@
+
+1-gcc main.c Communication\PCcom.c LIB\DELAY_program.c BL_protocol\BL_protocol.c BL_protocol\BL_protocol_cfg.c -o pc.exe
+2-pc.exe
