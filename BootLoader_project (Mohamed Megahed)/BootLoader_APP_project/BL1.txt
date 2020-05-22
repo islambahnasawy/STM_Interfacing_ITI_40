@@ -1,0 +1,681 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           ARM
+  Version:                           0x1
+  Entry point address:               0x800710d
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          487380 (bytes into file)
+  Flags:                             0x5000200, Version5 EABI, soft-float ABI
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         3
+  Size of section headers:           40 (bytes)
+  Number of section headers:         23
+  Section header string table index: 20
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .isr_vector       PROGBITS        08007000 000100 000374 00  AX  0   0  4
+  [ 2] .inits            PROGBITS        08007374 000474 000028 00  WA  0   0  4
+  [ 3] .data             PROGBITS        20000000 002800 000088 00  WA  0   0  4
+  [ 4] .data_CCMRAM      PROGBITS        00000000 002888 000000 00   W  0   0  4
+  [ 5] .bss              NOBITS          20000088 002888 000284 00  WA  0   0  4
+  [ 6] .text             PROGBITS        080073a0 0004a0 00231f 00  AX  0   0  8
+  [ 7] .noinit           PROGBITS        2000030c 002888 000000 00   W  0   0  4
+  [ 8] ._check_stack     NOBITS          2000030c 002888 000100 00  WA  0   0  4
+  [ 9] .comment          PROGBITS        00000000 002888 00006e 01  MS  0   0  1
+  [10] .ARM.attributes   ARM_ATTRIBUTES  00000000 0028f6 000031 00      0   0  1
+  [11] .debug_aranges    PROGBITS        00000000 002927 000730 00      0   0  1
+  [12] .debug_info       PROGBITS        00000000 003057 005e3d 00      0   0  1
+  [13] .debug_abbrev     PROGBITS        00000000 008e94 001f6c 00      0   0  1
+  [14] .debug_line       PROGBITS        00000000 00ae00 003fe1 00      0   0  1
+  [15] .debug_frame      PROGBITS        00000000 00ede4 001248 00      0   0  4
+  [16] .debug_str        PROGBITS        00000000 01002c 05c046 01  MS  0   0  1
+  [17] .debug_loc        PROGBITS        00000000 06c072 003438 00      0   0  1
+  [18] .debug_ranges     PROGBITS        00000000 06f4aa 0006a0 00      0   0  1
+  [19] .debug_macro      PROGBITS        00000000 06fb4a 003ab0 00      0   0  1
+  [20] .shstrtab         STRTAB          00000000 076ee6 0000ee 00      0   0  1
+  [21] .symtab           SYMTAB          00000000 0735fc 0024f0 10     22 352  4
+  [22] .strtab           STRTAB          00000000 075aec 0013fa 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  y (noread), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000100 0x08007000 0x08007000 0x026bf 0x026bf RWE 0x100
+  LOAD           0x002800 0x20000000 0x080096c0 0x00088 0x00088 RW  0x100
+  LOAD           0x002888 0x20000088 0x20000088 0x00000 0x00384 RW  0x100
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .isr_vector .inits .text 
+   01     .data 
+   02     .bss ._check_stack 
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+
+There are no unwind sections in this file.
+
+Symbol table '.symtab' contains 591 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 08007000     0 SECTION LOCAL  DEFAULT    1 
+     2: 08007374     0 SECTION LOCAL  DEFAULT    2 
+     3: 20000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 20000088     0 SECTION LOCAL  DEFAULT    5 
+     6: 080073a0     0 SECTION LOCAL  DEFAULT    6 
+     7: 2000030c     0 SECTION LOCAL  DEFAULT    7 
+     8: 2000030c     0 SECTION LOCAL  DEFAULT    8 
+     9: 00000000     0 SECTION LOCAL  DEFAULT    9 
+    10: 00000000     0 SECTION LOCAL  DEFAULT   10 
+    11: 00000000     0 SECTION LOCAL  DEFAULT   11 
+    12: 00000000     0 SECTION LOCAL  DEFAULT   12 
+    13: 00000000     0 SECTION LOCAL  DEFAULT   13 
+    14: 00000000     0 SECTION LOCAL  DEFAULT   14 
+    15: 00000000     0 SECTION LOCAL  DEFAULT   15 
+    16: 00000000     0 SECTION LOCAL  DEFAULT   16 
+    17: 00000000     0 SECTION LOCAL  DEFAULT   17 
+    18: 00000000     0 SECTION LOCAL  DEFAULT   18 
+    19: 00000000     0 SECTION LOCAL  DEFAULT   19 
+    20: 00000000     0 FILE    LOCAL  DEFAULT  ABS vectors_stm32f10x.c
+    21: 08007370     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    22: 08007000     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    23: 00000430     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    24: 00000000     0 FILE    LOCAL  DEFAULT  ABS _startup.c
+    25: 0800710c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    26: 080071ec     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    27: 20000088     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    28: 20000088     4 OBJECT  LOCAL  DEFAULT    5 __bss_begin_guard
+    29: 20000084     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    30: 20000084     4 OBJECT  LOCAL  DEFAULT    3 __data_end_guard
+    31: 08009448     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    32: 20000308     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    33: 20000308     4 OBJECT  LOCAL  DEFAULT    5 __bss_end_guard
+    34: 20000000     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    35: 20000000     4 OBJECT  LOCAL  DEFAULT    3 __data_begin_guard
+    36: 00000070     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    37: 00000000     0 FILE    LOCAL  DEFAULT  ABS exception_handlers.c
+    38: 08007240     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    39: 080074b4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    40: 08007558     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    41: 080075a4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    42: 080072b8     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    43: 080072c0     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    44: 08007304     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    45: 0800730c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    46: 0800734c     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    47: 08007354     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    48: 0800949c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    49: 08007362     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    50: 08007364     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    51: 00000270     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    52: 00000000     0 FILE    LOCAL  DEFAULT  ABS _syscalls.c
+    53: 080073e8     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    54: 080073f4     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    55: 20000090     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    56: 20000090     1 OBJECT  LOCAL  DEFAULT    5 name.4289
+    57: 20000004     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    58: 20000004     8 OBJECT  LOCAL  DEFAULT    3 argv.4290
+    59: 000000ec     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    60: 00000000     0 FILE    LOCAL  DEFAULT  ABS system_stm32f10x.c
+    61: 080075c4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    62: 080075c5   196 FUNC    LOCAL  DEFAULT    6 SetSysClockTo72
+    63: 08007680     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    64: 08007688     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    65: 08007689     8 FUNC    LOCAL  DEFAULT    6 SetSysClock
+    66: 08007690     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    67: 080076d4     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    68: 080076e0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    69: 08007760     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    70: 2000000c     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    71: 2000001c     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    72: 000003c8     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    73: 00000000     0 FILE    LOCAL  DEFAULT  ABS impure.c
+    74: 20000020     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    75: 20000020    96 OBJECT  LOCAL  DEFAULT    3 impure_data
+    76: 20000080     0 NOTYPE  LOCAL  DEFAULT    3 $d
+    77: 00000000     0 FILE    LOCAL  DEFAULT  ABS _exit.c
+    78: 080073a0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    79: 00000010     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    80: 00000000     0 FILE    LOCAL  DEFAULT  ABS _sbrk.c
+    81: 080073a4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    82: 080073dc     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    83: 2000008c     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    84: 2000008c     4 OBJECT  LOCAL  DEFAULT    5 current_heap_end.3974
+    85: 00000048     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    86: 00000000     0 FILE    LOCAL  DEFAULT  ABS Trace.c
+    87: 080073f8     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    88: 08007424     0 NOTYPE  LOCAL  DEFAULT    6 $d
+    89: 20000094     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    90: 20000094   128 OBJECT  LOCAL  DEFAULT    5 buf.5179
+    91: 0000013c     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    92: 00000000     0 FILE    LOCAL  DEFAULT  ABS trace_impl.c
+    93: 08007428     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    94: 08007429    98 FUNC    LOCAL  DEFAULT    6 _trace_write_semihosting_
+    95: 0800748c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    96: 000001d0     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    97: 00000000     0 FILE    LOCAL  DEFAULT  ABS _initialize_hardware.c
+    98: 08007494     0 NOTYPE  LOCAL  DEFAULT    6 $t
+    99: 080074a4     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   100: 080074ac     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   101: 00000230     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   102: 00000000     0 FILE    LOCAL  DEFAULT  ABS LED_program.c
+   103: 08007774     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   104: 08007794     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   105: 08007798     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   106: 08007844     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   107: 00000450     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   108: 00000000     0 FILE    LOCAL  DEFAULT  ABS USART_program.c
+   109: 0800784c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   110: 0800784d     8 FUNC    LOCAL  DEFAULT    6 IsTransmissionComplete
+   111: 08007854     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   112: 08007855     8 FUNC    LOCAL  DEFAULT    6 IsDataRecieved
+   113: 0800785c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   114: 0800785d     8 FUNC    LOCAL  DEFAULT    6 IsBreakRecieved
+   115: 08007864     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   116: 08007865    12 FUNC    LOCAL  DEFAULT    6 USART_voidTransIntStatus
+   117: 08007870     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   118: 08007871    12 FUNC    LOCAL  DEFAULT    6 USART_voidRecIntStatus
+   119: 0800787c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   120: 0800787d    12 FUNC    LOCAL  DEFAULT    6 USART_voidTCIntStatus
+   121: 08007888     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   122: 080078a4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   123: 080078b0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   124: 080078bc     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   125: 080078c8     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   126: 0800790c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   127: 08007918     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   128: 080079ec     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   129: 08007a08     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   130: 08007a10     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   131: 08007a14     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   132: 08007a60     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   133: 08007a6c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   134: 08007a9c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   135: 20000114     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   136: 20000114    24 OBJECT  LOCAL  DEFAULT    5 txbuffer
+   137: 2000012c     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   138: 2000012c     4 OBJECT  LOCAL  DEFAULT    5 DMA_CB
+   139: 20000130     1 OBJECT  LOCAL  DEFAULT    5 Sending_Mode
+   140: 20000130     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   141: 20000131     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   142: 20000134     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   143: 20000134     4 OBJECT  LOCAL  DEFAULT    5 LIN_break_CB
+   144: 20000138     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   145: 20000138    24 OBJECT  LOCAL  DEFAULT    5 rxbuffer
+   146: 00000494     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   147: 00000000     0 FILE    LOCAL  DEFAULT  ABS STK_program.c
+   148: 08007aa0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   149: 08007aac     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   150: 20000150     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   151: 20000150     4 OBJECT  LOCAL  DEFAULT    5 callBack
+   152: 00000680     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   153: 00000000     0 FILE    LOCAL  DEFAULT  ABS RCC_program.c
+   154: 08007ab0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   155: 08007ac0     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   156: 08007ac4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   157: 08007af8     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   158: 08007afc     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   159: 08007b0c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   160: 08007b10     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   161: 08007bb0     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   162: 08007bb4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   163: 08007c2c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   164: 08007c38     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   165: 08007cc0     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   166: 08007cc4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   167: 08007cec     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   168: 08007cf0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   169: 08007cf8     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   170: 000006f8     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   171: 00000000     0 FILE    LOCAL  DEFAULT  ABS NVIC_program.c
+   172: 08007d00     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   173: 08007d28     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   174: 00000834     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   175: 00000000     0 FILE    LOCAL  DEFAULT  ABS Flash_program.c
+   176: 08007d2c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   177: 08007d3c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   178: 00000974     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   179: 00000000     0 FILE    LOCAL  DEFAULT  ABS DMA_program.c
+   180: 08007d44     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   181: 08007d45    24 FUNC    LOCAL  DEFAULT    6 get_TCFlagStatus
+   182: 08007d58     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   183: 08007d5c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   184: 08007d5d    24 FUNC    LOCAL  DEFAULT    6 get_HTCFlagStatus
+   185: 08007d70     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   186: 08007d74     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   187: 08007d75    24 FUNC    LOCAL  DEFAULT    6 get_ERRFlagStatus
+   188: 08007d88     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   189: 08007d8c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   190: 08007d8d    24 FUNC    LOCAL  DEFAULT    6 clear_TCFlag
+   191: 08007da0     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   192: 08007da4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   193: 08007da5    24 FUNC    LOCAL  DEFAULT    6 clear_HTCFlag
+   194: 08007db8     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   195: 08007dbc     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   196: 08007dbd    24 FUNC    LOCAL  DEFAULT    6 clear_ERRFlag
+   197: 08007dd0     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   198: 08007dd4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   199: 08007e0c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   200: 08007e10     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   201: 08007e50     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   202: 08007ef4     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   203: 08007f00     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   204: 08007f10     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   205: 08007f14     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   206: 08007f64     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   207: 08007f6c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   208: 08007fbc     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   209: 08007fc4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   210: 08008014     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   211: 0800801c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   212: 0800806c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   213: 08008074     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   214: 080080c4     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   215: 080080cc     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   216: 0800811c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   217: 08008124     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   218: 08008174     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   219: 20000154     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   220: 20000154    84 OBJECT  LOCAL  DEFAULT    5 CB_Handlers
+   221: 00000a48     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   222: 00000000     0 FILE    LOCAL  DEFAULT  ABS DIO_program.c
+   223: 0800817c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   224: 080081bc     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   225: 080081e0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   226: 00000c54     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   227: 00000000     0 FILE    LOCAL  DEFAULT  ABS DELAY_program.c
+   228: 080082c0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   229: 080082ec     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   230: 00000cdc     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   231: 00000000     0 FILE    LOCAL  DEFAULT  ABS USRTH_program.c
+   232: 080082f4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   233: 080082f5    48 FUNC    LOCAL  DEFAULT    6 Queue_voidInit
+   234: 08008314     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   235: 08008324     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   236: 0800836c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   237: 08008374     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   238: 0800838c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   239: 08008394     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   240: 08009608     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   241: 00000d04     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   242: 00000000     0 FILE    LOCAL  DEFAULT  ABS BL_protocol.c
+   243: 0800839c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   244: 080083c8     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   245: 080084a8     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   246: 080084c0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   247: 080084cc     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   248: 0800854c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   249: 08008550     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   250: 0800855c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   251: 200001a8     1 OBJECT  LOCAL  DEFAULT    5 responseFrameNum
+   252: 200001a8     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   253: 200001a9     1 OBJECT  LOCAL  DEFAULT    5 writeReqFrameNum
+   254: 200001a9     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   255: 200001aa     1 OBJECT  LOCAL  DEFAULT    5 startFrameNum
+   256: 200001aa     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   257: 200001ab     1 OBJECT  LOCAL  DEFAULT    5 dataFrameNum
+   258: 200001ab     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   259: 200001ac     1 OBJECT  LOCAL  DEFAULT    5 headerIdicatiorNum
+   260: 200001ac     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   261: 00000ea0     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   262: 080083cd     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   263: 080083ce     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   264: 080084d1     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   265: 080084d2     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   266: 00000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+   267: 08008560     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   268: 08008561    76 FUNC    LOCAL  DEFAULT    6 send_Response
+   269: 0800859c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   270: 080085ac     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   271: 080085e0     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   272: 080085ec     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   273: 08008610     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   274: 0800861c     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   275: 08008698     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   276: 08009634     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   277: 00000ef0     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   278: 00000000     0 FILE    LOCAL  DEFAULT  ABS _arm_addsubsf3.o
+   279: 080086b8     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   280: 00000000     0 FILE    LOCAL  DEFAULT  ABS _arm_muldivsf3.o
+   281: 080088d4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   282: 00000000     0 FILE    LOCAL  DEFAULT  ABS _arm_fixunssfsi.o
+   283: 08008b74     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   284: 00000000     0 FILE    LOCAL  DEFAULT  ABS errno.c
+   285: 08008bb4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   286: 08008bbc     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   287: 00000f6c     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   288: 00000000     0 FILE    LOCAL  DEFAULT  ABS vsnprintf.c
+   289: 08008bc0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   290: 08008c18     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   291: 08008c30     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   292: 00000f8c     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   293: 00000000     0 FILE    LOCAL  DEFAULT  ABS nano-vfprintf.c
+   294: 08008c34     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   295: 08008ce8     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   296: 08008ebc     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   297: 00000fd4     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   298: 00000000     0 FILE    LOCAL  DEFAULT  ABS nano-vfprintf_i.c
+   299: 08008ed0     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   300: 08008fbc     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   301: 08009200     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   302: 00001064     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   303: 00000000     0 FILE    LOCAL  DEFAULT  ABS memchr-stub.c
+   304: 08009208     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   305: 000010c4     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   306: 00000000     0 FILE    LOCAL  DEFAULT  ABS memcpy-stub.c
+   307: 08009224     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   308: 000010ec     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   309: 00000000     0 FILE    LOCAL  DEFAULT  ABS memmove.c
+   310: 0800923a     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   311: 00001114     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   312: 00000000     0 FILE    LOCAL  DEFAULT  ABS nano-mallocr.c
+   313: 08009270     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   314: 08009304     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   315: 0000113c     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   316: 00000000     0 FILE    LOCAL  DEFAULT  ABS nano-mallocr.c
+   317: 08009308     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   318: 080093bc     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   319: 200001b0     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   320: 200001b4     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   321: 00001174     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   322: 00000000     0 FILE    LOCAL  DEFAULT  ABS nano-mallocr.c
+   323: 080093c4     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   324: 000011a0     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   325: 00000000     0 FILE    LOCAL  DEFAULT  ABS sbrkr.c
+   326: 08009410     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   327: 0800942c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   328: 000011dc     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   329: 00000000     0 FILE    LOCAL  DEFAULT  ABS mlock.c
+   330: 08009430     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   331: 08009432     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   332: 00001208     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   333: 00000000     0 FILE    LOCAL  DEFAULT  ABS nano-mallocr.c
+   334: 08009434     0 NOTYPE  LOCAL  DEFAULT    6 $t
+   335: 00001238     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   336: 00000000     0 FILE    LOCAL  DEFAULT  ABS LED_cfg.c
+   337: 080095e4     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   338: 080095ec     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   339: 00000000     0 FILE    LOCAL  DEFAULT  ABS BL_protocol_cfg.c
+   340: 08009620     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   341: 00000000     0 FILE    LOCAL  DEFAULT  ABS 
+   342: 0800739c     0 NOTYPE  LOCAL  DEFAULT    2 __fini_array_end
+   343: 2000030c     0 NOTYPE  LOCAL  DEFAULT    7 _end_noinit
+   344: 0800739c     0 NOTYPE  LOCAL  DEFAULT    2 __fini_array_start
+   345: 0800739c     0 NOTYPE  LOCAL  DEFAULT    2 __init_array_end
+   346: 0800739c     0 NOTYPE  LOCAL  DEFAULT    2 __preinit_array_end
+   347: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND DIO_GetPinVal
+   348: 0800739c     0 NOTYPE  LOCAL  DEFAULT    2 __init_array_start
+   349: 0800739c     0 NOTYPE  LOCAL  DEFAULT    2 __preinit_array_start
+   350: 0800968c     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   351: 0800969d     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   352: 08007c39   140 FUNC    GLOBAL DEFAULT    6 RCC_u32ReadAHBFreq
+   353: 08009435    20 FUNC    GLOBAL DEFAULT    6 _malloc_usable_size_r
+   354: 08007371     4 FUNC    WEAK   DEFAULT    1 EXTI2_IRQHandler
+   355: 08007d01    44 FUNC    GLOBAL DEFAULT    6 NVIC_EnableIRQ
+   356: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM8_TRG_COM_IRQHandler
+   357: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM8_CC_IRQHandler
+   358: 080074b5   240 FUNC    GLOBAL DEFAULT    6 dumpExceptionStack
+   359: 08007359     4 FUNC    WEAK   DEFAULT    1 DebugMon_Handler
+   360: 080084c1   144 FUNC    GLOBAL DEFAULT    6 BLProtocol_extractData
+   361: 200001bc     7 OBJECT  GLOBAL DEFAULT    5 Channel_AlwaysBusy
+   362: 20000000     0 NOTYPE  GLOBAL DEFAULT    3 __data_start__
+   363: 20004c00     0 NOTYPE  GLOBAL DEFAULT  ABS _Heap_Limit
+   364: 0800739c     0 NOTYPE  GLOBAL DEFAULT    2 __bss_regions_array_end
+   365: 200001c4     7 OBJECT  GLOBAL DEFAULT    5 Channel_States
+   366: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_CC_IRQHandler
+   367: 0800724d    20 FUNC    WEAK   DEFAULT    1 HardFault_Handler
+   368: 08007495    24 FUNC    WEAK   DEFAULT    6 __initialize_hardware_ear
+   369: 08007000     0 NOTYPE  GLOBAL DEFAULT  ABS __vectors_start__
+   370: 08009433     2 FUNC    GLOBAL DEFAULT    6 __malloc_unlock
+   371: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM6_IRQHandler
+   372: 08008a3d   310 FUNC    GLOBAL HIDDEN     6 __divsf3
+   373: 08007a6d    52 FUNC    GLOBAL DEFAULT    6 USART_DMARecieve
+   374: 08007aa1    16 FUNC    GLOBAL DEFAULT    6 SysTick_Handler
+   375: 200001cc    16 OBJECT  GLOBAL DEFAULT    5 SendQueue
+   376: 08007ac5    56 FUNC    GLOBAL DEFAULT    6 RCC_u8ChangeClockStatus
+   377: 08007371     4 FUNC    WEAK   DEFAULT    1 PVD_IRQHandler
+   378: 08007371     4 FUNC    WEAK   DEFAULT    1 SDIO_IRQHandler
+   379: 0800923b    54 FUNC    GLOBAL DEFAULT    6 memmove
+   380: 080096c0     0 NOTYPE  GLOBAL DEFAULT  ABS _sidata
+   381: 0800735d     4 FUNC    WEAK   DEFAULT    1 PendSV_Handler
+   382: 08007249     4 FUNC    WEAK   DEFAULT    1 NMI_Handler
+   383: 080096c0     0 NOTYPE  GLOBAL DEFAULT    3 __exidx_end
+   384: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN2_RX1_IRQHandler
+   385: 08007371     4 FUNC    WEAK   DEFAULT    1 EXTI3_IRQHandler
+   386: 08008bb5    12 FUNC    GLOBAL DEFAULT    6 __errno
+   387: 080096c0     0 NOTYPE  GLOBAL DEFAULT    3 __etext
+   388: 2000030c     0 NOTYPE  GLOBAL DEFAULT    7 _Heap_Begin
+   389: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM8_TRG_COM_TIM14_IRQHan
+   390: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_UP_TIM10_IRQHandler
+   391: 200001b8     4 OBJECT  GLOBAL DEFAULT    5 errno
+   392: 080096c0     0 NOTYPE  GLOBAL DEFAULT    3 _etext
+   393: 080082c1    52 FUNC    GLOBAL DEFAULT    6 delay_mSec
+   394: 20000088     0 NOTYPE  GLOBAL DEFAULT    5 _sbss
+   395: 20004c00     0 NOTYPE  GLOBAL DEFAULT  ABS __Main_Stack_Limit
+   396: 080086c5   352 FUNC    GLOBAL HIDDEN     6 __aeabi_fadd
+   397: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM8_UP_TIM13_IRQHandler
+   398: 080086c1   356 FUNC    GLOBAL HIDDEN     6 __subsf3
+   399: 080095ec    24 OBJECT  GLOBAL DEFAULT    6 ledmap
+   400: 08007afd    20 FUNC    GLOBAL DEFAULT    6 RCC_u8SwitchSystemClock
+   401: 080078b1    12 FUNC    GLOBAL DEFAULT    6 USART_voidChangeTransStat
+   402: 080073f9    48 FUNC    GLOBAL DEFAULT    6 trace_printf
+   403: 08009225    22 FUNC    GLOBAL DEFAULT    6 memcpy
+   404: 08008ce9   488 FUNC    GLOBAL DEFAULT    6 _svfprintf_r
+   405: 08007371     4 FUNC    WEAK   DEFAULT    1 EXTI0_IRQHandler
+   406: 08007371     4 FUNC    WEAK   DEFAULT    1 I2C2_EV_IRQHandler
+   407: 08007ab1    20 FUNC    GLOBAL DEFAULT    6 RCC_u8ReadSystemClock
+   408: 2000030c     0 NOTYPE  GLOBAL DEFAULT    7 _noinit
+   409: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN1_RX0_IRQHandler
+   410: 2000001c     4 OBJECT  GLOBAL DEFAULT    3 SystemCoreClock
+   411: 08008551    16 FUNC    GLOBAL DEFAULT    6 BLProtocol_getFrameLength
+   412: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_UP_TIM16_IRQHandler
+   413: 0800882d    28 FUNC    GLOBAL HIDDEN     6 __aeabi_i2f
+   414: 0800730d    20 FUNC    WEAK   DEFAULT    1 UsageFault_Handler
+   415: 08008c19    28 FUNC    GLOBAL DEFAULT    6 vsnprintf
+   416: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN2_SCE_IRQHandler
+   417: 08007371     4 FUNC    WEAK   DEFAULT    1 ADC1_2_IRQHandler
+   418: 08007d2d    24 FUNC    GLOBAL DEFAULT    6 Flash_unlock
+   419: 20000088     0 NOTYPE  GLOBAL DEFAULT    5 __bss_start__
+   420: 20000000     0 NOTYPE  GLOBAL DEFAULT    3 _sdata
+   421: 08007371     4 FUNC    WEAK   DEFAULT    1 SPI1_IRQHandler
+   422: 08009411    32 FUNC    GLOBAL DEFAULT    6 _sbrk_r
+   423: 200002dc    32 OBJECT  GLOBAL DEFAULT    5 BL_pack
+   424: 200001dc    16 OBJECT  GLOBAL DEFAULT    5 RecQueue
+   425: 08007371     4 FUNC    WEAK   DEFAULT    1 TAMPER_IRQHandler
+   426: 08007775    36 FUNC    GLOBAL DEFAULT    6 LED_Init
+   427: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM6_DAC_IRQHandler
+   428: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_BRK_TIM9_IRQHandler
+   429: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN2_RX0_IRQHandler
+   430: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM8_UP_IRQHandler
+   431: 20000131     1 OBJECT  GLOBAL DEFAULT    5 USART_DMAState
+   432: 080096c0     0 NOTYPE  GLOBAL DEFAULT    3 __exidx_start
+   433: 080093c5    76 FUNC    GLOBAL DEFAULT    6 _realloc_r
+   434: 00000400     0 NOTYPE  GLOBAL DEFAULT  ABS __Main_Stack_Size
+   435: 08007371     4 FUNC    WEAK   DEFAULT    1 DMA2_Channel2_IRQHandler
+   436: 0800801d    88 FUNC    GLOBAL DEFAULT    6 DMA1_Channel4_IRQHandler
+   437: 08007261    96 FUNC    WEAK   DEFAULT    1 HardFault_Handler_C
+   438: 08007e11    62 FUNC    GLOBAL DEFAULT    6 DMA_u8ChannelInit
+   439: 080073a5    68 FUNC    GLOBAL DEFAULT    6 _sbrk
+   440: 080073e9    16 FUNC    WEAK   DEFAULT    6 __initialize_args
+   441: 080072d9    52 FUNC    WEAK   DEFAULT    1 BusFault_Handler_C
+   442: 08007371     4 FUNC    WEAK   DEFAULT    1 USART3_IRQHandler
+   443: 080086c1   356 FUNC    GLOBAL HIDDEN     6 __aeabi_fsub
+   444: 08007371     4 FUNC    WEAK   DEFAULT    1 RTC_IRQHandler
+   445: 2000030c     0 NOTYPE  GLOBAL DEFAULT    5 _ebss
+   446: 08007cc5    44 FUNC    GLOBAL DEFAULT    6 RCC_u32ReadAPB2Freq
+   447: 08008125    88 FUNC    GLOBAL DEFAULT    6 DMA1_Channel7_IRQHandler
+   448: 08007241     6 FUNC    GLOBAL DEFAULT    1 Reset_Handler
+   449: 08008c19    28 FUNC    GLOBAL DEFAULT    6 vsniprintf
+   450: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN1_RX1_IRQHandler
+   451: 08007cf1    16 FUNC    GLOBAL DEFAULT    6 RCC_SWReset
+   452: 08007371     4 FUNC    WEAK   DEFAULT    1 UART5_IRQHandler
+   453: 08008859   124 FUNC    GLOBAL HIDDEN     6 __floatdisf
+   454: 08007371     4 FUNC    WEAK   DEFAULT    1 ADC3_IRQHandler
+   455: 080074ad     8 FUNC    WEAK   DEFAULT    6 __initialize_hardware
+   456: 08007799   180 FUNC    GLOBAL DEFAULT    6 LED_setLedState
+   457: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM4_IRQHandler
+   458: 08007371     4 FUNC    WEAK   DEFAULT    1 DMA2_Channel1_IRQHandler
+   459: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __sf_fake_stderr
+   460: 08007371     4 FUNC    WEAK   DEFAULT    1 I2C1_EV_IRQHandler
+   461: 08007374     0 NOTYPE  GLOBAL DEFAULT    2 __data_regions_array_star
+   462: 08008c35   178 FUNC    GLOBAL DEFAULT    6 __ssputs_r
+   463: 20000088     0 NOTYPE  GLOBAL DEFAULT    3 __data_end__
+   464: 08007a09    12 FUNC    GLOBAL DEFAULT    6 set_TransmissionCompleteC
+   465: 080078c9    80 FUNC    GLOBAL DEFAULT    6 USART_voidInit
+   466: 080080cd    88 FUNC    GLOBAL DEFAULT    6 DMA1_Channel6_IRQHandler
+   467: 08007371     4 FUNC    WEAK   DEFAULT    1 UART4_IRQHandler
+   468: 08007371     4 FUNC    WEAK   DEFAULT    1 DMA2_Channel4_IRQHandler
+   469: 08009209    28 FUNC    GLOBAL DEFAULT    6 memchr
+   470: 00000000     0 NOTYPE  WEAK   DEFAULT  UND _printf_float
+   471: 2000030c     0 NOTYPE  GLOBAL DEFAULT    5 __bss_end__
+   472: 08009271   152 FUNC    GLOBAL DEFAULT    6 _free_r
+   473: 0800748d     8 FUNC    GLOBAL DEFAULT    6 trace_write
+   474: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM3_IRQHandler
+   475: 08007371     4 FUNC    WEAK   DEFAULT    1 RCC_IRQHandler
+   476: 0800839d   292 FUNC    GLOBAL DEFAULT    6 BLProtocol_constructFrame
+   477: 08007e51   176 FUNC    GLOBAL DEFAULT    6 DMA_voidStart
+   478: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM8_BRK_TIM12_IRQHandler
+   479: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_TRG_COM_IRQHandler
+   480: 08007f15    88 FUNC    GLOBAL DEFAULT    6 DMA1_Channel1_IRQHandler
+   481: 08007371     4 FUNC    WEAK   DEFAULT    1 Default_Handler
+   482: 0800710d   308 FUNC    WEAK   DEFAULT    1 _start
+   483: 2000000c    16 OBJECT  GLOBAL DEFAULT    3 AHBPrescTable
+   484: 0800882d    28 FUNC    GLOBAL HIDDEN     6 __floatsisf
+   485: 08007371     4 FUNC    WEAK   DEFAULT    1 CEC_IRQHandler
+   486: 08007371     4 FUNC    WEAK   DEFAULT    1 EXTI15_10_IRQHandler
+   487: 00000100     0 NOTYPE  GLOBAL DEFAULT  ABS _Minimum_Stack_Size
+   488: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM14_IRQHandler
+   489: 08008325    80 FUNC    GLOBAL DEFAULT    6 USRTH_voidInit
+   490: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM13_IRQHandler
+   491: 08008375    24 FUNC    GLOBAL DEFAULT    6 USRTH_DMAEnable
+   492: 080078bd    12 FUNC    GLOBAL DEFAULT    6 USART_voidChangeRecStatus
+   493: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM12_IRQHandler
+   494: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM7_IRQHandler
+   495: 08008a3d   310 FUNC    GLOBAL HIDDEN     6 __aeabi_fdiv
+   496: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN2_TX_IRQHandler
+   497: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM5_IRQHandler
+   498: 08007321    52 FUNC    WEAK   DEFAULT    1 UsageFault_Handler_C
+   499: 08008849   140 FUNC    GLOBAL HIDDEN     6 __floatundisf
+   500: 08007371     4 FUNC    WEAK   DEFAULT    1 EXTI9_5_IRQHandler
+   501: 08007000     0 NOTYPE  GLOBAL DEFAULT  ABS __vectors_start
+   502: 08008825    36 FUNC    GLOBAL HIDDEN     6 __aeabi_ui2f
+   503: 08008bc1    86 FUNC    GLOBAL DEFAULT    6 _vsnprintf_r
+   504: 08007371     4 FUNC    WEAK   DEFAULT    1 ETH_WKUP_IRQHandler
+   505: 08009431     2 FUNC    GLOBAL DEFAULT    6 __malloc_lock
+   506: 08007371     4 FUNC    WEAK   DEFAULT    1 SPI2_IRQHandler
+   507: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __sf_fake_stdin
+   508: 080072c1     4 FUNC    WEAK   DEFAULT    1 MemManage_Handler
+   509: 0800861d   156 FUNC    GLOBAL DEFAULT    6 main
+   510: 08008859   124 FUNC    GLOBAL HIDDEN     6 __aeabi_l2f
+   511: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN1_TX_IRQHandler
+   512: 08007355     4 FUNC    WEAK   DEFAULT    1 SVC_Handler
+   513: 08007371     4 FUNC    WEAK   DEFAULT    1 DMA2_Channel5_IRQHandler
+   514: 0800838d     8 FUNC    GLOBAL DEFAULT    6 USRTH_DMASend
+   515: 08009309   188 FUNC    GLOBAL DEFAULT    6 _malloc_r
+   516: 08007f01    20 FUNC    GLOBAL DEFAULT    6 set_ChannelX_TCHandler
+   517: 08008075    88 FUNC    GLOBAL DEFAULT    6 DMA1_Channel5_IRQHandler
+   518: 08008849   140 FUNC    GLOBAL HIDDEN     6 __aeabi_ul2f
+   519: 08007371     4 FUNC    WEAK   DEFAULT    1 EXTI4_IRQHandler
+   520: 08007371     4 FUNC    WEAK   DEFAULT    1 USB_LP_CAN1_RX0_IRQHandle
+   521: 080088d5   360 FUNC    GLOBAL HIDDEN     6 __mulsf3
+   522: 200001ec   120 OBJECT  GLOBAL DEFAULT    5 TxReqs
+   523: 20000264   120 OBJECT  GLOBAL DEFAULT    5 RxReqs
+   524: 080085ed    48 FUNC    GLOBAL DEFAULT    6 receive_writeReqFrame
+   525: 08007691    80 FUNC    GLOBAL DEFAULT    6 SystemInit
+   526: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_TRG_COM_TIM17_IRQHan
+   527: 08007371     4 FUNC    WEAK   DEFAULT    1 USB_HP_CAN1_TX_IRQHandler
+   528: 08007889    26 FUNC    GLOBAL DEFAULT    6 USART_DMAEnable
+   529: 08007fc5    88 FUNC    GLOBAL DEFAULT    6 DMA1_Channel3_IRQHandler
+   530: 080086b9   364 FUNC    GLOBAL HIDDEN     6 __aeabi_frsub
+   531: 08009620    20 OBJECT  GLOBAL DEFAULT    6 protocol_cfg
+   532: 08007371     4 FUNC    WEAK   DEFAULT    1 FSMC_IRQHandler
+   533: 08007371     4 FUNC    WEAK   DEFAULT    1 ETH_IRQHandler
+   534: 08008ed1   236 FUNC    GLOBAL DEFAULT    6 _printf_common
+   535: 080075a5    32 FUNC    GLOBAL DEFAULT    6 isSemihosting
+   536: 20000080     4 OBJECT  GLOBAL DEFAULT    3 _impure_ptr
+   537: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_UP_IRQHandler
+   538: 080088d5   360 FUNC    GLOBAL HIDDEN     6 __aeabi_fmul
+   539: 080078a5    12 FUNC    GLOBAL DEFAULT    6 USART_voidChangeStatus
+   540: 08008ce9   488 FUNC    GLOBAL DEFAULT    6 _svfiprintf_r
+   541: 08007371     4 FUNC    WEAK   DEFAULT    1 WWDG_IRQHandler
+   542: 0800738c     0 NOTYPE  GLOBAL DEFAULT    2 __data_regions_array_end
+   543: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM2_IRQHandler
+   544: 08008bc1    86 FUNC    GLOBAL DEFAULT    6 _vsniprintf_r
+   545: 08007a15    88 FUNC    GLOBAL DEFAULT    6 USART_DMASend
+   546: 08007000   268 OBJECT  GLOBAL DEFAULT    1 __isr_vectors
+   547: 08007371     4 FUNC    WEAK   DEFAULT    1 OTG_FS_WKUP_IRQHandler
+   548: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_TRG_COM_TIM11_IRQHan
+   549: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_BRK_IRQHandler
+   550: 20005000     0 NOTYPE  GLOBAL DEFAULT  ABS _estack
+   551: 20005000     0 NOTYPE  GLOBAL DEFAULT    1 __stack
+   552: 08007371     4 FUNC    WEAK   DEFAULT    1 EXTI1_IRQHandler
+   553: 20000088     0 NOTYPE  GLOBAL DEFAULT    3 _edata
+   554: 08007371     4 FUNC    WEAK   DEFAULT    1 RTCAlarm_IRQHandler
+   555: 08007371     4 FUNC    WEAK   DEFAULT    1 DMA2_Channel4_5_IRQHandle
+   556: 08008b75    62 FUNC    GLOBAL HIDDEN     6 __aeabi_f2uiz
+   557: 08007371     4 FUNC    WEAK   DEFAULT    1 USART2_IRQHandler
+   558: 08007bb5   132 FUNC    GLOBAL DEFAULT    6 RCC_u32ReadSystemFreq
+   559: 200002fc    10 OBJECT  GLOBAL DEFAULT    5 BL_buffer
+   560: 080076e1   148 FUNC    GLOBAL DEFAULT    6 SystemCoreClockUpdate
+   561: 08008825    36 FUNC    GLOBAL HIDDEN     6 __floatunsisf
+   562: 080081bd    34 FUNC    GLOBAL DEFAULT    6 DIO_SetPinVal
+   563: 08007371     4 FUNC    WEAK   DEFAULT    1 I2C2_ER_IRQHandler
+   564: 08007f6d    88 FUNC    GLOBAL DEFAULT    6 DMA1_Channel2_IRQHandler
+   565: 08007dd5    60 FUNC    GLOBAL DEFAULT    6 DMA_voidInit
+   566: 080081e1   222 FUNC    GLOBAL DEFAULT    6 GPIO_Config
+   567: 08007b11   164 FUNC    GLOBAL DEFAULT    6 RCC_Peripheral_Config
+   568: 080095e4     6 OBJECT  GLOBAL DEFAULT    6 ledstatemap
+   569: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __sf_fake_stdout
+   570: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM8_BRK_IRQHandler
+   571: 0800738c     0 NOTYPE  GLOBAL DEFAULT    2 __bss_regions_array_start
+   572: 08007371     4 FUNC    WEAK   DEFAULT    1 CAN1_SCE_IRQHandler
+   573: 08008b75    62 FUNC    GLOBAL HIDDEN     6 __fixunssfsi
+   574: 08007371     4 FUNC    WEAK   DEFAULT    1 FLASH_IRQHandler
+   575: 080073a1     2 FUNC    WEAK   DEFAULT    6 _exit
+   576: 080072c5    20 FUNC    WEAK   DEFAULT    1 BusFault_Handler
+   577: 08008395     8 FUNC    GLOBAL DEFAULT    6 USRTH_DMARecieve
+   578: 08007919   240 FUNC    GLOBAL DEFAULT    6 USART1_IRQHandler
+   579: 08007371     4 FUNC    WEAK   DEFAULT    1 OTG_FS_IRQHandler
+   580: 08008fbd   588 FUNC    GLOBAL DEFAULT    6 _printf_i
+   581: 08007371     4 FUNC    WEAK   DEFAULT    1 SPI3_IRQHandler
+   582: 080085ad    64 FUNC    GLOBAL DEFAULT    6 BL_receiveReqFrame
+   583: 200001b0     4 OBJECT  GLOBAL DEFAULT    5 __malloc_sbrk_start
+   584: 08007371     4 FUNC    WEAK   DEFAULT    1 I2C1_ER_IRQHandler
+   585: 200001b4     4 OBJECT  GLOBAL DEFAULT    5 __malloc_free_list
+   586: 0800817d    64 FUNC    GLOBAL DEFAULT    6 DIO_SetPinMode
+   587: 080086c5   352 FUNC    GLOBAL HIDDEN     6 __addsf3
+   588: 08007371     4 FUNC    WEAK   DEFAULT    1 USBWakeUp_IRQHandler
+   589: 08007371     4 FUNC    WEAK   DEFAULT    1 DMA2_Channel3_IRQHandler
+   590: 08007371     4 FUNC    WEAK   DEFAULT    1 TIM1_BRK_TIM15_IRQHandler
+
+No version information found in this file.
+Attribute Section: aeabi
+File Attributes
+  Tag_CPU_name: "Cortex-M3"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_ABI_PCS_wchar_t: 4
+  Tag_ABI_FP_denormal: Needed
+  Tag_ABI_FP_exceptions: Needed
+  Tag_ABI_FP_number_model: IEEE 754
+  Tag_ABI_align_needed: 8-byte
+  Tag_ABI_enum_size: small
+  Tag_ABI_optimization_goals: Prefer Speed
+  Tag_CPU_unaligned_access: v6
