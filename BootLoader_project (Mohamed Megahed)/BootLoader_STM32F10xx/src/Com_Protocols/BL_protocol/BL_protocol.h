@@ -28,6 +28,14 @@
 /*Keys that indicate the bootloader action when found*/
 #define FLASH_NEW_PROGRAM		0x66666666
 #define NEW_PROGRAM_FLASHED		0x77777777
+#define NO_PORGRAM_EXISTS		0x88888888
+
+typedef struct
+{
+	u32 marker;
+	u32 startAdress;
+	u32 entryPoint;
+}keyData_t;
 
 
 typedef struct

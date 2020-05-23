@@ -284,7 +284,13 @@ SECTIONS
         __data_end__ = . ;
 
     } >RAM AT>FLASH
-    
+
+    .myData : ALIGN(4)
+	{
+	   _myData = . ;
+	   KEEP(*(.BL_Data*))
+	} >MyData    
+
     /*
      * The uninitialised data sections. NOLOAD is used to avoid
      * the "section `.bss' type changed to PROGBITS" warning

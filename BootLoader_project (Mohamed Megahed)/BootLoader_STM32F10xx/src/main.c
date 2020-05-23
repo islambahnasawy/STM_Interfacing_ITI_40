@@ -27,9 +27,6 @@
 
 #define MAX_FAULT_NUM	5
 
-#define MARKER_ADDRESS	0x08004000
-#define START_ADDRESS	0x08004004
-#define ENTRY_POINT		0x08004008
 
 static u8 buffer[MAX_BUFFER_SIZE];
 static packet_t pack;
@@ -41,6 +38,20 @@ static u8 datRecFlag=DONE;
 static u8 fault_counter;
 static u8 header_counter;
 
+/*The beginning of the BootLoader data section in Linkerscript*/
+extern unsigned int _myData;
+
+keyData_t * pKeyData = (keyData_t *)&_myData;
+/*Initializing the BootLoader data section with NO_PORGRAM_EXISTS values*/
+__attribute__ ((section(".BL_Data"),used))
+keyData_t keyData =
+{
+	.marker=NO_PORGRAM_EXISTS,
+	.startAdress=NO_PORGRAM_EXISTS,
+	.entryPoint=NO_PORGRAM_EXISTS
+};
+
+/*Prototypes of used call back functions*/
 static void BL_receiveDataFrame(void);
 static void BL_receiveStartFrame(void);
 static void BL_receiveReqFrame(void);
@@ -51,16 +62,16 @@ void BL_ComSequence(void);
 int
 main(int argc, char* argv[])
 {
-
 	/*if an application exists jump to it*/
-	if(*((u32*)MARKER_ADDRESS)==NEW_PROGRAM_FLASHED)
+	if(pKeyData->marker==NEW_PROGRAM_FLASHED)
 	{
 		trace_printf("jumping  app\n");
 		/*Initializing stack pointer to the top of the stack*/
 		//asm("MSR MSP,r0");
 		/*Setting the vector offset to the start of the application's vector table*/
-		SCB_VTOR = *((u32*)START_ADDRESS);
-		pack.entryPoint=*((u32*)ENTRY_POINT);
+		//SCB_VTOR = *((u32*)START_ADDRESS);
+		SCB_VTOR = pKeyData->startAdress;
+		pack.entryPoint=pKeyData->entryPoint;
 		trace_printf("entry point is %x",pack.entryPoint);
 		/*Jumping to the application's entry point (startup code)*/
 		((Handler_t)pack.entryPoint)();
@@ -93,7 +104,7 @@ void BL_ComSequence(void)
 		 * Checking if we reached the boot loader via receiving the write request frame from APP
 		 * In this case skip to the START_FRAME_ID status
 		 * */
-		if(*(u32*)MARKER_ADDRESS == FLASH_NEW_PROGRAM)
+		if(pKeyData->marker == FLASH_NEW_PROGRAM)
 		{
 			status = START_FRAME_ID;
 		}
@@ -161,7 +172,8 @@ void BL_ComSequence(void)
 	case PROGRAM_FLASHED:
 		pack.key=NEW_PROGRAM_FLASHED;
 		/*change the marker and reset*/
-		Flash_programWrite((u16*)MARKER_ADDRESS,(u16*)&pack.key,4);
+		Flash_programWrite((u16*)&pKeyData->marker,(u16*)&pack.key,4);
+		delay_mSec(10000);
 		RCC_SWReset();
 		break;
 	case WAITING:
@@ -248,9 +260,9 @@ static void BL_receiveStartFrame(void)
 		if(header_counter==0)
 		{
 			/*Saving the first startAdress in flash so it won't be erased after  the reset*/
-			Flash_programWrite((u16*)START_ADDRESS,(u16*)&pack.startAdress,4);
+			Flash_programWrite((u16*)&pKeyData->startAdress,(u16*)&pack.startAdress,4);
 			/*Saving the first entryPoint in flash so it won't be erased after  the reset*/
-			Flash_programWrite((u16*)ENTRY_POINT,(u16*)&pack.entryPoint,4);
+			Flash_programWrite((u16*)&pKeyData->entryPoint,(u16*)&pack.entryPoint,4);
 		}
 		header_counter++;
 		trace_printf("add:%lx entry:%lx size:%lx",pack.startAdress,pack.entryPoint,pack.size);

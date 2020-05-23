@@ -14,7 +14,10 @@
 u8 BL_buffer[10];
 packet_t BL_pack;
 
-#define MARKER_ADDRESS	0x08004000
+/*The beginning of the BootLoader data section in Linkerscript*/
+extern unsigned int _myData;
+
+keyData_t * pKeyData = (keyData_t *)&_myData;
 
 static void send_Response(u8 response);
 void BL_receiveReqFrame(void);
@@ -23,7 +26,7 @@ void receive_writeReqFrame(void);
 int
 main(int argc, char* argv[])
 {
-
+	/***********************************APP initialization*******************************************/
 	trace_printf("App main\n");
 	RCC_u8ChangeClockStatus(HSI_CLK,CLK_STATUS_ON);
 	RCC_u8SwitchSystemClock(HSE);
@@ -31,27 +34,28 @@ main(int argc, char* argv[])
 	RCC_Peripheral_Config(RCC_IOPA,PERIPHERAL_ON);
 	RCC_Peripheral_Config(RCC_IOPB,PERIPHERAL_ON);
 	trace_printf("init RCC done\n");
-	/*boot loader communication initialization*/
+	/****************************boot loader communication initialization****************************/
 	USRTH_voidInit(USART1);
 	DMA_voidInit();
 	USRTH_DMAEnable(USART1);
 	trace_printf("init comm done\n");
 	LED_Init(LED1);
 	LED_setLedState(LED1,LED_STATE_OFF);
-
 	receive_writeReqFrame();
-
+	/***************************************APP Code************************************************/
 	while (1)
 	{
 
 		LED_setLedState(LED1,LED_STATE_ON);
-		delay_mSec(200);
+		delay_mSec(2000);
 		LED_setLedState(LED1,LED_STATE_OFF);
-		delay_mSec(200);
+		delay_mSec(2000);
 
 	}
 }
 
+
+/****************Code added to be able to flash a new program while this app is running**********************/
 void receive_writeReqFrame(void)
 {
 	u16 length;
@@ -66,20 +70,23 @@ void BL_receiveReqFrame(void)
 	u8 local_status=OK;
 	BL_pack.Frame_ID=WRITE_REQ_FRAME_ID;
 	BL_pack.buffer=BL_buffer;
-	//LED_setLedState(LED1,LED_STATE_ON);
 	/*Verifying the correct frame has been received*/
 	local_status=BLProtocol_extractData(&BL_pack);
 	if(local_status==OK)
 	{
 		trace_printf("GOING BACK TO BOOTLOADER\n");
 		Flash_unlock();
-		Flash_programWrite((u16*)MARKER_ADDRESS,(u16*)&BL_pack.key,4);
+		Flash_programWrite((u16*)&pKeyData->marker,(u16*)&BL_pack.key,4);
 		send_Response(POSITIVE_RESPONSE);
+		/*Wait till the response frame is sent before reseting*/
+		delay_mSec(10000);
 		RCC_SWReset();
 	}
 	else
 	{
-		send_Response(POSITIVE_RESPONSE);
+		send_Response(NEGATIVE_RESPONSE);
+		/*Receive another write request frame (because the one before this failed)*/
+		receive_writeReqFrame();
 	}
 }
 

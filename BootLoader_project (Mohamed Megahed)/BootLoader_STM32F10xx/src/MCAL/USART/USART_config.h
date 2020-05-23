@@ -9,7 +9,7 @@
 
 /*User configuration for UART */
 /*Put the needed baudrate*/
-#define USART_BAUDRATE		9600
+#define USART_BAUDRATE		19200
 
 
 /*Options : ENABLED , DISABLED*/
