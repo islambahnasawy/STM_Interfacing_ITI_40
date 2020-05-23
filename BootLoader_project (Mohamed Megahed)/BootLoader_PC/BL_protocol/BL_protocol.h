@@ -26,7 +26,8 @@
 #define HEADER_FRAME_END		0x55
 
 /*Keys that indicate the bootloader action when found*/
-#define FLASH_NEW_PROGRAM	0x66666666
+#define FLASH_NEW_PROGRAM		0x66666666
+#define NEW_PROGRAM_FLASHED		0x77777777
 
 
 typedef struct

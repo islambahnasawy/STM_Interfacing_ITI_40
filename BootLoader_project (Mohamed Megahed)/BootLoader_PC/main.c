@@ -10,11 +10,16 @@
 #include "BL_protocol/BL_protocol.h"
 #include "LIB/DELAY_interface.h"
 
-#define SECTOR_SIZE 1024
+#define SECTOR_SIZE 	1024
 
-#define DATA_SIZE 1088
+#define DATA_SIZE 		1088
 
-#define SEND_DELAY 1000000
+#define SEND_DELAY 		500000
+
+#define MAX_FAULT_NUM	5
+
+#define FAULT_OCCURED	0x16
+#define NO_FAULT		0x17
 
 static void send_WriteReqFrame(void);
 static u8 recieve_ResponseFrame(void);
@@ -22,11 +27,12 @@ static void send_StartFrame(u32 startAdress,u32 entryPoint , u32 size);
 static void send_LastHeaderFrame(u8 header_status);
 static void send_DataFrame(u8* data,u16 length);
 
-u8 buffer[1029];
-u16 length;
-u16 rec_length;
-packet_t pack;
-
+static u8 buffer[1029];
+static u16 length;
+static u16 rec_length;
+static packet_t pack;
+static u8 fault_counter;
+static u8 fault_flag=NO_FAULT;
 
 #include <stdint.h>
 #include <stdio.h>
@@ -36,7 +42,7 @@ packet_t pack;
 #define FLASH_END_ADDRESS   0x08010000
 
 #define file_name	"D:/ARM_Training/workSpace/BootLoader_APP_project/Debug/BootLoader_APP_project.elf"
-
+//#define file_name "LED_Toggle.elf"
 typedef struct elf32_hdr{
 	uint8_t	e_ident[16];
 	uint16_t	e_type;
@@ -69,7 +75,7 @@ typedef struct{
 /*A buffer to hold the entire file */
 uint8_t fileBuffer[1000000] = {0};
 /*A buffer that holds the data that will be sent*/
-uint8_t dataBuffer[10000] = {0};
+uint8_t dataBuffer[100000] = {0};
 
 void main(void)
 {
@@ -110,116 +116,168 @@ void main(void)
 				/*Checking for poitive response*/
 				if(pack.response == POSITIVE_RESPONSE)
 				{
+					fault_counter=0;
 					break;
 				}
 				else if (pack.response == NEGATIVE_RESPONSE)
 				{
 					/*Send the frame again and wait for the response*/
+					fault_counter++;
+					if(fault_counter==MAX_FAULT_NUM)
+					{
+						/*Reset in case of MAX_FAULT_NUM of faults*/
+						fault_flag=FAULT_OCCURED;
+						break;
+					}					
 				}
 				printf("response for write request frame = 0x%x\n",pack.response);
 			}
 		}
 		//printf("first step done\n");
-
-		for(header_idx=0;header_idx<headerNum;header_idx++)
+		if(fault_flag==NO_FAULT)
 		{
-			Header_lastAdress = pHeader[header_idx].phyAddress + pHeader[header_idx].memSize;
-			if(pHeader[header_idx].type==LOAD &&\
-			pHeader[header_idx].phyAddress>=FLASH_START_ADDRESS\
-			&&Header_lastAdress<FLASH_END_ADDRESS)
+			for(header_idx=0;header_idx<headerNum;header_idx++)
 			{
-				for(uint32_t k=0;k<pHeader[header_idx].memSize;k++)
+				Header_lastAdress = pHeader[header_idx].phyAddress + pHeader[header_idx].memSize;
+				if(pHeader[header_idx].type==LOAD &&\
+				pHeader[header_idx].phyAddress>=FLASH_START_ADDRESS\
+				&&Header_lastAdress<FLASH_END_ADDRESS)
 				{
-					dataBuffer[k] = fileBuffer[(pHeader[header_idx].offset)+k];
-					printf("%02x ",dataBuffer[k]);
-					if(k%50 == 0) printf("\n");
-					if(k%1024 == 0) printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+					for(uint32_t k=0;k<pHeader[header_idx].memSize;k++)
+					{	if(k%4 == 0) printf(" ");
+						if(k%16 == 0) printf("\n");
+						dataBuffer[k] = fileBuffer[(pHeader[header_idx].offset)+k];
+						printf("%02x",dataBuffer[k]);
+
+						if(k%1025 == 0) printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+					}
+					//printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+					/************************************************************************************/
+					/*Sending the start frame till a positive response is received */
+					while(1)
+					{
+						send_StartFrame(pHeader[header_idx].phyAddress,elfHeader->e_entry,pHeader[header_idx].memSize);
+						local_status=recieve_ResponseFrame();
+						if(local_status==OK)
+						{
+							/*Checking for poitive response*/
+							if(pack.response == POSITIVE_RESPONSE)
+							{
+								fault_counter=0;
+								break;
+							}
+							else if (pack.response == NEGATIVE_RESPONSE)
+							{
+								fault_counter++;
+								if(fault_counter==MAX_FAULT_NUM)
+								{
+									/*Reset in case of MAX_FAULT_NUM of faults*/
+									fault_flag=FAULT_OCCURED;
+									break;
+								}
+							}
+							printf("response for start frame = 0x%x\n",pack.response);
+						}	
+					}
+					if(fault_flag==FAULT_OCCURED)
+					{
+						break;
+					}
+					//printf("second step done\n");
+					
+					sectorNum=(u8)((pHeader[header_idx].memSize-1)/SECTOR_SIZE) + 1;
+					rem_length=pHeader[header_idx].memSize%SECTOR_SIZE;
+					/*Sending the data frames and waiting for the positive response*/
+					for(s8 sectorIdx=0;sectorIdx<sectorNum;sectorIdx++)
+					{
+						printf("sector idx %d\n",sectorIdx);
+						if(sectorIdx==(sectorNum-1))
+						{
+							send_DataFrame(dataBuffer+(sectorIdx*SECTOR_SIZE),rem_length);
+						}
+						else
+						{
+							send_DataFrame(dataBuffer+(sectorIdx*SECTOR_SIZE),SECTOR_SIZE);
+						}
+						local_status=recieve_ResponseFrame();
+						if(local_status!=OK || pack.response != POSITIVE_RESPONSE)
+						{
+							//handeled only negative response, the wrong response not handeled yet
+							if(pack.response==NEGATIVE_RESPONSE)
+							{
+								fault_counter++;
+								if(fault_counter==MAX_FAULT_NUM)
+								{
+									/*Reset in case of MAX_FAULT_NUM of faults*/
+									fault_flag=FAULT_OCCURED;
+									break;
+								}
+							}
+							sectorIdx--;
+						}
+						else
+						{
+							fault_counter=0;
+						}
+						printf("response for data frame = 0x%x\n",pack.response);
+					}
+					if(fault_flag==FAULT_OCCURED)
+					{
+						break;
+					}
 				}
-				//printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-				/************************************************************************************/
-				/*Sending the start frame till a positive response is received */
+				/*In case the next header is not the last one, and is not valid , skipt it*/
+				for(u8 i=1;i<headerNum;i++)
+				{
+					Header_lastAdress = pHeader[header_idx+1].phyAddress + pHeader[header_idx+1].memSize;
+					if(header_idx<(headerNum-1)&&\
+					(pHeader[header_idx+1].type!=LOAD ||\
+					pHeader[header_idx+1].phyAddress<FLASH_START_ADDRESS||\
+					Header_lastAdress>FLASH_END_ADDRESS))
+					{
+						header_idx++;
+					}
+					else
+					{
+						break;
+					}
+				}
+				/*Sending the write request frame till a positive response is received */
 				while(1)
 				{
-					send_StartFrame(pHeader[header_idx].phyAddress,elfHeader->e_entry,pHeader[header_idx].memSize);
+					if(header_idx != (headerNum-1))
+					{
+						send_LastHeaderFrame(HEADER_FRAME_INCOMMING);
+					}
+					else
+					{
+						send_LastHeaderFrame(HEADER_FRAME_END);
+					}
 					local_status=recieve_ResponseFrame();
 					if(local_status==OK)
 					{
 						/*Checking for poitive response*/
 						if(pack.response == POSITIVE_RESPONSE)
 						{
+							fault_counter=0;
 							break;
 						}
 						else if (pack.response == NEGATIVE_RESPONSE)
 						{
-							/*Send the frame again and wait for the response*/
+							fault_counter++;
+							if(fault_counter==MAX_FAULT_NUM)
+							{
+								/*Reset in case of MAX_FAULT_NUM of faults*/
+								fault_flag=FAULT_OCCURED;
+								break;
+							}
 						}
-						printf("response for start frame = 0x%x\n",pack.response);
-					}	
-				}
-				//printf("second step done\n");
-				
-				sectorNum=(u8)((pHeader[header_idx].memSize-1)/SECTOR_SIZE) + 1;
-				rem_length=pHeader[header_idx].memSize%SECTOR_SIZE;
-				/*Sending the data frames and waiting for the positive response*/
-				for(s8 sectorIdx=0;sectorIdx<sectorNum;sectorIdx++)
-				{
-					printf("sector idx %d\n",sectorIdx);
-					if(sectorIdx==(sectorNum-1))
-					{
-						send_DataFrame(dataBuffer+(sectorIdx*SECTOR_SIZE),rem_length);
+						printf("response for last header frame = 0x%x\n",pack.response);
 					}
-					else
-					{
-						send_DataFrame(dataBuffer+(sectorIdx*SECTOR_SIZE),SECTOR_SIZE);
-					}
-					local_status=recieve_ResponseFrame();
-					if(local_status!=OK || pack.response != POSITIVE_RESPONSE)
-					{
-						sectorIdx--;
-					}
-					printf("response for data frame = 0x%x\n",pack.response);
 				}
-			}
-			/*In case the next header is not the last one, and is not valid , skipt it*/
-			for(u8 i=1;i<headerNum;i++)
-			{
-				Header_lastAdress = pHeader[header_idx+1].phyAddress + pHeader[header_idx+1].memSize;
-				if(header_idx<(headerNum-1)&&\
-				(pHeader[header_idx+1].type!=LOAD ||\
-				pHeader[header_idx+1].phyAddress<FLASH_START_ADDRESS||\
-				Header_lastAdress>FLASH_END_ADDRESS))
-				{
-					header_idx++;
-				}
-				else
+				if(fault_flag==FAULT_OCCURED)
 				{
 					break;
-				}
-			}
-			/*Sending the write request frame till a positive response is received */
-			while(1)
-			{
-				if(header_idx != (headerNum-1))
-				{
-					send_LastHeaderFrame(HEADER_FRAME_INCOMMING);
-				}
-				else
-				{
-					send_LastHeaderFrame(HEADER_FRAME_END);
-				}
-				local_status=recieve_ResponseFrame();
-				if(local_status==OK)
-				{
-					/*Checking for poitive response*/
-					if(pack.response == POSITIVE_RESPONSE)
-					{
-						break;
-					}
-					else if (pack.response == NEGATIVE_RESPONSE)
-					{
-						/*Send the frame again and wait for the response*/
-					}
-					printf("response for last header frame = 0x%x\n",pack.response);
 				}
 			}
 		}
@@ -257,7 +315,7 @@ static void send_StartFrame(u32 startAdress,u32 entryPoint , u32 size)
 	BLProtocol_constructFrame(&pack,&length);
 	printf("\n");
 	/*Sending the buffer*/
-	delay_mSec(SEND_DELAY);
+	delay_mSec(SEND_DELAY+2000000);
 	serial_Send(buffer,length);
 	for(u8 i=0;i<20 ;i++)
 	{

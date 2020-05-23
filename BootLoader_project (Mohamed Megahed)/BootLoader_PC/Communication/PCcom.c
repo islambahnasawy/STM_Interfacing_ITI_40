@@ -81,12 +81,9 @@ u8 serial_Send(u8* buffer , u16 length)
                    length,  //No of bytes to write
                    &dNoOfBytesWritten, //Bytes written
                    NULL);
-	Status = SetCommMask(hComm, EV_RXCHAR);
+	
 	//CloseHandle(hComm);//Closing the Serial Port
   }
-
-	//printf("\nHamada wsal");
-  return 0;
 }
 
 u8 serial_Receive(u8*buffer ,u16 length)
@@ -95,6 +92,8 @@ u8 serial_Receive(u8*buffer ,u16 length)
 	DWORD dwEventMask; 
 	DWORD NoBytesRead;
 	int i = 0;
+	u8 a;
+	Status = SetCommMask(hComm, EV_RXCHAR);
 	Status = WaitCommEvent(hComm, &dwEventMask, NULL); 
 	if(Status==EV_RXCHAR)
 		{
@@ -103,11 +102,13 @@ u8 serial_Receive(u8*buffer ,u16 length)
 			{
 				DWORD NoBytesRead;
 				ReadFile( hComm,           //Handle of the Serial port
-					&buffer[i],       //Temporary character
-					length,//Size of TempChar
+					&a,       //Temporary character
+					1,//Size of TempChar
 					&NoBytesRead,    //Number of bytes read
 					NULL);
-				i++;
+
+				buffer[i]=a;
+								i++;
 			}
 	while (length>i);
 		}	
