@@ -7,8 +7,8 @@
  2. Run the makefile of Bootloader_PC using "make" command to compile, link and generate "FLASH_Application.exe" file.
  3. Run the generated "FLASH_Application.exe" file.
  4. The LED_Toggle.elf shall be flashed and run, and you can notice Led C13 Toggling each second.
- 5. we will add a feature to allow user flash and run a desired application. (we still working on that)
- 5. we will add a feature to allow user flash and run a desired application. (we still working on that)
+ 5. We will add a feature to allow user flash and run a desired application. (we still working on that)
+ 5. We will add a feature to allow user flash and run a desired application. (we still working on that)
 
  
  
